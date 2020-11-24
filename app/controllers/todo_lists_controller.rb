@@ -2,6 +2,6 @@ class TodoListsController < ApplicationController
   def index
   end
 
-  def show
+  def update
   end
 end
