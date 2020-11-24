@@ -8,3 +8,6 @@ class CreateSearches < ActiveRecord::Migration[6.0]
     end
   end
 end
+
+#adding another column for a more specific search "arrondisment"
+#for example. 

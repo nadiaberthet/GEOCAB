@@ -1,0 +1,2 @@
+class Demographie < ApplicationRecord
+end
