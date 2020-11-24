@@ -1,0 +1,11 @@
+<h1>Pages#QUIZ</h1>
+<p>Find me in app/views/pages/QUIZ.html.erb</p>
+<div class="container">
+<%= simple_form_for @user do |f| %>
+  <%= f.input :ordre %>
+
+  <%= f.input :cpam %>
+  <%= f.input :urssaf %>
+  <%= f.button :submit %>
+<% end %>
+</div>
