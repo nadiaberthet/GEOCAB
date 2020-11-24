@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :todo_lists, only:[:index, :update]
 
   resources :users, only:[:edit, :update]
+  get '/dashboard' => 'users#dashboard', as: :dashboard
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
