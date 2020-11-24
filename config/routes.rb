@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get 'insights', to: 'pages#insights'
 
   resources :searches, only: [:create, :update, :show]
 
