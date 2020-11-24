@@ -2,11 +2,11 @@ class SearchesController < ApplicationController
   def create
     @search = Search.new(params[:search])
     if !search.nil?
-      @searches = Unicorn.near(search[:query], 10)
+      @searches = Ad.near(search[:query], 10)
       @ad_start = search[:startdate]
       @ad_end = search[:enddate]
     else
-      @ads = AD.all
+      @ads = Ad.all
     end
     @markers = @ads.map do |ad|
       {
