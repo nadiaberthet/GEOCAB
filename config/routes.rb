@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'todo_lists/index'
+  get 'todo_lists/show'
+  get 'tasks/show'
+  get 'tasks/index'
+  get 'tasks/update'
   devise_for :users
   root to: 'pages#home'
 
