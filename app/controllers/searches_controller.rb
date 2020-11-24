@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
   def create
-    @searche = Search.new(params[])
+    @search = Search.new(params[])
   end
 end
