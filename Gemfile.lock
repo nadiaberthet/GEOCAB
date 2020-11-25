@@ -258,6 +258,7 @@ DEPENDENCIES
   nokogiri
   open-uri
   pg (>= 0.18, < 2.0)
+  pry
   pry-byebug
   pry-rails
   puma (~> 4.1)
