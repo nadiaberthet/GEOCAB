@@ -4,25 +4,25 @@ require 'pry'
 
 class BoncoinScraper
   def scrap
-    response = RestClient.get(url, headers)
-    doc = Nokogiri::HTML(response.body)
-    doc.search('._3RVaT').first(5).each do |ad|
+    # response = RestClient.get(url, headers)
+    body = File.open("#{Rails.root}/boncoin.html")
+    doc = Nokogiri::HTML(body)
+    doc.search('._2-MzW').first(5).each do |ad|
       title   = ad.search('.Msj0v').text
-      address = ad.search('._1UzWr').text
-      rent_cents = ad.search('._1qZ_s').text
-      published_at = ad.search('._1UzWr').text
-      image_url = ad.search('._29Lk0').text
+      address = ad.search('._1UzWr:nth-child(2)').text
+      rent_cents = ad.search('._1C-CB').text
+      published_at = ad.search('._1UzWr:nth-child(3)').text
+      image_url = ad.attr('image')
+
       # Ad.create(
       #   title: title,
       #   address: address,
       #   rent_cents: rent_cents,
       #   published_at: published_at,
       #   image_url: image_url
-      # )
-    p address
-    p rent_cents
-    p published_at
-    p image_url
+      #
+
+    puts image_url
     end
   end
 
@@ -46,7 +46,7 @@ class BoncoinScraper
       'Sec-Fetch-Site': 'same-origin',
       'Sec-Fetch-User': '?1',
       'Upgrade-Insecure-Requests': '1',
-      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36'
+      'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36'
     }
   end
 end
