@@ -1,14 +1,4 @@
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<%= simple_form_for @search do |f| %>
-  <div class="form-inputs">
-    <%= f.input :query, label: "Recherche!"%>
-    <%= f.submit "Recherche!"%>
-  </div>
-<% end %>
-
 <div class="container">
   <div class="card main">
     <div class="card-body">
@@ -16,7 +6,12 @@
         <div class="card-home-text">
           <h1>GEOCAB</h1>
           <p>Votre projet d'installation en libéral de A à Z.</p>
-          <%= link_to "Commence ta recherche!", "/insights", class: "btn btn-primary"%>
+          <%= simple_form_for @search do |f| %>
+            <div class="form-inputs">
+              <%= f.input :query %>
+              <%= f.submit "C'est parti !", class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
         <div class="card-home-img">
           <%= image_tag "home-img.png"%>
