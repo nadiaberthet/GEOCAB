@@ -1,5 +1,9 @@
 // Specific CSS for your home-page
 
+// body {
+//   background-color: $my-lightgreen;
+// }
+
 // Main Card
 .main {
   height: 400px;
@@ -16,6 +20,7 @@
 }
 
 .fas {
+  margin-bottom: 40px;
   font-size: 50px;
   color: $brand-color;
 }
