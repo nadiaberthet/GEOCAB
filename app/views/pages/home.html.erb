@@ -1,4 +1,10 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Commence ta recherche!", "/insights" %>
+
+<%= simple_form_for @search do |f| %>
+  <div class="form-inputs">
+    <%= f.input :query, label: "Recherche!"%>
+    <%= f.submit "Recherche!"%>
+  </div>
+<% end %>
 

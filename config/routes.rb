@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'insights', to: 'pages#insights'
   get 'mes_locaux', to: 'users#mes_locaux'
-  resources :searches, only: [:create, :update, :show]
+  
+  resources :searches, only: [:new, :create, :update, :show]
 
   resources :todo_lists, only:[:index, :update]
 
