@@ -6,13 +6,23 @@ class BoncoinScraper
   def scrap
     response = RestClient.get(url, headers)
     doc = Nokogiri::HTML(response.body)
-    doc.search('._3RVaT').each do |ad|
+    doc.search('._3RVaT').first(5).each do |ad|
+      title   = ad.search('.Msj0v').text
       address = ad.search('._1UzWr').text
-      loyer   = ad.search('._1qZ_s').text
-      Ad.create(
-        address: address,
-        loyer: loyer,
-      )
+      rent_cents = ad.search('._1qZ_s').text
+      published_at = ad.search('._1UzWr').text
+      image_url = ad.search('._29Lk0').text
+      # Ad.create(
+      #   title: title,
+      #   address: address,
+      #   rent_cents: rent_cents,
+      #   published_at: published_at,
+      #   image_url: image_url
+      # )
+    p address
+    p rent_cents
+    p published_at
+    p image_url
     end
   end
 
