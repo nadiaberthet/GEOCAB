@@ -1,6 +1,6 @@
 class SearchesController < ApplicationController
   def create
-    @search = Search.new(params[:search])
+    @search = Search.new(params[:query])
     if !search.nil?
       @searches = Ad.near(search[:query], 10)
       @ad_start = search[:startdate]

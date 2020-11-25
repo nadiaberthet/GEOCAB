@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'insights', to: 'pages#insights'
-
+  get 'mes_locaux', to: 'users#mes_locaux'
   resources :searches, only: [:create, :update, :show]
 
   resources :todo_lists, only:[:index, :update]
