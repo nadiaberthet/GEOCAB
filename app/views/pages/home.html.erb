@@ -1,3 +1,4 @@
+
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
@@ -7,4 +8,40 @@
     <%= f.submit "Recherche!"%>
   </div>
 <% end %>
+
+<div class="container">
+  <div class="card main">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <div class="card-home-text">
+          <h1>GEOCAB</h1>
+          <p>Votre projet d'installation en libéral de A à Z.</p>
+          <%= link_to "Commence ta recherche!", "/insights", class: "btn btn-primary"%>
+        </div>
+        <div class="card-home-img">
+          <%= image_tag "home-img.png"%>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-steps">
+    <div class="card-body">
+      <div class="d-flex justify-content-around">
+        <div class="step">
+          <i class="fas fa-clipboard-check"></i>
+          <p text="center">Remplissez notre questionnaire pour précisez votre projet d'installation</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-cogs"></i>
+          <p text="center">Notre algorithme trouve pour vous la meilleure proposition</p>
+        </div>
+        <div class="step">
+          <i class="fas fa-columns"></i>
+          <p text="center">Accédez à votre projet sur-mesure dans votre dashboard !</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 

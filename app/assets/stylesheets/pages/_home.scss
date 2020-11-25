@@ -1,1 +1,33 @@
 // Specific CSS for your home-page
+
+// body {
+//   background-color: $my-lightgreen;
+// }
+
+// Main Card
+.main {
+  height: 400px;
+}
+
+.card-home-img {
+  height: 300px;
+}
+
+// Steps Card
+.step {
+  width: 150px;
+  text-align: center;
+}
+
+.fas {
+  margin-bottom: 40px;
+  font-size: 50px;
+  color: $brand-color;
+}
+
+.card-steps {
+  margin-top: 25px;
+}
+
+
+
