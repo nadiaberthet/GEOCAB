@@ -1,15 +1,17 @@
 require 'rest-client'
 require 'nokogiri'
 require 'pry'
+
 class BoncoinScraper
   def scrap
     response = RestClient.get(url, headers)
     doc = Nokogiri::HTML(response.body)
-    doc.search('.ffdsfsd').each do |ad|
-      address = ad.search('.fdjskfjdsl').text
+    doc.search('._3RVaT').each do |ad|
+      address = ad.search('._1UzWr').text
+      loyer   = ad.search('._1qZ_s').text
       Ad.create(
         address: address,
-        name: ''
+        loyer: loyer,
       )
     end
   end
