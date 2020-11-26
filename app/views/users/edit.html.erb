@@ -2,44 +2,28 @@
 <div class="container">
 <h1>Questionnaire</h1>
 <p>Repondre a quelque questions pour plus d'informations!</p>
-<%= simple_form_for @user do |f| %>
+<%= simple_form_for current_user do |f| %>
 
-  <p>- Etes-vous inscrit au Conseil Départemental de l’Ordre (numéro RPPS)?</p>
-    <div class="field">
-      <%= f.label :retraite, "Yes", :value => "true"  %>
-      <%= f.radio_button :retraite, true %>
-      <%= f.label :retraite, "No", :value => "false" %>
-      <%= f.radio_button :retraite, false, :checked => true %>
-      <%= f.submit "Question suivante!", class: "btn btn-primary" %>
+    <p>- Etes-vous inscrit au Conseil Départemental de l’Ordre (numéro RPPS)?</p>
+        <div class="field">
+        <%= f.input :retraite, as: :radio_buttons, collection: [["Yes", 1], ["No", 0]], :checked => 0 %>
     </div>
 
     <p>- Etes-vous inscrit au Conseil Départemental de l’Ordre (numéro RPPS)?</p>
     <div class="field">
-      <%= f.label :ordre, "Yes", :value => "true"  %>
-      <%= f.radio_button :ordre, true %>
-      <%= f.label :ordre, "No", :value => "false" %>
-      <%= f.radio_button :ordre, false, :checked => true %>
-      <%= f.submit "Question suivante!", class: "btn btn-primary" %>
+      <%= f.input :ordre, as: :radio_buttons, collection: [["Yes", 1], ["No", 0]], :checked => 0 %>
     </div>
 
     <p>- Etes-vous inscrit au Conseil Départemental de l’Ordre (numéro RPPS)?</p>
     <div class="field">
-      <%= f.label :assurance_rcp, "Yes", :value => "true"  %>
-      <%= f.radio_button :assurance_rcp, true %>
-      <%= f.label :assurance_rcp, "No", :value => "false" %>
-      <%= f.radio_button :assurance_rcp, false, :checked => true %>
-      <%= f.submit "Question suivante!", class: "btn btn-primary" %>
+      <%= f.input :assurance_rcp, as: :radio_buttons, collection: [["Yes", 1], ["No", 0]], :checked => 0 %>
     </div>
 
     <p>- Etes-vous inscrit au Conseil Départemental de l’Ordre (numéro RPPS)?</p>
     <div class="field">
-      <%= f.label :urssaf, "Yes", :value => "true"  %>
-      <%= f.radio_button :urssaf, true %>
-      <%= f.label :urssaf, "No", :value => "false" %>
-      <%= f.radio_button :urssaf, false, :checked => true %>
+      <%= f.input :urssaf, as: :radio_buttons, collection: [["Yes", 1], ["No", 0]], :checked => 0 %>
       <%= f.submit "Question suivante!", class: "btn btn-primary" %>
     </div>
 
   <% end %>
 </div>
-

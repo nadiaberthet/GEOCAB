@@ -2,12 +2,10 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
 
   def home
-    @user = current_user
     @search = Search.new
   end
 
   def insights
-    @user = current_user
     @search = Search.find(params[:id])
     @ads = Ad.near([@search.latitude, @search.longitude], 10)
 
