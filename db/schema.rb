@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_140702) do
+ActiveRecord::Schema.define(version: 2020_11_26_131145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2020_11_25_140702) do
     t.integer "rent_cents"
     t.date "published_at"
     t.text "image_url"
+    t.float "longitude"
+    t.float "latitude"
   end
 
   create_table "competitors", force: :cascade do |t|
