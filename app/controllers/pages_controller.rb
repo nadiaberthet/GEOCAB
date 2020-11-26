@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   end
 
   def insights
+    @user = current_user
     @search = Search.find(params[:id])
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
