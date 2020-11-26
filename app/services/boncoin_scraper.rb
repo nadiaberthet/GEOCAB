@@ -14,18 +14,18 @@ class BoncoinScraper
       published_at = ad.search('._1UzWr:nth-child(3)').text
       image_url = ad.attr('image')
 
-      # Ad.create(
-      #   title: title,
-      #   address: address,
-      #   rent_cents: rent_cents,
-      #   published_at: published_at,
-      #   image_url: image_url
-      # )
-      puts title
-      puts address
-      puts rent_cents
-      puts published_at
-      puts image_url
+      Ad.create(
+        title: title,
+        address: address,
+        rent_cents: rent_cents,
+        published_at: published_at,
+        image_url: image_url
+      )
+      # puts title
+      # puts address
+      # puts rent_cents
+      # puts published_at
+      # puts image_url
     end
   end
 
