@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   def home
     @user = current_user
     @search = Search.new
+    # @job = current_user.job
   end
 
   def insights
