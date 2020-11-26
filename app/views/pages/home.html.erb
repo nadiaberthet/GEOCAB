@@ -1,27 +1,25 @@
 
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<%= simple_form_for @search do |f| %>
-  <div class="form-inputs">
-    <%= f.input :query, label: "Recherche!"%>
-    <%= f.submit "Recherche!"%>
-  </div>
-<% end %>
-
 <div class="container">
   <div class="card main">
     <div class="card-body">
       <div class="d-flex justify-content-between">
         <div class="card-home-text">
-          <h1>GEOCAB</h1>
-          <p>Votre projet d'installation en libéral de A à Z.</p>
-          <%= link_to "Commence ta recherche!", "/insights", class: "btn btn-primary"%>
+          <div class="mb-5 mt-5 title-desc">
+            <h1>GEOCAB</h1>
+            <p>Votre projet d'installation en libéral de A à Z.</p>
+          </div>
         </div>
         <div class="card-home-img">
-          <%= image_tag "home-img.png"%>
+          <%= image_tag "home-img.png", height: 300%>
         </div>
       </div>
+          <div class="form-inputs text-center">
+            <%= simple_form_for @search do |f| %>
+              Je suis <%= f.input :query, label: false %> et je m'installe à
+              <%= f.input :query, label: false, placeholder: "Lyon" %>
+              <%= f.submit "C'est parti !", class: "btn btn-primary" %>
+            <% end %>
+          </div>
     </div>
   </div>
   <div class="card-steps">
@@ -43,5 +41,7 @@
     </div>
   </div>
 </div>
+
+
 
 

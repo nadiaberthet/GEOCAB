@@ -5,4 +5,3 @@ class SearchesController < ApplicationController
     redirect_to insights_path(@search.id)
   end
 end
-
