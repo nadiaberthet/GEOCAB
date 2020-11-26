@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     @user = current_user
     @search = Search.new
   end
+
   def insights
     @user = current_user
     @search = Search.find(params[:id])
