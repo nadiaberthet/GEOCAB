@@ -9,11 +9,8 @@ class PagesController < ApplicationController
   def insights
     @user = current_user
     @search = Search.find(params[:id])
-    if !@search.nil?
-      @ad = Ad.near([@search.latitude, @search.longitude], 10)
-    else
-      @ads = Ad.all
-    end
+    @ads = Ad.near([@search.latitude, @search.longitude], 10)
+
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @markers = @ads.map do |ad|
       {
