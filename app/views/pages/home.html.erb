@@ -15,13 +15,11 @@
                 <%= f.input :job, label: false, :collection => ["Infirmier", "Kinésithérapeute", "Médecin généraliste", "Ostéopathe", "Sage-Femme"] %>
               <% end %>
 
-
               <%= simple_form_for @search do |f| %>
                 et je m'installe à <%= f.input :query, label: false, placeholder: "Lyon" %>
               <% end %>
 
               <%= f.button :submit, "C'est parti !", class: "btn btn-primary" %>
-
             <% end %>
 
           </div>
