@@ -1,7 +1,32 @@
-<div class="container">
-<%= link_to "Home", dashboard_path%>
+
+
+<!--<%= link_to "Home", user_dashboard_path%>
 <br>
 <%= link_to "To-do list",todo_lists_path(current_user) %>
 <br>
 <%= link_to "Mes locaux", "/mes_locaux" %>
+</div>-->
+
+<div class="main-container">
+
+  <div class="row cards-main">
+    <div class="card-profil"></div>
+  </div>
+
+<div class="wrapper">
+
+    <div class="card1 card-info"><div class="data"> 32 </div> </br> <div class="title"> cabinets </div> <div class="text"> disponibles à la vente ou la location à Lyon </div></div>
+    <div class="card2 card-info"><div class="data"> 210 </div> </br> <div class="title"> kinésithérapeuthes </div> <div class="text"> sont en exercice à Lyon actuellement </div></div>
+
+    <div class="card3 card-info"><div class="data"> 513 275 </div> </br> <div class="title"> habitants </div> <div class="text"> recensés à Lyon en 2019 </div></div>
+    <div class="card4 card-info"></div>
+
+
+    <div id="map" class="card5 card-info"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+ </div>
+
 </div>
