@@ -1,29 +1,80 @@
 
-<div class="container">
-<h1>Questionnaire</h1>
-<p>Repondre a quelque questions pour plus d'informations!</p>
-<%= simple_form_for current_user do |f| %>
+<div class="container questionnaire">
+  <h2>D'abord, faisons connaissance !</h2>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h4><i class="far fa-file-alt"></i> Démarches administratives</h4>
+        <hr>
+      </div>
+      <h4>Avez-vous entrepris les démarches suivantes ?</h4>
+      <div class="d-flex justify-content-around">
+        <div class="questionnaire-img">
+          <%= image_tag "office-img", height: 150 %>
+        </div>
+        <div class="mt-5 questions">
+          <%= simple_form_for current_user do |f| %>
+            <div class="field d-flex justify-content-between">
+              <p>Inscription à l’Ordre des Masseurs-Kinésithérapeutes (numéro RPPS)?</p>
+              <%= f.input :retraite, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
 
-    <p>- Etes-vous inscrit au Conseil Départemental de l’Ordre (numéro RPPS)?</p>
-        <div class="field">
-        <%= f.input :retraite, as: :radio_buttons, collection: [["Yes", 1], ["No", 0]], :checked => 0 %>
+            <div class="field d-flex justify-content-between">
+              <p>Enregistrement auprès de la CPAM ?</p>
+              <%= f.input :ordre, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Déclaration à l'URSSAF ?</p>
+              <%= f.input :assurance_rcp, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Inscription à la caisse de retraite des auxiliaires médicaux (CARPIMKO)?</p>
+              <%= f.input :urssaf, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+            <div class="field d-flex justify-content-between">
+              <p>Souscription à une assurance en responsabilité civile professionnelle ?</p>
+              <%= f.input :assurance_rcp, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+              <%= f.submit "Questions suivantes!", class: "btn btn-primary text-right" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="card-title">
+        <h4><i class="fas fa-hospital-user"></i> Critères personnels</h4>
+        <hr>
+      </div>
+      <h4>Où souhaitez-vous installer votre cabinet ?</h4>
+      <div class="d-flex justify-content-around">
+        <div class="questionnaire-img">
+          <%= image_tag "office-img", height: 150 %>
+        </div>
+        <div class="mt-5 questions">
+          <%= simple_form_for current_user do |f| %>
+            <div class="field d-flex justify-content-between">
+              <p>Proche d'une école / crèche ?</p>
+              <%= f.input :retraite, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Proche d'une salle de sport ?</p>
+              <%= f.input :ordre, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Proche d'un parc ?</p>
+              <%= f.input :assurance_rcp, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Proche des transports en commun ?</p>
+              <%= f.input :urssaf, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+              <%= f.submit "Je veux voir mon dashboard", class: "btn btn-primary text-right" %>
+          <% end %>
+        </div>
+      </div>
     </div>
-
-    <p>- Etes-vous inscrit au Conseil Départemental de l’Ordre (numéro RPPS)?</p>
-    <div class="field">
-      <%= f.input :ordre, as: :radio_buttons, collection: [["Yes", 1], ["No", 0]], :checked => 0 %>
-    </div>
-
-    <p>- Etes-vous inscrit au Conseil Départemental de l’Ordre (numéro RPPS)?</p>
-    <div class="field">
-      <%= f.input :assurance_rcp, as: :radio_buttons, collection: [["Yes", 1], ["No", 0]], :checked => 0 %>
-    </div>
-
-    <p>- Etes-vous inscrit au Conseil Départemental de l’Ordre (numéro RPPS)?</p>
-    <div class="field">
-      <%= f.input :urssaf, as: :radio_buttons, collection: [["Yes", 1], ["No", 0]], :checked => 0 %>
-      <%= f.submit "Question suivante!", class: "btn btn-primary" %>
-    </div>
-
-  <% end %>
+  </div>
 </div>
