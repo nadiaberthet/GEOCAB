@@ -8,6 +8,16 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 20px;
   background-color: $my-lightgreen;
+  margin-top: 20px;
+}
+
+.margin-profil {
+  margin-left: 200px;
+  color: white;
+}
+
+.title-profil {
+  font-size: 24px;
 }
 
 .card-info {
@@ -18,6 +28,26 @@
     margin: 20px 20px 0px 0px;
     text-align: left;
     padding: 20px;
+}
+
+.card-info:hover {
+  border: 2px solid $my-lightgreen;
+  transition: 0.1s ease
+}
+
+.card-info-5 {
+    margin: 20px 0px 0px 0px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid lightgrey;
+    text-align: left;
+    padding: 20px;
+    }
+
+.card-info-5:hover {
+  border: 2px solid $my-lightgreen;
+  transition: 0.1s ease
 }
 
 .wrapper {
