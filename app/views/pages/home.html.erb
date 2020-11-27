@@ -11,7 +11,7 @@
           <div class="form-inputs">
             <%= simple_form_for :search, url: user_path(current_user), method: :get do |f| %>
               Je suis <%= simple_form_for current_user do |f| %>
-                <%= f.input :job, label: false, :collection => %w[Infirmier Kinésithérapeute Médecin généraliste Ostéopathe Sage-Femme] %>
+                <%= f.input :job, label: false, :collection => ["Infirmier", "Kinésithérapeute", "Médecin généraliste", "Ostéopathe", "Sage-Femme"] %>
               <% end %>
               <%= simple_form_for @search do |f| %>
                 et je m'installe à <%= f.input :query, label: false, placeholder: "Lyon" %>
