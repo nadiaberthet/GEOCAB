@@ -1,4 +1,39 @@
 <div class="container">
   <h1>TodoLists#index</h1>
   <p>Find me in app/views/todo_lists/index.html.erb</p>
+  <div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+  </div>
+  <%= simple_form_for current_user do |f| %>
+       <p>- Inscription au Conseil Départemental de l’Ordre</p>
+        <div class="field">
+        <%= f.input :ordre, as: :boolean, :checked => 0 %>
+    </div>
+
+    <p>- Enregristrement auprès de la CPAM</p>
+      <div class="field">
+      <%= f.input :cpam, as: :boolean, :checked => 0 %>
+    </div>
+
+    <p>- Déclaration auprès de l'URSSAF</p>
+      <div class="field">
+      <%= f.input :urssaf, as: :boolean, :checked => 0 %>
+    </div>
+
+    <p>- Inscription à la CARPIMKO</p>
+      <div class="field">
+      <%= f.input :retraite, as: :boolean, :checked => 0 %>
+    </div>
+
+    <p>- Inscription à une Assurance en responsabilité Civile Professionnelle.</p>
+      <div class="field">
+      <%= f.input :assurance_rcp, as: :boolean, :checked => 0 %>
+    </div>
+
+    <p>- Voulez-vous modifier votre budget?</p>
+            <div class="field">
+            <%= f.input :budget %>
+            <%= f.submit "Question suivante!", class: "btn btn-primary" %>
+          </div>
+    <% end %>
 </div>

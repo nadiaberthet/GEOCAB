@@ -9,14 +9,13 @@
             <p>Votre projet d'installation en libéral de A à Z.</p>
           </div>
           <div class="form-inputs">
-            <%= simple_form_for :search, url: user_path(@user), method: :get do |f| %>
-              Je suis <%= simple_form_for @user do |f| %>
-                <%= f.input :job, label: false, :collection => %w[Infirmier Kinésithérapeute Médecin généraliste Ostéopathe Sage-Femme] %>
-              <% end %>
-              <%= simple_form_for @search do |f| %>
-                et je m'installe à <%= f.input :query, label: false, placeholder: "Lyon" %>
-              <% end %>
-              <%= f.submit "C'est parti !", class: "btn btn-primary" %>
+            <%= form_with url: "/searches", local: true, method: :post do |f| %>
+              <%= f.text_field :query %>
+              <%= f.select :job, %w[Infirmier Kinésithérapeute Médecin généraliste Ostéopathe Sage-Femme] %>
+                <%= f.submit "C'est parti !", class: "btn btn-primary" %>
+              <%#= form_with model: @user do |f| %>
+                <%#= f.select :job, %w[Infirmier Kinésithérapeute Médecin généraliste Ostéopathe Sage-Femme] %>
+                <%# end %>
             <% end %>
           </div>
         </div>

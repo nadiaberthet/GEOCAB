@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Questionnaire2</h1>
+
+  <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
+    </div>
+
+    <%= simple_form_for current_user do |f| %>
+
+      <p>- Etes-vous inscrit au Conseil Départemental de l’Ordre (numéro RPPS)?</p>
+          <div class="field">
+          <%= f.input :budget %>
+          <%= f.submit "Question suivante!", class: "btn btn-primary" %>
+        </div>
+
+        <%end%>
+</div>
