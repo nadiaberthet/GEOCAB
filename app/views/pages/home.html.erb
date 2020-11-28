@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="card main">
     <div class="card-body">
@@ -8,12 +7,10 @@
             <h1>GEOCAB</h1>
             <p>Votre projet d'installation en libéral de A à Z.</p>
           </div>
-
           <div class="form-inputs">
             <%= simple_form_for :search, url: user_path(current_user), method: :get do |f| %>
               Je suis <%= simple_form_for current_user do |f| %>
                 <%= f.input :job, label: false, :collection => %w[Infirmier Kinésithérapeute Médecin généraliste Ostéopathe Sage-Femme] %>
-
               <% end %>
 
               <%= simple_form_for @search do |f| %>
@@ -50,4 +47,3 @@
     </div>
   </div>
 </div>
-

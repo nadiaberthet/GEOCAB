@@ -1,0 +1,78 @@
+.wrapper-chiffres-cles {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 200px);
+}
+
+.card-chiffres {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  background-color: white;
+  color: $my-lightgreen;
+  border: 1px solid lightgrey;
+  text-align: left;
+  padding: 23px;
+  transition: all .2s ease-in-out;
+}
+
+.card-chiffres:hover {
+  transform: scale(1.03);
+}
+
+#card-chiffres-1 {
+  grid-column: 1 / 2 ;
+  grid-row: 1;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+#card-chiffres-2 {
+  grid-column: 2 / 3 ;
+  grid-row: 1;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+#card-chiffres-3 {
+  grid-column: 3 / 5 ;
+  grid-row: 1;
+  margin-bottom: 20px;
+}
+
+#card-chiffres-4 {
+  grid-column: 1 / 2 ;
+  grid-row: 2;
+  margin-right: 20px;
+}
+
+#card-chiffres-5 {
+  grid-column: 2 / 3 ;
+  grid-row: 2;
+  margin-right: 20px;
+}
+
+#card-chiffres-6 {
+  grid-column: 3 / 4 ;
+  grid-row: 2;
+  margin-right: 20px;
+}
+
+#card-chiffres-7 {
+  grid-column: 4 / 5 ;
+  grid-row: 2;
+}
+
+#card-chiffres-8 {
+  grid-column: 1 / 5;
+  grid-row: 3;
+  margin-top: 20px;
+  position: relative;
+  vertical-align: middle;
+}
+
+#img-chiffres-cles {
+  position: absolute;
+  bottom: 15px;
+  left: 1100px;
+  z-index: 1000;
+}
