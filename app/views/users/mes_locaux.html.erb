@@ -1,13 +1,25 @@
-<div class="main_container wrapper-locaux">
+<div class="main-container wrapper-locaux">
 
 <div id="map" class="card-local card-local-map"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+</div>
 
-  <div class="card-local card-local-recherches"></div>
+  <div class="card-local card-local-recherches">
+    <div class="text-description"> mes recherches </div>
+    <div>
+
+    </div>
+  </div>
+
+
   <div class="card-local card-local-ad"></div>
 
 </div>
 
 
+<script>
+  setTimeout(function(){
+    //deferred onload
+  }, 2000);
+</script>

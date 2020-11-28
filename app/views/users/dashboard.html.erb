@@ -1,12 +1,4 @@
 
-
-<!--<%= link_to "Home", user_dashboard_path%>
-<br>
-<%= link_to "To-do list",todo_lists_path(current_user) %>
-<br>
-<%= link_to "Mes locaux", "/mes_locaux" %>
-</div>-->
-
 <div class="main-container">
 
 
@@ -22,11 +14,11 @@
 
 <div class="wrapper">
 
-    <div class="card1 card-info"><div class="data text-primary"> 32 </div> </br> <div class="title"> cabinets </div> <div class="text"> disponibles à la vente ou la location à Lyon </div></div>
-    <div class="card2 card-info"><div class="data text-primary"> 210 </div> </br> <div class="title"> kinésithérapeuthes </div> <div class="text"> sont en exercice à Lyon actuellement </div></div>
+    <div class="card1 card-info"></div>
+    <div class="card2 card-info"><div class="text-category">mes démarches</div></div>
 
-    <div class="card3 card-info"><div class="data text-primary"> 513 275 </div> </br> <div class="title"> habitants </div> <div class="text"> recensés à Lyon en 2019 </div></div>
-    <div class="card4 card-info"><div class="data text-primary"> 800€ </div> </br> <div class="title"> de loyer mensuel </div> <div class="text"> pour un cabinet en location à Lyon </div></div>
+    <div class="card3 card-info"><div class="text-category">chiffres clés</div><div class="text-data"> 513 275 </div> </br> <div class="text-title"> habitants </div> <div class="text-description"> recensés à Lyon en 2019 </div></div>
+    <div class="card4 card-info"><div class="text-category">chiffres clés</div><div class="text-data"> 800€ </div> </br> <div class="text-title"> de loyer mensuel </div> <div class="text-description"> pour un cabinet en location à Lyon </div></div>
 
 
     <div id="map" class="card5 card-info-5"
@@ -36,3 +28,9 @@
 
  </div>
  </div>
+
+ <script>
+  setTimeout(function(){
+    //deferred onload
+  }, 2000);
+</script>

@@ -6,23 +6,28 @@
 
 .card-local-map {
   grid-column: 1 / 3 ;
-  grid-row: 3;
+  grid-row: 1 / 4;
+  margin-right: 20px;
 
 }
 
 .card-local-recherches {
   grid-column: 3 / 4 ;
-  grid-row: 1 / 3;
+  grid-row: 1 / 2;
+  margin-bottom: 20px;
+  background-color: $my-lightgreen;
+  text-align: left;
+  padding: 20px;
+  color: white;
 }
 
 .card-local-ad {
-  grid-column: 1 / 3 ;
-  grid-row: 3 / 4;
+  grid-column: 3 / 4 ;
+  grid-row: 2 / 4;
 }
 
 .card-local {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 20px;
-  background-color: white;
   border: 1px solid lightgrey;
 }
