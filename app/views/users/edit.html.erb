@@ -16,22 +16,22 @@
           <%= simple_form_for current_user do |f| %>
             <div class="field d-flex justify-content-between">
               <p>Inscription à l’Ordre des Masseurs-Kinésithérapeutes (numéro RPPS)?</p>
-              <%= f.input :retraite, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
-            </div>
-
-            <div class="field d-flex justify-content-between">
-              <p>Enregistrement auprès de la CPAM ?</p>
               <%= f.input :ordre, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
             </div>
 
             <div class="field d-flex justify-content-between">
+              <p>Enregistrement auprès de la CPAM ?</p>
+              <%= f.input :cpam, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+
+            <div class="field d-flex justify-content-between">
               <p>Déclaration à l'URSSAF ?</p>
-              <%= f.input :assurance_rcp, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+              <%= f.input :urssaf, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
             </div>
 
             <div class="field d-flex justify-content-between">
               <p>Inscription à la caisse de retraite des auxiliaires médicaux (CARPIMKO)?</p>
-              <%= f.input :urssaf, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+              <%= f.input :retraite, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
             </div>
             <div class="field d-flex justify-content-between">
               <p>Souscription à une assurance en responsabilité civile professionnelle ?</p>
@@ -71,10 +71,18 @@
               <p>Proche des transports en commun ?</p>
               <%= f.input :urssaf, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
             </div>
-              <%= f.submit "Je veux voir mon dashboard", class: "btn btn-primary text-right" %>
+            <div><%= link_to "Je veux voir mon dashboard", user_dashboard_path(current_user), class: "btn btn-primary text-right"%>
+              <%#= f.submit "Je veux voir mon dashboard", class: "btn btn-primary text-right" %>
+            </div>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  setTimeout(function(){
+    //deferred onload
+  }, 2000);
+</script>
