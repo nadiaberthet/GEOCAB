@@ -3,10 +3,11 @@
 
 
 
-    <div class="card-profil d-flex justify-content-start">
+    <div class="card-profil d-flex justify-content-around">
       <div class="my-auto margin-profil"> <%= image_tag "doctor-table.png", height: 130%> </div>
-      <div class="my-auto margin-profil"><div class="text"> Projet </div> </br> <div class="title-profil"> kinésithérapeuthes </br> à Lyon </div></div>
-     <div class="my-auto margin-profil"><div class="text"> Budget </div> </br> <div class="title-profil"> 80 000€</div></div>
+      <div class="my-auto margin-profil"><div class="category-profil">Projet</div> </br> <div class="title-profil"> Kinésithérapeuthe</div></div>
+      <div class="my-auto margin-profil"><div class="category-profil">Lieux</div> </br> <div class="title-profil"> Lyon</div></div>
+     <div class="my-auto margin-profil"><div class="category-profil">Budget</div> </br> <div class="title-profil"> 80 000€</div></div>
 
 
     </div>
@@ -14,14 +15,14 @@
 
 <div class="wrapper">
 
-    <div class="card1 card-info"></div>
-    <div class="card2 card-info"><div class="text-category">mes démarches</div></div>
+    <div class="card1 card-completion"><div class="text-category">Progression</div></div>
+    <div class="card2 card-info"><div class="text-category">Mes démarches</div></div>
 
-    <div class="card3 card-info"><div class="text-category">chiffres clés</div><div class="text-data"> 513 275 </div> </br> <div class="text-title"> habitants </div> <div class="text-description"> recensés à Lyon en 2019 </div></div>
-    <div class="card4 card-info"><div class="text-category">chiffres clés</div><div class="text-data"> 800€ </div> </br> <div class="text-title"> de loyer mensuel </div> <div class="text-description"> pour un cabinet en location à Lyon </div></div>
+    <a href="<%= '/users/:id/chiffres_cles' %>"><div class="card3 card-info"><div class="text-category">Chiffres clés</div></br><div class="text-data"> 513 275 </div><div class="text-title"> habitants </div> <div class="text-description"> recensés à Lyon en 2019 </div></div></a>
+    <div class="card4 card-info"><div class="text-category">Chiffres clés</div></br><div class="text-data"> 800€ </div><div class="text-title"> de loyer mensuel </div> <div class="text-description"> pour un cabinet en location à Lyon </div></div>
 
 
-    <div id="map" class="card5 card-info-5"
+    <div id="map" class="card-info-5"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
