@@ -3,14 +3,14 @@
 // body {
 //   background-color: $my-lightgreen;
 // }
-
 // Main Card
-.main {
-  height: 400px;
-}
-
 .card-home-img {
   height: 300px;
+}
+
+.card-body {
+  width: 900px;
+  margin: 0 auto;
 }
 
 // Steps Card
@@ -29,6 +29,7 @@
   margin-top: 25px;
 }
 
-.form-inputs .home div {
+.form-inputs .home {
   display: inline-block;
 }
+
