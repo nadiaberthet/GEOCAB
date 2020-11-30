@@ -51,8 +51,6 @@ before_action :current, only: [:edit, :update]
     end
   end
 
-  def chiffres_cles
-  end
 
   private
 

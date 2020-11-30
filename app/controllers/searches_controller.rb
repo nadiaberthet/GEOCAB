@@ -54,7 +54,7 @@ class SearchesController < ApplicationController
     else
       cookies[:budget] = params[:budget]
     end
-    redirect_to dashboard_searches_path
+    redirect_to dashboard_path
   end
 
 
@@ -69,6 +69,8 @@ class SearchesController < ApplicationController
       #don't forget to put all radiobuttons here
     }
   end
+
+
 end
 
 
