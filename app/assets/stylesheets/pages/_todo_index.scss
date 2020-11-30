@@ -1,0 +1,43 @@
+hr {
+  background-color: $brand-color;
+}
+
+.modal-style {
+  color: $brand-color;
+  font-size: 18px;
+  font-size: bold;
+}
+
+.wrapper_todo {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 170px);
+  grid-gap: 20px;
+}
+
+.wrapper-checklist {
+  padding: 0 100px;
+}
+
+.todo-checklist {
+  grid-column: 1 / 5 ;
+  grid-row: 1 / 6;
+}
+
+.todo-progress {
+  grid-column: 5 / 6 ;
+  grid-row: 1 / 2;
+
+}
+
+.todo-links {
+  grid-column: 5 / 6 ;
+  grid-row: 2 / 6;
+}
+
+.todo-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  background-color: white;
+  padding: 20px;
+}

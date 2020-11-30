@@ -67,6 +67,6 @@ class SearchesController < ApplicationController
       jobs: @search.job
       #don't forget to put all radiobuttons here
     }
+    end
   end
-end
 end

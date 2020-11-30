@@ -7,10 +7,16 @@ class ApplicationController < ActionController::Base
       search = Search.find(cookies[:search_id])
       search.update(user: resource)
       resource.cpam = cookies[:cpam] == 'true'
+      resource.ordre = cookies[:ordre] == 'true'
+      resource.urssaf = cookies[:urssaf] == 'true'
+      resource.assurance_rcp = cookies[:assurance_rcp] == 'true'
+      resource.retraite = cookies[:retraite] == 'true'
+      resource.budget = cookies[:budget]
+      resource.job = search.job
       resource.save
       cookies.delete :search_id
     end
-    stored_location_for(resource) || root_path
+    stored_location_for(resource) || dashboard_path
   end
 
   protected

@@ -2,20 +2,28 @@
   font-weight: bold;
 }
 
+.card-body {
+  width: 100%;
+}
+
 .card-title {
   color: $my-lightgreen;
 }
 
 .far {
   padding-right: 10px;
+  font-size: 22px;
+  color: $my-lightgreen;
 }
 
 .fas {
   padding-right: 10px;
+  font-size: 22px;
+  color: $my-lightgreen;
 }
 
 .questionnaire-img {
-  width: 180px;
+  width: 200px;
   grid-column: 1;
   grid-row: 1 / span 2;
   justify-self: center;
@@ -35,14 +43,19 @@
   width: 25%;
 }
 
-.wrapper {
+.wrapper-questionnaire {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  margin: 0px 60px;
+  grid-template-rows: 2;
+  margin: 0px auto;
 }
 
 .questions {
-  grid-column: 2 / span 4;
-  padding-left: 70px;
+  grid-column: 2 / span 3;
+  padding-right: 50px;
+}
+
+.questions-2 {
+  grid-column: 2 / span 1;
+  padding-right: 50px;
 }
