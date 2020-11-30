@@ -102,19 +102,26 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style> .progress-bar { width: 0;}</style>
  <script>
-    $(document).ready(function() {
-      let $checkboxes = $('.custom-check-box');
-      let $progress = $('#CheckProgress');
-      let total = $checkboxes.length;
+ function initCards() {
+  const updateProgressBar = () =>{
+    let $checkboxes = $('.custom-check-box');
+    let total = $checkboxes.length;
+    let checked = $checkboxes.filter(':checked').length;
+    let progressWidth = (checked / total) * 100;
+    $('.progress-bar').css('width', progressWidth + '%');
+  };
 
+  $(document).ready(function() {
+    let $checkboxes = $('.custom-check-box');
 
-      $checkboxes.on('change', function() {
-        let checked = $checkboxes.filter(':checked').length;
-        let progressWidth = (checked / total) * 100;
-        $('.progress-bar').css('width', progressWidth + '%');
+    updateProgressBar();
+
+    $checkboxes.on('change', updateProgressBar);
   });
-});
-  setTimeout(function(){
+  };
+  initCards();
+
+   setTimeout(function(){
     //deferred onload
   }, 2000);
  </script>

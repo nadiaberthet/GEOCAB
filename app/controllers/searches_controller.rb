@@ -69,8 +69,4 @@ class SearchesController < ApplicationController
       #don't forget to put all radiobuttons here
     }
   end
-
-
 end
-
-
