@@ -64,12 +64,11 @@ class SearchesController < ApplicationController
       cpam: current_user ? current_user.cpam : cookies[:cpam],
       ordre: current_user ? current_user.ordre : cookies[:ordre],
       urssaf: current_user ? current_user.urssaf : cookies[:urssaf],
-      retraite: current_user ? current_user.retraite : cookues[:retraite],
+      retraite: current_user ? current_user.retraite : cookies[:retraite],
       assurance_rcp: current_user ? current_user.assurance_rcp : cookies[:assurance_rcp],
       budget: current_user ? current_user.budget : cookies[:budget],
       location: @search.query,
       jobs: @search.job
-      #don't forget to put all radiobuttons here
     }
   end
 end
