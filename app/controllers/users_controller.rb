@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :current, only: [:edit, :update]
+  before_action :current, only: [:edit, :update]
 
   def edit
   end
@@ -39,6 +39,13 @@ before_action :current, only: [:edit, :update]
     end
   end
 
+  def chiffres_cles
+    @ad = Ad.all
+    @avg = @ad.map(&:rent_cents).sum / @ad.length.to_f
+    @client = GooglePlaces::Client.new(ENV["PLACES_API_KEY"])
+    @search = current_user.searches.last
+    @places = @client.spots(@search.latitude, @search.longitude, :name => 'physiotherapist', :radius => 15)
+  end
 
   private
 
@@ -47,6 +54,6 @@ before_action :current, only: [:edit, :update]
   end
 
   def user_params
-    params.require(:user).permit(:job, :ordre, :cpam, :urssaf, :retraite, :assurance_rcp, :budget, :commodite) #doesn't work needs something else
+    params.require(:user).permit(:job, :ordre, :cpam, :urssaf, :retraite, :assurance_rcp, :budget, :commodite)
   end
 end
