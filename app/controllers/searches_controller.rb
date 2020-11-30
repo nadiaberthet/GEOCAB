@@ -59,11 +59,15 @@ class SearchesController < ApplicationController
 
 
   def dashboard
-    raise "no search, you need to redirect to new search path here (redirect to ...)" if current_user && current_user.searches.none?
+    redirect_to root_path if current_user && current_user.searches.none?
     @search = current_user ? current_user.searches.last : Search.find(cookies[:search_id])
     @options = {
       cpam: current_user ? current_user.cpam : cookies[:cpam],
       ordre: current_user ? current_user.ordre : cookies[:ordre],
+      urssaf: current_user ? current_user.urssaf : cookies[:urssaf],
+      retraite: current_user ? current_user.retraite : cookues[:retraite],
+      assurance_rcp: current_user ? current_user.assurance_rcp : cookies[:assurance_rcp],
+      budget: current_user ? current_user.budget : cookies[:budget],
       location: @search.query,
       jobs: @search.job
       #don't forget to put all radiobuttons here

@@ -6,6 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :job, inclusion: { in: JOBS }
-
-
+  has_many :searches
 end
