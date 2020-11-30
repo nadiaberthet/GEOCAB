@@ -1,30 +1,16 @@
 class SearchesController < ApplicationController
-  skip_before_action  :authenticate_user!, only: [:create, :show, :questionnaire]
+  skip_before_action  :authenticate_user!
 
   def create
-    if current_user
-      @search = Search.new(query: params[:query], user: current_user)
-      @search.save
-    else
-      cookies[:search] = params[:query]
-      cookies[:searchjob] = params[:job]
-    end
-      redirect_to searches_path(@search&.id)
+    job = current_user&.job || params[:job]
+    @search = Search.create!(query: params[:query], job: job, user: current_user)
+    cookies[:search_id] = @search.id unless current_user
+    redirect_to search_path(@search.id)
   end
 
   def show
-    if current_user
-      @search = Search.find(params[:id])
-      @ads = Ad.near([@search.latitude, @search.longitude], 10)
-
-      # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
-
-    else
-      coordinates = Geocoder.search(cookies[:search]).first.coordinates
-      @ads = Ad.near([coordinates[0], coordinates[1]], 10)
-    end
-
-    @query = @search&.query || cookies[:search]
+    @search = Search.find(params[:id])
+    @ads = Ad.near(@search, 10)
 
     @markers = @ads.map do |ad|
       {
@@ -37,11 +23,33 @@ class SearchesController < ApplicationController
     end
   end
 
-  def questionnaire
+  def questionnaire_step_1
     cookies[:retraite] = params[:retraite]
   end
 
-  def questionnaire2
+  def questionnaire_step_2
+  end
+
+  def questionnaire_step_1_submit
+    if current_user
+      current_user.cpam = params[:cpam] == 'true'
+      current_user.save
+    else
+      cookies[:cpam] = params[:cpam]
+    end
+    redirect_to dashboard_path
+  end
+
+
+  def dashboard
+    raise "no search, you need to redirect to new search path here (redirect to ...)" if current_user && current_user.searches.none?
+    @search = current_user ? current_user.searches.last : Search.find(cookies[:search_id])
+    @options = {
+      cpam: current_user ? current_user.cpam : cookies[:cpam],
+      location: @search.query,
+      josb: @search.job
+      #don't forget to put all radiobuttons here
+    }
   end
 end
 

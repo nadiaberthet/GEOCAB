@@ -1,0 +1,20 @@
+<div class="container">
+<h1>Questionnaire</h1>
+<div class="progress">
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+  </div>
+
+  <p>Repondre a quelque questions pour plus d'informations!</p>
+  <%= form_with url: questionnaire_step_1_searches_path, local: true, method: :post do |f| %>
+    <div>
+      <%= label :cpam, "Yes", value: true %>
+      <%= f.radio_button :cpam, true,  :value => true %>
+    </div>
+
+    <div>
+      <%= label :cpam, "No", value: false %>
+      <%= f.radio_button :cpam, false, :checked => true, :value => false%>
+    </div>
+    <%= f.submit "Question suivante!", class: "btn btn-primary" %>
+  <% end %>
+</div>

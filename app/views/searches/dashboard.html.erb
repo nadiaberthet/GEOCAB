@@ -1,7 +1,8 @@
 <div class="container">
 <%= link_to "Home", dashboard_path%>
 <br>
-<%= link_to "To-do list",todo_lists_path(current_user) %>
-<br>
-<%= link_to "Mes locaux", "/mes_locaux" %>
+<h2> I'm here in dashboard </h2>
 </div>
+
+
+<%= raw(ap @options) %>
