@@ -1,64 +1,79 @@
-<div class="container">
-<h1>Questionnaire</h1>
-<div class="progress">
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+<div class="main-container questionnaire">
+  <h2>D'abord, faisons connaissance !</h2>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h4><i class="far fa-file-alt"></i> Démarches administratives</h4>
+        <hr>
+      </div>
+      <h4>Avez-vous entrepris les démarches suivantes :</h4>
+      <div class="wrapper-questionnaire">
+        <div class="questionnaire-img">
+          <%= image_tag "office-img", height: 150 %>
+        </div>
+        <div class="mt-5 questions">
+          <%= form_with url: questionnaire_step_1_searches_path, local: true, method: :post do |f| %>
+
+            <div class="field d-flex justify-content-between">
+              <p>Inscription à l’Ordre des Masseurs-Kinésithérapeutes ?</p>
+              <div>
+                <%= label :ordre, "Oui", value: true %>
+                <%= f.radio_button :ordre, true,  :value => true %>
+
+                <%= label :ordre, "Non", value: false %>
+                <%= f.radio_button :ordre, false, :checked => true, :value => false%>
+              </div>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Enregistrement auprès de la CPAM ?</p>
+              <div>
+                <%= label :cpam, "Oui", value: true %>
+                <%= f.radio_button :cpam, true,  :value => true %>
+                <%= label :cpam, "Non", value: false %>
+                <%= f.radio_button :cpam, false, :checked => true, :value => false%>
+              </div>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Déclaration à l'URSSAF ?</p>
+              <div>
+                <%= label :urssaf, "Oui", value: true %>
+                <%= f.radio_button :urssaf, true,  :value => true %>
+                <%= label :urssaf, "Non", value: false %>
+                <%= f.radio_button :urssaf, false, :checked => true, :value => false%>
+              </div>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Inscription à la caisse de retraite CARPIMKO ?</p>
+              <div>
+                <%= label :retraite, "Oui", value: true %>
+                <%= f.radio_button :retraite, true,  :value => true %>
+                <%= label :retraite, "Non", value: false %>
+                <%= f.radio_button :retraite, false, :checked => true, :value => false%>
+              </div>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Souscription à une assurance en responsabilité civile professionnelle ?</p>
+              <div>
+                <%= label :assurance_rcp, "Oui", value: true %>
+                <%= f.radio_button :assurance_rcp, true,  :value => true %>
+                <%= label :assurance_rcp, "Non", value: false %>
+                <%= f.radio_button :assurance_rcp, false, :checked => true, :value => false%>
+              </div>
+            </div>
+
+        </div>
+        <div class="text-center">
+            <%= f.submit "Question suivante!", class: "mt-5 btn btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+      </div>
+    </div>
   </div>
-
-  <p>Repondre a quelque questions pour plus d'informations!</p>
-  <%= form_with url: questionnaire_step_1_searches_path, local: true, method: :post do |f| %>
-    <div>
-      <%= label :cpam, "Yes", value: true %>
-      <%= f.radio_button :cpam, true,  :value => true %>
-    </div>
-
-    <div>
-      <%= label :cpam, "No", value: false %>
-      <%= f.radio_button :cpam, false, :checked => true, :value => false%>
-    </div>
-
-  <br>
-    <div>
-      <%= label :ordre, "Yes", value: true %>
-      <%= f.radio_button :ordre, true,  :value => true %>
-    </div>
-
-    <div>
-      <%= label :ordre, "No", value: false %>
-      <%= f.radio_button :ordre, false, :checked => true, :value => false%>
-    </div>
-
-  <br>
-    <div>
-      <%= label :urssaf, "Yes", value: true %>
-      <%= f.radio_button :urssaf, true,  :value => true %>
-    </div>
-
-    <div>
-      <%= label :urssaf, "No", value: false %>
-      <%= f.radio_button :urssaf, false, :checked => true, :value => false%>
-    </div>
-
-  <br>
-    <div>
-      <%= label :retraite, "Yes", value: true %>
-      <%= f.radio_button :retraite, true,  :value => true %>
-    </div>
-
-    <div>
-      <%= label :retraite, "No", value: false %>
-      <%= f.radio_button :retraite, false, :checked => true, :value => false%>
-    </div>
-
-  <br>
-    <div>
-      <%= label :assurance_rcp, "Yes", value: true %>
-      <%= f.radio_button :assurance_rcp, true,  :value => true %>
-    </div>
-
-    <div>
-      <%= label :assurance_rcp, "No", value: false %>
-      <%= f.radio_button :assurance_rcp, false, :checked => true, :value => false%>
-    </div>
-    <%= f.submit "Question suivante!", class: "btn btn-primary" %>
-  <% end %>
 </div>
