@@ -69,3 +69,5 @@ gem 'amazing_print'
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'geocoder'
+
+gem "amazing_print", "~> 1.2"

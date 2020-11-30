@@ -260,7 +260,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  amazing_print
+
+
+  amazing_print (~> 1.2)
+
   autoprefixer-rails
   bootsnap (>= 1.4.2)
   byebug
