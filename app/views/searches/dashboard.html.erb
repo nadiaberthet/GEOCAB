@@ -16,9 +16,16 @@
 
     <div class="card1 card-completion"><div class="text-category">Progression</div></div>
 
-    <div class="card2 card-info">
+
+  <%if current_user == nil%>
+    <%= link_to new_user_session_path, class: 'card2 card-info' do %>
       <div class="text-category">Mes démarches</div>
-    </div>
+    <%end%>
+  <%else%>
+    <%= link_to todo_lists_path, class: 'card2 card-info' do %>
+      <div class="text-category">Mes démarches</div>
+    <%end%>
+  <%end%>
 
     <%if current_user == nil  %>
 
