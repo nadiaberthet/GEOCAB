@@ -1,0 +1,38 @@
+hr {
+  color: $brand-color;
+  height: 2px;
+}
+
+.wrapper_todo {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 200px);
+  grid-gap: 20px;
+}
+
+.wrapper-cheklist {
+  padding: 0 100px;
+}
+
+.todo-checklist {
+  grid-column: 1 / 5 ;
+  grid-row: 1 / 4;
+}
+
+.todo-progress {
+  grid-column: 5 / 5 ;
+  grid-row: 1 / 2;
+
+}
+
+.todo-links {
+  grid-column: 5 / 5 ;
+  grid-row: 2 / 4;
+}
+
+.todo-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  background-color: white;
+  padding: 20px;
+}
