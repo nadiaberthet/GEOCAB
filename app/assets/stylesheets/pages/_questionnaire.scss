@@ -4,8 +4,6 @@
 
 .card-body {
   width: 100%;
-  // margin-left: 20px;
-  // margin-left: 20px;
 }
 
 .card-title {
@@ -14,10 +12,14 @@
 
 .far {
   padding-right: 10px;
+  color: $my-lightgreen;
+  font-size: 22px;
 }
 
 .fas {
   padding-right: 10px;
+  color: $my-lightgreen;
+  font-size: 22px;
 }
 
 .questionnaire-img {
@@ -44,12 +46,17 @@
 .wrapper-questionnaire {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 2;
   margin: 0px auto;
 }
 
 .questions {
   grid-column: 2 / span 3;
+  padding-right: 50px;
+}
+
+.questions-2 {
+  grid-column: 2 / span 1;
   padding-right: 50px;
 }
 
