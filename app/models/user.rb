@@ -5,7 +5,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :job, inclusion: { in: JOBS }
-
-
+  has_many :searches
 end
