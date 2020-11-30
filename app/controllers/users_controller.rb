@@ -17,7 +17,11 @@ before_action :current, only: [:edit, :update]
       @user.update(user_params)
       redirect_to todo_lists_path
     end
-  end 
+  end
+
+  def todo_update
+    redirect_to dashboard_path
+  end
 
   def mes_locaux
     @search = Search.find(params[:id])
