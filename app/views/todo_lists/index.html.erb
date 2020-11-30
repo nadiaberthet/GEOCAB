@@ -1,4 +1,4 @@
-<div class="main-container">
+<div class="main-container mb-4">
 
  <div class="wrapper_todo">
 
@@ -7,64 +7,95 @@
       <span class="progress-bar progress-bar-striped progress-bar-animated"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
     </div>
 
-    <h4 class="card-title my-4">Mes démarches administrative</h4> <hr>
+    <h4 class="card-title my-4"><i class="far fa-file-alt"></i>Mes démarches administrative</h4><hr>
 
     <div class="my-5">
     <%= simple_form_for current_user do |f| %>
 
-    <div class="wrapper-cheklist">
+    <div class="wrapper-checklist">
       <div class="d-flex justify-content-between">
         <p>- Inscription au Conseil Départemental de l'Ordre</p>
         <div class="field">
-           <%= f.input :ordre, label: "Fait", as: :boolean, :checked => 0 ,  input_html: { class: 'custom-check-box' }%>
+           <%= f.input :ordre, label: false, as: :boolean, :checked => 0 ,  input_html: { class: 'custom-check-box' }%>
         </div>
       </div>
 
     <div class="d-flex justify-content-between">
       <p>- Enregristrement auprès de la CPAM</p>
       <div class="field">
-        <%= f.input :cpam, label: "Fait", as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' }%>
+        <%= f.input :cpam, label: false, as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' }%>
       </div>
     </div>
 
     <div class="d-flex justify-content-between">
       <p>- Déclaration auprès de l'URSSAF</p>
       <div class="field">
-        <%= f.input :urssaf, label: "Fait", as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' }%>
+        <%= f.input :urssaf, label: false, as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' }%>
       </div>
     </div>
 
     <div class="d-flex justify-content-between">
       <p>- Inscription à la CARPIMKO</p>
       <div class="field">
-        <%= f.input :retraite, label: "Fait", as: :boolean, :checked => 0, input_html: { class: 'custom-check-box' } %>
+        <%= f.input :retraite, label: false, as: :boolean, :checked => 0, input_html: { class: 'custom-check-box' } %>
       </div>
     </div>
 
     <div class="d-flex justify-content-between">
     <p>- Inscription à une Assurance en responsabilité Civile Professionnelle.</p>
       <div class="field">
-        <%= f.input :assurance_rcp, label: "Fait", as: :boolean, :checked => 0, input_html: { class: 'custom-check-box' } %>
+        <%= f.input :assurance_rcp, label: false, as: :boolean, :checked => 0, input_html: { class: 'custom-check-box' } %>
       </div>
     </div>
-
-    <%= f.submit "Mise à jour votre To-do!", class: "btn btn-primary mt-3", id: "button" %>
-
-  </div>
-  <% end %>
-
   </div>
   </div>
+
+<h4 class="card-title my-4"><i class="fas fa-clinic-medical"></i>Mes démarches immobilières</h4><hr>
+  <div class="wrapper-checklist">
+  <%= simple_form_for current_user do |f| %>
+    <div class="d-flex justify-content-between">
+      <p>- Location ou achat d'un cabinet</p>
+      <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <p>- Achat du matériel neccesaire</p>
+      <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
+      <% end %>
+  </div>
+  </div>
+
+<h4 class="card-title my-4"><i class="fas fa-comments"></i>Ma communication</h4><hr>
+
+<div class="wrapper-checklist">
+  <%= simple_form_for current_user do |f| %>
+    <div class="d-flex justify-content-between">
+      <p>- Inscription à Doctolib</p>
+      <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
+    </div>
+
+    <div class="d-flex justify-content-between">
+      <p><div class="modal-style">+</div>Inscription à Google Business</p>
+      <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
+      <% end %>
+  </div>
+  </div>
+<div class="text-center mt-3">
+   <%= f.submit "Mettre à jour mes démarches!", class: "btn btn-primary mt-3 pull-right", id: "button" %>
+</div>
+   <% end %>
+
+</div>
 
   <div class="todo-progress todo-card">
-
+  <h6>Progession</h6>
   </div>
 
   <div class="todo-links todo-card">
-
+  <h6>Liens utiles</h6>
   </div>
 
-</div>
+
 
   </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
