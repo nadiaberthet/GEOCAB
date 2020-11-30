@@ -99,6 +99,8 @@ GEM
     geocoder (1.6.4)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    google_places (2.0.0)
+      httparty (>= 0.13.1)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -258,7 +260,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+
+
   amazing_print (~> 1.2)
+
   autoprefixer-rails
   bootsnap (>= 1.4.2)
   byebug
@@ -267,6 +272,7 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass
   geocoder
+  google_places
   httparty
   jbuilder (~> 2.7)
   json
