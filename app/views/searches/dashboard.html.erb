@@ -21,7 +21,20 @@
     </div>
 
     <%if current_user == nil  %>
-      <%= link_to new_user_session_path%>
+
+    <%= link_to new_user_session_path, class: 'card-info card3' do %>
+        <div class="text-category">Chiffres clés</div></br>
+        <div class="text-data"> 513 275 </div>
+        <div class="text-title"> habitants </div>
+        <div class="text-description"> recensés à Lyon en 2019 </div>
+      <% end %>
+
+      <%= link_to new_user_session_path, class: 'card-info card4' do %>
+        <div class="text-category">Chiffres clés</div></br>
+        <div class="text-data"> 800€ </div>
+        <div class="text-title"> de loyer mensuel </div>
+        <div class="text-description"> pour un cabinet en location à Lyon </div>
+      <% end %>
 
     <%else %>
 
