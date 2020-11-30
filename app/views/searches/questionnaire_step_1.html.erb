@@ -15,6 +15,50 @@
       <%= label :cpam, "No", value: false %>
       <%= f.radio_button :cpam, false, :checked => true, :value => false%>
     </div>
+
+  <br>
+    <div>
+      <%= label :ordre, "Yes", value: true %>
+      <%= f.radio_button :ordre, true,  :value => true %>
+    </div>
+
+    <div>
+      <%= label :ordre, "No", value: false %>
+      <%= f.radio_button :ordre, false, :checked => true, :value => false%>
+    </div>
+
+  <br>
+    <div>
+      <%= label :urssaf, "Yes", value: true %>
+      <%= f.radio_button :urssaf, true,  :value => true %>
+    </div>
+
+    <div>
+      <%= label :urssaf, "No", value: false %>
+      <%= f.radio_button :urssaf, false, :checked => true, :value => false%>
+    </div>
+
+  <br>
+    <div>
+      <%= label :retraite, "Yes", value: true %>
+      <%= f.radio_button :retraite, true,  :value => true %>
+    </div>
+
+    <div>
+      <%= label :retraite, "No", value: false %>
+      <%= f.radio_button :retraite, false, :checked => true, :value => false%>
+    </div>
+
+  <br>
+    <div>
+      <%= label :assurance_rcp, "Yes", value: true %>
+      <%= f.radio_button :assurance_rcp, true,  :value => true %>
+    </div>
+
+    <div>
+      <%= label :assurance_rcp, "No", value: false %>
+      <%= f.radio_button :assurance_rcp, false, :checked => true, :value => false%>
+    </div>
     <%= f.submit "Question suivante!", class: "btn btn-primary" %>
   <% end %>
 </div>
