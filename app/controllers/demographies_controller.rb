@@ -8,6 +8,8 @@ class DemographiesController < ApplicationController
 
   def nearbies
     @client = GooglePlaces::Client.new(ENV["PLACES_API_KEY"])
+    @search = current_user.searches.last
+    @ads = Ad.near([@search.latitude, @search.longitude], 10)
     @places = @client.spots(@ads)
   end
 
