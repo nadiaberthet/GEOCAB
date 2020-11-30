@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     @avg = @ad.map(&:rent_cents).sum / @ad.length.to_f
     @client = GooglePlaces::Client.new(ENV["PLACES_API_KEY"])
     @search = current_user.searches.last
-    @places = @client.spots(@search.latitude, @search.longitude, :name => 'physiotherapist', :radius => 15)
+    @places = @client.spots(@search.latitude, @search.longitude, :name => 'Kinésithérapeute', :radius => 15000)
   end
 
   private
