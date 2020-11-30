@@ -24,7 +24,6 @@ class SearchesController < ApplicationController
   end
 
   def questionnaire_step_1
-    cookies[:retraite] = params[:retraite]
   end
 
   def questionnaire_step_2
@@ -33,11 +32,29 @@ class SearchesController < ApplicationController
   def questionnaire_step_1_submit
     if current_user
       current_user.cpam = params[:cpam] == 'true'
+      current_user.ordre = params[:ordre] == 'true'
+      current_user.urssaf = params[:urssaf] == 'true'
+      current_user.assurance_rcp = params[:assurance_rcp] == 'true'
+      current_user.retraite = params[:retraite] == 'true'
       current_user.save
     else
       cookies[:cpam] = params[:cpam]
+      cookies[:ordre] = params[:ordre]
+      cookies[:urssaf] = params[:urssaf]
+      cookies[:assurance_rcp] = params[:assurance_rcp]
+      cookies[:retraite] = params[:retraite]
     end
-    redirect_to dashboard_path
+    redirect_to questionnaire_step_2_searches_path
+  end
+
+  def questionnaire_step_2_submit
+    if current_user
+      current_user.budget = params[:budget]
+      current_user.save
+    else
+      cookies[:budget] = params[:budget]
+    end
+    redirect_to dashboard_searches_path
   end
 
 
@@ -46,8 +63,9 @@ class SearchesController < ApplicationController
     @search = current_user ? current_user.searches.last : Search.find(cookies[:search_id])
     @options = {
       cpam: current_user ? current_user.cpam : cookies[:cpam],
+      ordre: current_user ? current_user.ordre : cookies[:ordre],
       location: @search.query,
-      josb: @search.job
+      jobs: @search.job
       #don't forget to put all radiobuttons here
     }
   end
