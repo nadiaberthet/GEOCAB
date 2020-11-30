@@ -16,10 +16,24 @@
 <div class="wrapper">
 
     <div class="card1 card-completion"><div class="text-category">Progression</div></div>
-    <div class="card2 card-info"><div class="text-category">Mes démarches</div></div>
 
-    <a href="<%= '/users/:id/chiffres_cles' %>"><div class="card3 card-info"><div class="text-category">Chiffres clés</div></br><div class="text-data"> 513 275 </div><div class="text-title"> habitants </div> <div class="text-description"> recensés à Lyon en 2019 </div></div></a>
-    <div class="card4 card-info"><div class="text-category">Chiffres clés</div></br><div class="text-data"> 800€ </div><div class="text-title"> de loyer mensuel </div> <div class="text-description"> pour un cabinet en location à Lyon </div></div>
+    <div class="card2 card-info">
+      <div class="text-category">Mes démarches</div>
+    </div>
+
+    <%= link_to chiffres_cles_path(current_user), class: 'card-info card3' do %>
+        <div class="text-category">Chiffres clés</div></br>
+        <div class="text-data"> 513 275 </div>
+        <div class="text-title"> habitants </div>
+        <div class="text-description"> recensés à Lyon en 2019 </div>
+      <% end %>
+
+    <%= link_to chiffres_cles_path(current_user), class: 'card-info card4' do %>
+      <div class="text-category">Chiffres clés</div></br>
+      <div class="text-data"> 800€ </div>
+      <div class="text-title"> de loyer mensuel </div>
+      <div class="text-description"> pour un cabinet en location à Lyon </div>
+    <% end %>
 
 
     <div id="map" class="card-info-5"
