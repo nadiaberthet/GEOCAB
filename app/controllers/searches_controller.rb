@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-  skip_before_action  :authenticate_user!
+  skip_before_action :authenticate_user!
 
   def create
     job = current_user&.job || params[:job]
@@ -57,9 +57,8 @@ class SearchesController < ApplicationController
     redirect_to dashboard_path
   end
 
-
   def dashboard
-    raise "no search, you need to redirect to new search path here (redirect to ...)" if current_user && current_user.searches.none?
+    if current_user && current_user.searches.none?
     @search = current_user ? current_user.searches.last : Search.find(cookies[:search_id])
     @options = {
       cpam: current_user ? current_user.cpam : cookies[:cpam],
@@ -69,8 +68,5 @@ class SearchesController < ApplicationController
       #don't forget to put all radiobuttons here
     }
   end
-
-
 end
-
-
+end

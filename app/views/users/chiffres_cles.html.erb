@@ -1,5 +1,5 @@
 <div class="main-container">
-
+<h1> <%= @search.query %> </h1>
   <div class="wrapper-chiffres-cles">
 
     <div class="card-chiffres" id="card-chiffres-1">
@@ -17,10 +17,10 @@
        <div class="text-data"> XX </div> </br> <div class="text-title"> titre </div> <div class="text-description"> description </div>
     </div>
     <div class="card-chiffres" id="card-chiffres-5">
-       <div class="text-data"> XX </div> </br> <div class="text-title"> titre </div> <div class="text-description"> description </div>
+       <div class="text-data"> <%= @places.count %> </div> </br> <div class="text-title"> Kinésithérapeute </div> <div class="text-description"> sont actuellement en exercice à <%= @search.query %> </div>
     </div>
     <div class="card-chiffres" id="card-chiffres-6">
-       <div class="text-data"> XX </div> </br> <div class="text-title"> titre </div> <div class="text-description"> description </div>
+       <div class="text-data"> <%= @avg.to_i %>€ </div> </br> <div class="text-title"> prix moyen d’un cabinet  </div> <div class="text-description">par mois à <%= @search.query%></div>
     </div>
     <div class="card-chiffres" id="card-chiffres-7">
        <div class="text-data"> XX </div> </br> <div class="text-title"> titre </div> <div class="text-description"> description </div>
@@ -31,9 +31,7 @@
        <div class="text-description"> description </div>
        <div id="img-chiffres-cles"> <%= image_tag "abc-doctor.png", height: 150%> </div>
     </div>
-
   </div>
+</div>
 
-</div>
-</div>
 
