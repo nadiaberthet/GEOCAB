@@ -1,0 +1,96 @@
+<div class="container questionnaire">
+  <h2>D'abord, faisons connaissance !</h2>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title">
+        <h4><i class="far fa-file-alt"></i> Démarches administratives</h4>
+        <hr>
+      </div>
+      <h4>Avez-vous entrepris les démarches suivantes ?</h4>
+      <div class="wrapper">
+        <div class="questionnaire-img">
+          <%= image_tag "office-img", height: 150 %>
+        </div>
+        <div class="mt-5 questions">
+          <%= simple_form_for current_user do |f| %>
+            <div class="field d-flex justify-content-between">
+              <p>Inscription à l’Ordre des Masseurs-Kinésithérapeutes ?</p>
+              <%= f.input :ordre, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Enregistrement auprès de la CPAM ?</p>
+              <%= f.input :cpam, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Déclaration à l'URSSAF ?</p>
+              <%= f.input :urssaf, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Inscription à la caisse de retraite CARPIMKO ?</p>
+              <%= f.input :retraite, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+            <div class="field d-flex justify-content-between">
+              <p>Souscription à une assurance en responsabilité civile professionnelle ?</p>
+              <%= f.input :assurance_rcp, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= f.submit "Questions suivantes !", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+<!-- En attente de la deuxième page: html ou JS ? -->
+     <!--  </div>
+      <div class="card-title">
+        <h4><i class="fas fa-hospital-user"></i> Critères personnels</h4>
+        <hr>
+      </div>
+      <h4>Où souhaitez-vous installer votre cabinet ?</h4>
+      <div class="d-flex justify-content-around">
+        <div class="questionnaire-img">
+          <%#= image_tag "office-img", height: 150 %>
+        </div>
+        <div class="mt-5 questions">
+          <%#= simple_form_for current_user do |f| %>
+            <div class="field d-flex justify-content-between">
+              <p>Proche d'une école / crèche ?</p>
+              <%#= f.input :retraite, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Proche d'une salle de sport ?</p>
+              <%#= f.input :ordre, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Proche d'un parc ?</p>
+              <%#= f.input :assurance_rcp, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+
+            <div class="field d-flex justify-content-between">
+              <p>Proche des transports en commun ?</p>
+              <%#= f.input :urssaf, label: "", as: :radio_buttons, collection: [["Oui", 1], ["Non", 0]], :checked => 0 %>
+            </div>
+            <div><%#= link_to "Je veux voir mon dashboard", user_dashboard_path(current_user), class: "btn btn-primary text-right"%>
+              <%#= f.submit "Je veux voir mon dashboard", class: "btn btn-primary text-right" %>
+            </div>
+          <%# end %>
+        </div>
+      </div>
+    </div> -->
+
+  <div class="progress">
+    <div class="progress_bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+</div>
+
+
+<script>
+  setTimeout(function(){
+    //deferred onload
+  }, 2000);
+</script>

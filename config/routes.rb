@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'mes_locaux', to: 'users#mes_locaux'
   get 'dashboard', to: 'searches#dashboard', as: :dashboard
+  get '/users/:id/mes_locaux', to: 'users#mes_locaux', as: "mes_locaux"
+  get '/users/:id/chiffres_cles', to: 'users#chiffres_cles', as: "chiffres_cles"
 
   resources :searches, only: [:new, :create, :update, :show] do
     get 'questionnaire-step-1', on: :collection, as: :step1
@@ -10,8 +12,6 @@ Rails.application.routes.draw do
     post 'questionnaire-step-1', on: :collection, to: 'searches#questionnaire_step_1_submit'
     post 'questionnaire-step-2', on: :collection, to: 'searches#questionnaire_step_2_submit'
   end
-
-
 
   resources :todo_lists, only:[:index, :update]
 

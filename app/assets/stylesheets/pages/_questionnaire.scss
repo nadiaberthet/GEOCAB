@@ -1,0 +1,48 @@
+.questionnaire h2 {
+  font-weight: bold;
+}
+
+.card-title {
+  color: $my-lightgreen;
+}
+
+.far {
+  padding-right: 10px;
+}
+
+.fas {
+  padding-right: 10px;
+}
+
+.questionnaire-img {
+  width: 180px;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  justify-self: center;
+  align-self: center;
+}
+
+.field {
+  display: inline-block;
+}
+
+.progress {
+  margin-top: 25px;
+  height: 20px;
+}
+
+.progress .progressbar {
+  width: 25%;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  margin: 0px 60px;
+}
+
+.questions {
+  grid-column: 2 / span 4;
+  padding-left: 70px;
+}

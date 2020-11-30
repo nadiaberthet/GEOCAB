@@ -1,8 +1,3 @@
-.main-container {
-  margin: 5px 70px 2px 70px;
-  position: relative;
-}
-
 .main-container h3 {
   margin-top: 20px;
 }
@@ -19,11 +14,22 @@
   border-radius: 20px;
 }
 
+.card-square {
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    text-align: left;
+    padding: 20px 20px 20px 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 20px;
+  }
+
 .card-horizontal {
   width: 520px;
   height: 150px;
   margin-bottom: 0px;
-  background-color: $my-green;
+  background-color: white;
   color: white;
   padding: 10px 20px 20px 20px;
 }
@@ -37,21 +43,6 @@
   position: absolute;
   bottom: 0;
   vertical-align: middle;
-}
-
-.data {
-  font-weight: bold;
-  font-size: 30px;
-}
-
-.title {
-  font-size: 18px;
-
-}
-
-.text {
-font-weight: lighter;
-font-size: 16px;
 }
 
 .image-insights {

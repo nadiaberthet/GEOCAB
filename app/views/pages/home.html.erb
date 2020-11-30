@@ -1,14 +1,12 @@
-
 <div class="container">
-  <div class="card main">
-    <div class="card-body">
-      <div class="d-flex justify-content-between">
-        <div class="card-home-text">
-          <div class="mb-5 mt-5 title-desc">
-            <h1>GEOCAB</h1>
-            <p>Votre projet d'installation en libéral de A à Z.</p>
-          </div>
-          <div class="form-inputs">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <div class="card-home-text">
+        <div class="mb-5 mt-5 title-desc">
+          <h1>GEOCAB</h1>
+          <p>Votre projet d'installation en libéral de A à Z.</p>
+        </div>
+        <div class="form-inputs">
             <%= form_with url: "/searches", local: true, method: :post do |f| %>
               <%= f.text_field :query %>
               <%= f.select :job, %w[Infirmier Kinésithérapeute Médecin généraliste Ostéopathe Sage-Femme] %>
@@ -19,29 +17,30 @@
             <% end %>
           </div>
         </div>
-        <div class="card-home-img">
-          <%= image_tag "home-img.png", height: 300%>
-        </div>
+      </div>
+      <div class="card-home-img">
+        <%= image_tag "home-img.png", height: 300%>
       </div>
     </div>
   </div>
-  <div class="card-steps">
-    <div class="card-body">
-      <div class="d-flex justify-content-around">
-        <div class="step">
-          <i class="fas fa-clipboard-check"></i>
-          <p text="center">Remplissez notre questionnaire pour précisez votre projet d'installation</p>
-        </div>
-        <div class="step">
-          <i class="fas fa-cogs"></i>
-          <p text="center">Notre algorithme trouve pour vous la meilleure proposition</p>
-        </div>
-        <div class="step">
-          <i class="fas fa-columns"></i>
-          <p text="center">Accédez à votre projet sur-mesure dans votre dashboard !</p>
+  <div class="card main">
+    <div class="card-steps">
+      <div class="card-body">
+        <div class="d-flex justify-content-around">
+          <div class="step">
+            <i class="fas fa-clipboard-check"></i>
+            <p text="center">Remplissez notre questionnaire pour précisez votre projet d'installation</p>
+          </div>
+          <div class="step">
+            <i class="fas fa-cogs"></i>
+            <p text="center">Notre algorithme trouve pour vous la meilleure proposition</p>
+          </div>
+          <div class="step">
+            <i class="fas fa-columns"></i>
+            <p text="center">Accédez à votre projet sur-mesure dans votre dashboard !</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
