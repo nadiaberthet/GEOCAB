@@ -5,4 +5,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :searches
+
+  def search_places
+    client = GooglePlaces::Client.new(ENV["PLACES_API_KEY"])
+    search = self.post_search
+    places = client.spots(search.latitude, search.longitude, name: 'Kinésithérapeute', radius: 15_000, multipage: true)
+    return places
+  end
+
+  def post_search
+    return self.searches.last
+  end
 end

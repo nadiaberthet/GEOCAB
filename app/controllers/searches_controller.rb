@@ -6,6 +6,16 @@ class SearchesController < ApplicationController
     job = current_user&.job || params[:job]
     @search = Search.create!(query: params[:query], job: job, user: current_user)
     cookies[:search_id] = @search.id unless current_user
+    @places = current_user.search_places
+    @places.each do |place|
+      longitude = place.lng
+      latitude = place.lat
+
+      Competitor.find_or_create_by(
+        latitude: latitude,
+        longitude: longitude
+      )
+    end
     redirect_to search_path(@search.id)
   end
 

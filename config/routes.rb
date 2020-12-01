@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'dashboard', to: 'searches#dashboard', as: :dashboard
   get '/users/:id/mes_locaux', to: 'users#mes_locaux', as: "mes_locaux"
   get '/users/:id/chiffres_cles', to: 'users#chiffres_cles', as: "chiffres_cles"
-  get 'demograpie', to: 'demographies#nearbies'
 
   resources :searches, only: [:new, :create, :update, :show] do
     get 'questionnaire-step-1', on: :collection, as: :step1

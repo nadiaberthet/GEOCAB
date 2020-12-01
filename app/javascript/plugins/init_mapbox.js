@@ -10,13 +10,21 @@ const buildMap = (mapElement) => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
+    const element = document.createElement('div');
+    element.className = 'marker';
+    element.style.backgroundImage = `url('${marker.image_url}')`;
+    element.style.backgroundSize = 'contain';
+    element.style.width = '25px';
+    element.style.height = '25px';
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-    new mapboxgl.Marker()
+    new mapboxgl.Marker(element)
     .setLngLat([ marker.lng, marker.lat ])
     .setPopup(popup)
     .addTo(map);
   });
 };
+//
+
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -26,12 +34,17 @@ const fitMapToMarkers = (map, markers) => {
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
-  if (mapElement) {
+  if (!("data-markers-competitors" in mapElement.getAttribute)){
     const map = buildMap(mapElement);
     const markers = JSON.parse(mapElement.dataset.markers);
-    addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
-  }
-};
+    addMarkersToMap(map, markers);
+  } else {
+    const markersCompetitors = JSON.parse(mapElement.dataset.markersCompetitors);
+    addMarkersToMap(map, markers);
+    addMarkersToMap(map, markersCompetitors);
+    fitMapToMarkers(map, markers);
+  };
+}; // if  il y a map element data set
 
 export { initMapbox };
