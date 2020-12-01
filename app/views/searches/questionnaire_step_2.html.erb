@@ -17,41 +17,41 @@
             <div class="field d-flex justify-content-between">
               <p>- Proche d'une école / crèche ?</p>
               <div>
-                <%= f.check_box as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' } %>
+                <%= f.check_box :ecole, as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' } %>
               </div>
             </div>
 
             <div class="field d-flex justify-content-between">
               <p>- Proche d'une salle de sport ?</p>
               <div>
-                <%= f.check_box as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' } %>
+                <%= f.check_box :sport, as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' } %>
               </div>
             </div>
 
              <div class="field d-flex justify-content-between">
               <p>- Proche d'un parc ?</p>
               <div>
-                <%= f.check_box as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' } %>
+                <%= f.check_box :parc, as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' } %>
               </div>
             </div>
 
             <div class="field d-flex justify-content-between">
               <p>- Proche des transports en commun ?</p>
               <div>
-                <%= f.check_box as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' } %>
+                <%= f.check_box :transport, as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' } %>
               </div>
             </div>
 
             <div class="field d-flex justify-content-between">
               <p>- Quel est votre budget ?</p>
-                <div class="field d-flex justify-content-between">
-                  <%= f.text_field :budget %>
-                </div>
-                <div class="text-center">
-                  <%= f.submit "Voir mon dashboard", class: "mt-5 btn btn-primary" %>
+              <div>
+                <%= f.text_field :budget, placeholder: "750", class: "text-right" %> €
+              </div>
+            </div>
+            <div class="submit-questionnaire">
+              <%= f.submit "Voir mon dashboard", class: "mt-5 btn btn-primary" %>
             </div>
           <% end %>
-          </div>
         </div>
         </div>
       <div class="progress">
