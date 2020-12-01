@@ -4,9 +4,9 @@
 
     <div class="card-profil d-flex justify-content-around">
       <div class="my-auto margin-profil"> <%= image_tag "doctor-table.png", height: 130%> </div>
-      <div class="my-auto margin-profil"><div class="category-profil">Projet</div> </br> <div class="title-profil"> Kinésithérapeuthe</div></div>
-      <div class="my-auto margin-profil"><div class="category-profil">Lieux</div> </br> <div class="title-profil"> Lyon</div></div>
-     <div class="my-auto margin-profil"><div class="category-profil">Budget</div> </br> <div class="title-profil"> 80 000€</div></div>
+      <div class="my-auto margin-profil"><div class="category-profil">Projet</div> </br> <div class="title-profil"> <%=current_user ? current_user.job : @search.job %></div></div>
+      <div class="my-auto margin-profil"><div class="category-profil">Lieux</div> </br> <div class="title-profil"> <%= @search.query%></div></div>
+     <div class="my-auto margin-profil"><div class="category-profil">Budget</div> </br> <div class="title-profil"> <%= tag.span(cookies[:budget]) %>€</div></div>
 
 
     </div>
@@ -17,10 +17,10 @@
     <div class="card1 card-completion"><div class="text-category">Progression</div>
       <div class="circleprogress mx-auto" data-value='80'>
           <span class="circleprogress-left">
-                        <span class="circleprogress-bar border-primary"></span>
+          <span class="circleprogress-bar border-primary"></span>
           </span>
           <span class="circleprogress-right">
-                        <span class="circleprogress-bar border-primary"></span>
+          <span class="circleprogress-bar border-primary"></span>
           </span>
           <div class="circleprogress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
             <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
@@ -32,15 +32,20 @@
   <%if current_user == nil%>
     <%= link_to new_user_session_path, class: 'card2 card-info' do %>
       <div class="text-category">Mes démarches</div>
+      <div class="text-description"> <%= "S'inscrire à l'ordre des Kinésthérapeuthes" if cookies[:ordre] == 'false'%> </div>
+      <div class="text-description"> <%="toto" if cookies[:cpam] == 'false'  %> </div>
+      <div class="text-description"> <%="toto" if cookies[:urssaf] == 'false'  %> </div>
+      <div class="text-description"> <%="S'inscrire à la caisse de retraite" if cookies[:retraite] == 'false'  %> </div>
+      <div class="text-description"> <%="toto" if cookies[:assurance_rcp] == 'false'%></div>
     <%end%>
   <%else%>
     <%= link_to todo_lists_path, class: 'card2 card-info' do %>
       <div class="text-category">Mes démarches</div>
-      <div class="text-description"> <%=current_user.ordre ? "": "S'inscrire à l'ordre des Kinésthérapeuthes" %> </div>
-      <div class="text-description"> <%=current_user.cpam ? "": "toto" %> </div>
-      <div class="text-description"> <%=current_user.urssaf ? "": "toto" %> </div>
-      <div class="text-description"> <%=current_user.retraite ? "": "S'inscrire à la caisse de retraite" %> </div>
-      <div class="text-description"> <%=current_user.assurance_rcp ? "": "toto" %> </div>
+      <div class="text-description"> <%=current_user.ordre ? "" : "S'inscrire à l'ordre des Kinésthérapeuthes" %> </div>
+      <div class="text-description"> <%=current_user.cpam ? "" : "toto" %> </div>
+      <div class="text-description"> <%=current_user.urssaf ? "" : "toto" %> </div>
+      <div class="text-description"> <%=current_user.retraite ? "" : "S'inscrire à la caisse de retraite" %> </div>
+      <div class="text-description"> <%=current_user.assurance_rcp ? "" : "toto" %> </div>
     <%end%>
   <%end%>
 
@@ -85,14 +90,5 @@
 
   </div>
  </div>
-
- <script>
-  setTimeout(function(){
-    //deferred onload
-  }, 2000);
-</script>
-
-
-
 
 <%#= raw(ap @options) s %>

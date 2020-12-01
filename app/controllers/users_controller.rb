@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
     else
       @user.update(user_params)
-      redirect_to todo_lists_path
+      redirect_to dashboard_path
     end
   end
 
