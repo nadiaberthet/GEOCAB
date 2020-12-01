@@ -14,35 +14,55 @@
 
     <div class="wrapper-checklist">
       <div class="d-flex justify-content-between">
-        <p>- Inscription au Conseil Départemental de l'Ordre</p>
+        <p>
+        <a type="button" class="text-center" data-toggle="modal" data-target="#ordre">
+          <i class="fas fa-plus-circle" id="plus-sign"></i>
+        </a>
+        Inscription au Conseil Départemental de l'Ordre</p>
         <div class="field">
            <%= f.input :ordre, label: false, as: :boolean, :checked => 0 ,  input_html: { class: 'custom-check-box' }%>
         </div>
       </div>
 
     <div class="d-flex justify-content-between">
-      <p>- Enregristrement auprès de la CPAM</p>
+      <p>
+      <a type="button" class="text-center" data-toggle="modal" data-target="#cpam">
+          <i class="fas fa-plus-circle" id="plus-sign"></i>
+      </a>
+        Enregristrement auprès de la CPAM</p>
       <div class="field">
         <%= f.input :cpam, label: false, as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' }%>
       </div>
     </div>
 
     <div class="d-flex justify-content-between">
-      <p>- Déclaration auprès de l'URSSAF</p>
+      <p>
+        <a type="button" class="text-center" data-toggle="modal" data-target="#ursaf">
+          <i class="fas fa-plus-circle" id="plus-sign"></i>
+        </a>
+        Déclaration auprès de l'URSSAF</p>
       <div class="field">
         <%= f.input :urssaf, label: false, as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' }%>
       </div>
     </div>
 
     <div class="d-flex justify-content-between">
-      <p>- Inscription à la CARPIMKO</p>
+      <p>
+       <a type="button" class="text-center" data-toggle="modal" data-target="#carpimko">
+          <i class="fas fa-plus-circle" id="plus-sign"></i>
+        </a>
+        Inscription à la CARPIMKO</p>
       <div class="field">
         <%= f.input :retraite, label: false, as: :boolean, :checked => 0, input_html: { class: 'custom-check-box' } %>
       </div>
     </div>
 
     <div class="d-flex justify-content-between">
-    <p>- Inscription à une Assurance en responsabilité Civile Professionnelle.</p>
+    <p>
+      <a type="button" class="text-center" data-toggle="modal" data-target="#rsp">
+          <i class="fas fa-plus-circle" id="plus-sign"></i>
+        </a>
+        Inscription à une Assurance en responsabilité Civile Professionnelle.</p>
       <div class="field">
         <%= f.input :assurance_rcp, label: false, as: :boolean, :checked => 0, input_html: { class: 'custom-check-box' } %>
       </div>
@@ -52,33 +72,46 @@
 
 <h4 class="card-title my-4"><i class="fas fa-clinic-medical"></i>Mes démarches immobilières</h4><hr>
   <div class="wrapper-checklist">
-  <%= simple_form_for current_user do |f| %>
     <div class="d-flex justify-content-between">
-      <p>- Location ou achat d'un cabinet</p>
-      <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
+      <p>
+         <a type="button" class="text-center" data-toggle="modal" data-target="#cabinet">
+          <i class="fas fa-plus-circle" id="plus-sign"></i>
+        </a>
+        Location ou achat d'un cabinet</p>
+      <%= f.input :cabinet, label: false, as: :boolean, :checked => 0, input_html: { class: 'custom-check-box' } %>
     </div>
 
     <div class="d-flex justify-content-between">
-      <p>- Achat du matériel neccesaire</p>
-      <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
-      <% end %>
-  </div>
+      <p>
+        <a type="button" class="text-center" data-toggle="modal" data-target="#materiel">
+          <i class="fas fa-plus-circle" id="plus-sign"></i>
+        </a>
+         Achat du matériel neccesaire</p>
+       <%= f.input :materiel, label: false, as: :boolean, :checked => 0, input_html: { class: 'custom-check-box' } %>
+    </div>
   </div>
 
 <h4 class="card-title my-4"><i class="fas fa-comments"></i>Ma communication</h4><hr>
 
 <div class="wrapper-checklist">
-  <%= simple_form_for current_user do |f| %>
     <div class="d-flex justify-content-between">
-      <p>- Inscription à Doctolib</p>
-      <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
+       <p>
+         <a type="button" class="text-center" data-toggle="modal" data-target="#doctolib">
+          <i class="fas fa-plus-circle" id="plus-sign"></i>
+        </a>
+      Inscription à Doctolib</p>
+       <%= f.input :doctolib, label: false, as: :boolean, :checked => 0, input_html: { class: 'custom-check-box' } %>
     </div>
 
     <div class="d-flex justify-content-between">
-      <p><div class="modal-style">+</div>Inscription à Google Business</p>
-      <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
-      <% end %>
-  </div>
+      <p>
+        <a type="button" class="text-center" data-toggle="modal" data-target="#gb">
+          <i class="fas fa-plus-circle" id="plus-sign"></i>
+        </a>
+        Inscription à Google My Business
+      </p>
+      <%= f.input :google_business, label: false, as: :boolean, :checked => 0, input_html: { class: 'custom-check-box' } %>
+    </div>
   </div>
 <div class="text-center mt-3">
    <%= f.submit "Mettre à jour mes démarches!", class: "btn btn-primary mt-3 pull-right", id: "button" %>
@@ -94,10 +127,195 @@
   <div class="todo-links todo-card">
   <h6>Liens utiles</h6>
   </div>
-
-
-
   </div>
+
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal ordre-->
+<div class="modal fade" id="ordre" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center lightgreen" id="exampleModalLabel"><i class="far fa-file-alt"></i>Inscription au Conseil Départemental de l'Ordre</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        Pour plus d'infos sur comment s'inscrire au Conseil Départemental de l'Ordre, visitez le site de <strong> <%= link_to "l'Ordre", "https://www.ordremk.fr/je-suis-kinesitherapeute/exercice/minscrire-a-lordre/les-demarches/", target: :_blank %></strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal CPAM-->
+<div class="modal fade" id="cpam" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center lightgreen" id="exampleModalLabel"><i class="far fa-file-alt"></i>Inscription à la CPAM</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        Pour plus d'infos sur comment s'inscrire à la CPAM, visitez le site de la <strong> <%= link_to "CPAM", "https://installation-kine.ameli.fr/installation_kine/", target: :_blank %></strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal URSAF-->
+<div class="modal fade" id="ursaf" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center lightgreen" id="exampleModalLabel"><i class="far fa-file-alt"></i>Inscription à la CPAM</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        Pour plus d'infos sur comment s'inscrire à l'Ursaf, visitez le site de l'<strong> <%= link_to "Ursaf", "https://www.urssaf.fr/portail/home/independant/je-cree-mon-entreprise/quelle-activite/je-suis-profession-liberale/sinstaller-en-tant-que-professio.html", target: :_blank %></strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal CARPIMKO-->
+<div class="modal fade" id="carpimko" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center lightgreen" id="exampleModalLabel"><i class="far fa-file-alt"></i>Inscription à la CPAM</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        Pour plus d'infos sur comment s'inscrire à la CARPIMKO, visitez le site de la<strong> <%= link_to "CARPIMKO", "https://www.carpimko.com/affiliation", target: :_blank %></strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal rsp-->
+<div class="modal fade" id="rsp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center lightgreen" id="exampleModalLabel"><i class="far fa-file-alt"></i>Inscription à la CPAM</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        Pour plus d'infos sur comment souscrire à une responsabilité civile professionnelle, visitez ce<strong> <%= link_to "comparateur", "https://www.lelynx.fr/pro/responsabilite-civile/comparatif-devis-assurance/", target: :_blank %></strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal cabinet-->
+<div class="modal fade" id="cabinet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center lightgreen" id="exampleModalLabel"><i class="fas fa-clinic-medical"></i>Louer ou acheter un cabinet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        Pour plus d'infos sur comment trouver un cabinet, rendez-vous sur la page GeoCab<strong> <%= link_to "Mon cabinet", mes_locaux_path(current_user), target: :_blank %> </strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal materiel-->
+<div class="modal fade" id="materiel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center lightgreen" id="exampleModalLabel"><i class="fas fa-clinic-medical"></i>Acheter mon materiel</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        Pour plus d'infos sur comment acheter votre materiel, visitez ce <strong><%= link_to "site", "https://www.fyzea.fr/?gclid=CjwKCAiA8Jf-BRB-EiwAWDtEGvrTtas7N4CmtsUm_EOrHh2YSPeN8B_tyHILK0Lmlq654-l7Fikd2BoCvsAQAvD_BwE", target: :_blank %></strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal doctolib-->
+<div class="modal fade" id="doctolib" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center lightgreen" id="exampleModalLabel"><i class="fas fa-comments"></i>Inscription sur Doctolib</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        Pour plus d'infos sur comment vous inscrire à Doctolib, rendez-vous <strong><%= link_to "ici", "https://info.doctolib.fr/?utm_source=google&utm_medium=cpc&utm_campaign=adv_AW_FR_Search_B2B_ACQ_Click_Generic_KW-doctolibpro_BMM-phrase&utm_content=461544983007&utm_term=%2Bdoctolib%20%2Bpro&gclid=CjwKCAiA8Jf-BRB-EiwAWDtEGkqT1v4Od2u1R5pl-LhapfSvF0lN6e8aXXlj3n5uQ-liJD5D2Pm0HBoCwEQQAvD_BwE", target: :_blank %></strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Google Business-->
+<div class="modal fade" id="gb" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-center lightgreen" id="exampleModalLabel"><i class="fas fa-comments"></i>Inscription à Google My Business</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        Pour plus d'infos sur comment vous inscrire à Google My Business, rendez-vous <strong><%= link_to "ici", "https://support.google.com/business/answer/9798848?hl=fr&ref_topic=4539639", target: :_blank %></strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style> .progress-bar { width: 0;}</style>
