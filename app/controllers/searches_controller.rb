@@ -1,5 +1,6 @@
 class SearchesController < ApplicationController
   skip_before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:dashboard]
 
   def create
     job = current_user&.job || params[:job]
@@ -70,5 +71,16 @@ class SearchesController < ApplicationController
       location: @search.query,
       jobs: @search.job
     }
+    @ads = Ad.near(@search, 10)
+
+    @markers = @ads.map do |ad|
+      {
+        lat: ad.latitude,
+        lng: ad.longitude,
+        infoWindow: render_to_string(partial: "/shared/info_window", locals: { ad: ad }),
+        # image_url: helpers.asset_url("image"),
+        id: ad.id
+      }
+    end
   end
 end

@@ -66,3 +66,17 @@
   top: 0;
   left: 0;
 }
+
+
+.circle.small {
+	border: 1px solid #f84342;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+  z-index: 86;
+}
+
+.circle.filled {
+	background-color: #666666;
+}
+
