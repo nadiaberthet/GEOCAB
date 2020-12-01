@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :current, only: [:edit, :update]
-  before_action 
+  before_action
 
   def edit
   end
@@ -51,6 +51,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:job, :ordre, :cpam, :urssaf, :retraite, :assurance_rcp, :budget, :commodite)
+    params.require(:user).permit(:job, :ordre, :cpam, :urssaf, :retraite, :assurance_rcp, :budget, :cabinet, :materiel, :doctolib, :google_business)
   end
 end
