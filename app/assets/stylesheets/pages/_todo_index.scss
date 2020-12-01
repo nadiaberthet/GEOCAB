@@ -4,12 +4,13 @@ hr {
 
 #plus-sign {
   color: $brand-color;
+  font-size: 18px;
 }
 
 .wrapper_todo {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 240px);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 300px);
   grid-gap: 20px;
 }
 
@@ -23,13 +24,13 @@ hr {
 }
 
 .todo-progress {
-  grid-column: 5 / 6 ;
+  grid-column: 5 / 7 ;
   grid-row: 1 / 2;
 
 }
 
 .todo-links {
-  grid-column: 5 / 6 ;
+  grid-column: 5 / 7 ;
   grid-row: 2 / 6;
 }
 
@@ -38,4 +39,20 @@ hr {
   border-radius: 20px;
   background-color: white;
   padding: 20px;
+}
+
+.checkbox-round {
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid $brand-color;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+    background-color: $brand-color;
 }
