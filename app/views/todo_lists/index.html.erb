@@ -48,12 +48,10 @@
         </div>
       </div>
     </div>
-    <%= f.submit "Mettre à jour mes démarches!", class: "btn btn-primary mt-3 pull-right", id: "button" %>
-  </div>
 
-<h4 class="card-title my-4"><i class="fas fa-clinic-medical"></i>Mes démarches immobilières</h4><hr>
-  <div class="wrapper-checklist">
-  <%= simple_form_for current_user do |f| %>
+  <h4 class="card-title my-4"><i class="fas fa-clinic-medical"></i>Mes démarches immobilières</h4><hr>
+    <div class="wrapper-checklist">
+
     <div class="d-flex justify-content-between">
       <p>- Location ou achat d'un cabinet</p>
       <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
@@ -62,27 +60,26 @@
     <div class="d-flex justify-content-between">
       <p>- Achat du matériel neccesaire</p>
       <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
-      <% end %>
-  </div>
-  </div>
-
-<h4 class="card-title my-4"><i class="fas fa-comments"></i>Ma communication</h4><hr>
-
-<div class="wrapper-checklist">
-  <%= simple_form_for current_user do |f| %>
-    <div class="d-flex justify-content-between">
-      <p>- Inscription à Doctolib</p>
-      <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
+      </div>
     </div>
 
-    <div class="d-flex justify-content-between">
-      <p><div class="modal-style">+</div>Inscription à Google Business</p>
-      <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
-      <% end %>
+  <h4 class="card-title my-4"><i class="fas fa-comments"></i>Ma communication</h4><hr>
+    <div class="wrapper-checklist">
+
+        <div class="d-flex justify-content-between">
+          <p>- Inscription à Doctolib</p>
+          <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <p><div class="modal-style">+</div>Inscription à Google Business</p>
+          <%= f.input :retraite, label: false, input_html: { class: 'custom-check-box' } %>
+        </div>
+      </div>
+        <div class="text-center mt-3">
+    </div>
+    <%= f.submit "Mettre à jour mes démarches!", class: "btn btn-primary mt-3 pull-right", id: "button" %>
   </div>
-  </div>
-<div class="text-center mt-3">
-</div>
    <% end %>
 
 </div>
@@ -101,8 +98,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style> .progress-bar { width: 0;}</style>
+
  <script>
- function initCards() {
   const updateProgressBar = () =>{
     let $checkboxes = $('.custom-check-box');
     let total = $checkboxes.length;
@@ -118,11 +115,5 @@
 
     $checkboxes.on('change', updateProgressBar);
   });
-  };
-  initCards();
-
-   setTimeout(function(){
-    //deferred onload
-  }, 2000);
  </script>
 

@@ -19,12 +19,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def todo_update
-    redirect_to dashboard_path
-  end
-
   def mes_locaux
-    @search = Search.find(params[:id])
+    @search = current_user.searches.last
     @ads = Ad.near([@search.latitude, @search.longitude], 10)
 
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
