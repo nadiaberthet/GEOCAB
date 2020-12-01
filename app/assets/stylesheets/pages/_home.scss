@@ -4,11 +4,11 @@
 //   background-color: $my-lightgreen;
 // }
 body {
-  background: linear-gradient(#FFFF, #5DA7A1);
+  background: linear-gradient(#006a71, #5DA7A1);
 }
 // Main Card
 .card-home-img {
-  height: 300px;
+  height: 250px;
 }
 
 .card-body {
@@ -30,9 +30,17 @@ body {
 
 .card-steps {
   margin-top: 25px;
+  width: 100%;
+  background-color: white;
 }
 
 .form-inputs.home {
   // display: inline-block;
+}
+
+.title-desc {
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
 }
 
