@@ -1,3 +1,4 @@
+
 <div class="main-container mb-4">
 
  <div class="wrapper_todo">
@@ -76,6 +77,7 @@
                       </i>
                     </a>
                   </div>
+
 
 
                   <div class="d-flex justify-content-between">
@@ -163,12 +165,10 @@
                           </i>
                         </a>
                       </div>
-                    </div>
-
                     <div class="text-center mt-3">
                       <%= f.submit "Mettre à jour mes démarches!", class: "btn btn-primary mt-3 pull-right", id: "button" %>
                     </div>
-
+                    </div>
               <% end %>
             </div>
 
@@ -374,8 +374,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style> .progress-bar { width: 0;}</style>
  <script>
- function initCards() {
-  const updateProgressBar = () =>{
+    const updateProgressBar = () =>{
     let $checkboxes = $('.checkbox-round');
     let total = $checkboxes.length;
     let checked = $checkboxes.filter(':checked').length;
@@ -383,17 +382,13 @@
     $('.progress-bar').css('width', progressWidth + '%');
   };
 
-  $(document).ready(function() {
+  setTimeout(function(){ $(document).ready(function() {
     let $checkboxes = $('.checkbox-round');
-
+    console.log('ready');
     updateProgressBar();
-
     $checkboxes.on('change', updateProgressBar);
-  });
-  };
-  initCards();
+      });
+    },
+  200);
 
-   setTimeout(function(){
-    //deferred onload
-  }, 2000);
  </script>
