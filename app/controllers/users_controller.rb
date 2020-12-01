@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :current, only: [:edit, :update]
+  before_action 
 
   def edit
   end

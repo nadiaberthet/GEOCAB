@@ -1,5 +1,6 @@
 class SearchesController < ApplicationController
   skip_before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:dashboard]
 
   def create
     job = current_user&.job || params[:job]
