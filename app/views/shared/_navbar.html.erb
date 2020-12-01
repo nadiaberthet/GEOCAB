@@ -1,33 +1,44 @@
-<div class="container">
+<!-- <div class="container"> -->
   <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <%= link_to "/", class: "navbar-brand" do %>
-        <%= image_tag "logo.png" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active pr-5 pt-2">
-            <%= "Bonjour, #{current_user.name} !" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Accueil", "/", class: "dropdown-item" %>
-              <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "S'identifier", new_user_session_path, class: "nav-link", class: "btn btn-primary" %>
-          </li>
+    <div class="d-flex justify-content-start flex-wrap">
+      <div>
+        <%= link_to "/", class: "navbar-brand" do %>
+            <%= image_tag "logo.png" %>
         <% end %>
-      </ul>
+      </div>
+      <div class="logo-text align-self-center">
+        <h1>GEOCAB</h1>
+      </div>
+    </div>
+
+    <div class="user-block">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <% if user_signed_in? %>
+            <li class="nav-item active pr-5 pt-2">
+              <div class= "greetings">
+                <%= "Bonjour, #{current_user.name} !"%>
+            </div>
+            </li>
+            <li class="nav-item dropdown">
+              <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <%= link_to "Accueil", "/", class: "dropdown-item" %>
+                <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "S'identifier", new_user_session_path, class: "nav-link", class: "btn btn-primary" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+<!-- </div> -->
