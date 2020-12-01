@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2020_12_01_101705) do
+
+
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,8 +83,15 @@ ActiveRecord::Schema.define(version: 2020_12_01_101705) do
     t.boolean "retraite", default: false
     t.boolean "assurance_rcp", default: false
     t.integer "budget"
-    t.string "commodite"
     t.string "job"
+    t.boolean "cabinet", default: false
+    t.boolean "materiel", default: false
+    t.boolean "doctolib", default: false
+    t.boolean "google_business", default: false
+    t.boolean "ecole", default: false
+    t.boolean "sport", default: false
+    t.boolean "parc", default: false
+    t.boolean "transport", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

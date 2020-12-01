@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :current, only: [:edit, :update]
+  before_action
 
   def edit
   end
@@ -15,16 +16,12 @@ class UsersController < ApplicationController
 
     else
       @user.update(user_params)
-      redirect_to todo_lists_path
+      redirect_to dashboard_path
     end
   end
 
-  def todo_update
-    redirect_to dashboard_path
-  end
-
   def mes_locaux
-    @search = Search.find(params[:id])
+    @search = current_user.searches.last
     @ads = Ad.near([@search.latitude, @search.longitude], 10)
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @competitors = []
@@ -65,6 +62,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:job, :ordre, :cpam, :urssaf, :retraite, :assurance_rcp, :budget, :commodite)
+    params.require(:user).permit(:job, :ordre, :cpam, :urssaf, :retraite, :assurance_rcp, :budget, :cabinet, :materiel, :doctolib, :google_business)
   end
 end

@@ -58,6 +58,12 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    algoliasearch (1.27.5)
+      httpclient (~> 2.8, >= 2.8.3)
+      json (>= 1.5.1)
+    algoliasearch-rails (1.25.0)
+      algoliasearch (>= 1.26.0, < 2.0.0)
+      json (>= 1.5.1)
     amazing_print (1.2.2)
     autoprefixer-rails (10.0.2.0)
       execjs
@@ -107,6 +113,7 @@ GEM
     httparty (0.18.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
+    httpclient (2.8.3)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.1)
@@ -260,6 +267,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  algoliasearch-rails
   amazing_print (~> 1.2)
   autoprefixer-rails
   bootsnap (>= 1.4.2)

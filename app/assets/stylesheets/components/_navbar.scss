@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
+  padding: 0 100px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,20 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 80px;
+}
+
+.logo-text {
+  font-weight: 900;
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-style: italic;
+}
+
+.greetings {
+  font-size: 18px;
+  color: white;
+}
+
+.greetings-name {
+  color: $brand-color;
 }
