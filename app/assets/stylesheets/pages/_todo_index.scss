@@ -2,16 +2,14 @@ hr {
   background-color: $brand-color;
 }
 
-.modal-style {
+#plus-sign {
   color: $brand-color;
-  font-size: 18px;
-  font-size: bold;
 }
 
 .wrapper_todo {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 170px);
+  grid-template-rows: repeat(5, 240px);
   grid-gap: 20px;
 }
 

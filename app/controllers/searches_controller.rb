@@ -69,7 +69,6 @@ class SearchesController < ApplicationController
       budget: current_user ? current_user.budget : cookies[:budget],
       location: @search.query,
       jobs: @search.job
-      #don't forget to put all radiobuttons here
     }
     @ads = Ad.near(@search, 10)
 
