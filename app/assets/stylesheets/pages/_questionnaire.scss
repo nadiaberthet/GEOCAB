@@ -46,8 +46,9 @@
 .wrapper-questionnaire {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 2;
+  grid-template-rows: 1fr 1fr;
   margin: 0px auto;
+  height: 370px;
 }
 
 .questions {
@@ -58,4 +59,8 @@
 .questions-2 {
   grid-column: 2 / span 1;
   padding-right: 50px;
+}
+
+.submit-questionnaire {
+  grid-area: 2 / 2;
 }
