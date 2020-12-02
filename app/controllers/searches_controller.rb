@@ -29,6 +29,9 @@ class SearchesController < ApplicationController
     @search = Search.find(params[:id])
     @ads = Ad.near(@search, 10)
 
+    @ad = Ad.all
+    @avg = @ad.map(&:rent_cents).sum / @ad.length.to_f
+
     @markers = @ads.map do |ad|
       {
         lat: ad.latitude,
