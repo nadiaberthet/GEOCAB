@@ -84,7 +84,7 @@ class SearchesController < ApplicationController
         lat: ad.latitude,
         lng: ad.longitude,
         infoWindow: render_to_string(partial: "/shared/info_window", locals: { ad: ad }),
-        # image_url: helpers.asset_url("image"),
+        image_url: helpers.asset_url("marker.png"),
         id: ad.id
       }
     end
