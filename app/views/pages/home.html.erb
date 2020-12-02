@@ -1,17 +1,18 @@
-<div class="container">
+<div class="main-background">
+ <div class="container">
   <div class="card-body">
-    <div class="d-flex justify-between">
+    <div class="d-flex justify-between position-relative">
       <div class="card-home-text">
         <div class="mb-5 mt-5 title-desc">
           <p>Votre projet d'installation en libéral de A à Z.</p>
         </div>
         <div class="form-inputs-home">
             <%= form_with url: "/searches", local: true, method: :post do |f| %>
-            <strong>Je suis </strong>
-              <%= f.select :job, %w[Infirmier Kinésithérapeute Médecin généraliste Ostéopathe Sage-Femme], class: "form-control" %>
-            <strong>et je m'installe à </strong>
-              <%= f.text_field :query, placeholder: "Paris", class: "mt-2 form-control" %>
-                <%= f.submit "C'est parti !", class: "mt-2 btn btn-primary" %>
+            <inline style="color:white;"><strong>Je suis</strong></inline>
+              <%= f.select :job, %w[Infirmier Kinésithérapeute Généraliste Ostéopathe Sage-Femme], class: "dropdown" %>
+            <inline style="color:white;"><strong> et je m'installe à </strong></inline>
+              <%= f.text_field :query, placeholder: "Paris", class: "mt-3 form-control" %>
+                <%= f.submit "C'est parti !", class: "mt-3 btn btn-primary" %>
               <%#= form_with model: @user do |f| %>
                 <%#= f.select :job, %w[Infirmier Kinésithérapeute Médecin généraliste Ostéopathe Sage-Femme] %>
                 <%# end %>
@@ -19,12 +20,12 @@
         </div>
       </div>
       <div class="card-home-img">
-        <%= image_tag "home-img.png", height: 300%>
+        <%= image_tag "home-img.png", height: 150%>
       </div>
     </div>
   </div>
 </div>
-  <!-- <div class="card main"> -->
+  <!-- <div class="card"> -->
     <div class="card-steps">
       <div class="card-body">
         <div class="d-flex justify-content-around">
@@ -44,4 +45,7 @@
       </div>
     </div>
   <!-- </div> -->
+</div>
+
+
 

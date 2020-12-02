@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   get 'dashboard', to: 'searches#dashboard', as: :dashboard
+  get 'loading', to: 'searches#loading', as: :loading
   get '/users/:id/mes_locaux', to: 'users#mes_locaux', as: "mes_locaux"
   get '/users/:id/chiffres_cles', to: 'users#chiffres_cles', as: "chiffres_cles"
 

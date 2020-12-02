@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
       resource.save
       cookies.delete :search_id
     end
-    stored_location_for(resource) || dashboard_path
+    stored_location_for(resource) || loading_path
   end
 
   protected
