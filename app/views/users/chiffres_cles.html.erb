@@ -1,37 +1,27 @@
+<%= render 'shared/navbar_white_links'%>
+
 <div class="main-container">
-<h1> <%= @search.query %> </h1>
+<h3 class="lightgreen ml-3 mb-3"> <%= @search.query %> </h3>
   <div class="wrapper-chiffres-cles">
 
     <div class="card-chiffres" id="card-chiffres-1">
-        <div class="text-data"> XX </div> </br>
-        <div class="text-title"> titre </div>
-        <div class="text-description"> description </div>
+        <div class="text-data"> nombre </div> </br>
+        <div class="text-title"> d'habitants</div>
+        <div class="text-description"> </div>
     </div>
     <div class="card-chiffres" id="card-chiffres-2">
-       <div class="text-data"> XX </div> </br> <div class="text-title"> titre </div> <div class="text-description"> description </div>
+       <div class="text-data"> nombre </div> </br> <div class="text-title">kinésithérapeutes </div> <div class="text-description"> en exercice</div>
     </div>
     <div class="card-chiffres" id="card-chiffres-3">
-       <div class="text-data"> XX </div> </br> <div class="text-title"> titre </div> <div class="text-description"> description </div>
+       <div class="text-data"> graphique </div> </br> <div class="text-title"> Evolution </div> <div class="text-description"> de la population </div>
     </div>
     <div class="card-chiffres" id="card-chiffres-4">
-       <div class="text-data"> XX </div> </br> <div class="text-title"> titre </div> <div class="text-description"> description </div>
+       <div class="text-data"> XX </div> </br> <div class="text-title"> Répartition </div> <div class="text-description"> par tranche d'âge </div>
     </div>
-    <div class="card-chiffres" id="card-chiffres-5">
-       <div class="text-data"> <%= @places.count %> </div> </br> <div class="text-title"> Kinésithérapeute </div> <div class="text-description"> sont actuellement en exercice à <%= @search.query %> </div>
-    </div>
-    <div class="card-chiffres" id="card-chiffres-6">
-       <div class="text-data"> <%= @avg.to_i %>€ </div> </br> <div class="text-title"> prix moyen d’un cabinet  </div> <div class="text-description">par mois à <%= @search.query%></div>
-    </div>
-    <div class="card-chiffres" id="card-chiffres-7">
-       <div class="text-data"> XX </div> </br> <div class="text-title"> titre </div> <div class="text-description"> description </div>
-    </div>
-    <div class="card-chiffres" id="card-chiffres-8">
-       <div class="text-data"> XX </div> </br>
-       <div class="text-title"> titre </div>
-       <div class="text-description"> description </div>
+
        <div id="img-chiffres-cles"> <%= image_tag "abc-doctor.png", height: 150%> </div>
-    </div>
-  </div>
 </div>
+
+<%= @places.count %>
 
 

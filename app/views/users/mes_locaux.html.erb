@@ -1,3 +1,4 @@
+
 <div class="container">
 <%= form_with url: mes_locaux_path, local: true, method: :post do |f| %>
 <inline style="color:white;"><strong> et je m'installe à </strong></inline>
@@ -5,6 +6,9 @@
     <%= f.submit "C'est parti !", class: "mt-3 btn btn-primary" %>
 <% end %>
 </div>
+
+<%= render 'shared/navbar_white_links'%>
+
 
 <div class="main-container wrapper-locaux">
 

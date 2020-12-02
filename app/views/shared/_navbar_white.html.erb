@@ -1,12 +1,12 @@
 <!-- <div class="container"> -->
-  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon-white">
     <div class="d-flex justify-content-start flex-wrap">
       <div>
         <%= link_to "/", class: "navbar-brand" do %>
-            <%= image_tag "logo-white.png" %>
+            <%= image_tag "logo.png" %>
         <% end %>
       </div>
-      <div class="logo-text align-self-center">
+      <div class="logo-text-color align-self-center">
         <h1>GEOCAB</h1>
       </div>
     </div>
@@ -21,7 +21,7 @@
         <ul class="navbar-nav mr-auto">
           <% if user_signed_in? %>
             <li class="nav-item active pr-5">
-              <div class= "greetings pt-2">
+              <div class= "greetings-white pt-2">
                 <%= "Bonjour #{current_user.name} !"%>
             </div>
             </li>
@@ -42,3 +42,4 @@
     </div>
   </div>
 <!-- </div> -->
+
