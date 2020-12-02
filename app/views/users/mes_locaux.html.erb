@@ -1,4 +1,14 @@
+
+<div class="container">
+<%= form_with url: mes_locaux_path, local: true, method: :post do |f| %>
+<inline style="color:white;"><strong> et je m'installe à </strong></inline>
+  <%= f.text_field :query, placeholder: "Paris", class: "mt-3 form-control" %>
+    <%= f.submit "C'est parti !", class: "mt-3 btn btn-primary" %>
+<% end %>
+</div>
+
 <%= render 'shared/navbar_white_links'%>
+
 
 <div class="main-container wrapper-locaux">
 
@@ -10,6 +20,15 @@
 
   <div class="card-local card-local-recherches">
     <div class="text-description"> mes recherches </div>
+   <ul>
+   <% current_user.searches.last(2).each do |search| %>
+
+     <li>
+  <%= search.id %> <%= link_to search.query, mes_locaux_path(current_user, search_id: search.id) %>
+     </li>
+
+   <% end %>
+   </ul>
     <div>
 
     </div>
@@ -25,5 +44,5 @@
  <script>
   setTimeout(function(){
     //deferred onload
-  }, 5000);
+  }, 2000);
 </script>
