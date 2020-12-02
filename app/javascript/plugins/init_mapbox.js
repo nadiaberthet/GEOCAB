@@ -44,6 +44,7 @@ const initMapbox = () => {
     const markersCompetitors = JSON.parse(mapElement.dataset.markersCompetitors);
     addMarkersToMap(map, markers);
     addMarkersToMap(map, markersCompetitors);
+    fitMapToMarkers(map, markers);
   };
 }; // if  il y a map element data set
 
