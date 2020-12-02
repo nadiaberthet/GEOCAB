@@ -30,23 +30,26 @@
     </div>
 
 
-  <%if current_user == nil%>
-    <%= link_to new_user_session_path, class: 'card2 card-info' do %>
-      <div class="text-category">Mes prochaines démarches</div>
-      <div class="brand-color"> <%= "- S'inscrire à l'ordre des Kinésthérapeuthes" if cookies[:ordre] == 'false'%> </div>
-      <div class="brand-color"> <%="- S'inscrire à la Cpam" if cookies[:cpam] == 'false'  %> </div>
-      <div class="brand-color"> <%="- Se déclarer à l'Urssaf" if cookies[:urssaf] == 'false'  %> </div>
-      <div class="brand-color"> <%="- S'inscrire à la caisse de retraite" if cookies[:retraite] == 'false'  %> </div>
-      <div class="brand-color"> <%="- Souscire à une Responsabilité Civile Pro" if cookies[:assurance_rcp] == 'false'%></div>
-    <%end%>
-  <%else%>
     <%= link_to todo_lists_path, class: 'card2 card-info' do %>
       <div class="text-category mb-2">Mes prochaines démarches</div>
-      <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i> <%=current_user.ordre ? "" : "S'inscrire à l'ordre des Kinésthérapeuthes" %> </div>
-      <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i> <%=current_user.cpam ? "" : "S'inscrire à la Cpam" %> </div>
-      <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i> <%=current_user.urssaf ? "" : "Se déclarer à l'Urssaf" %> </div>
-      <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i> <%=current_user.retraite ? "" : "S'inscrire à la caisse de retraite" %> </div>
-      <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i> <%=current_user.assurance_rcp ? "" : "Souscire à une Responsabilité Civile Pro" %> </div>
+    <%if current_user.ordre == false %>
+      <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i>S'inscrire à l'ordre des Kinésthérapeuthes</div>
+    <%end%>
+
+    <%if current_user.cpam == false%>
+      <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i>S'inscrire à la Cpam</div>
+    <%end%>
+
+    <%if current_user.urssaf == false%>
+      <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i>S'inscrire à l'Urssaf</div>
+    <%end%>
+
+    <%if current_user.retraite == false%>
+      <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i>S'inscrire à la caisse de retraite</div>
+    <%end%>
+
+    <%if current_user.assurance_rcp == false%>
+      <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i>S'inscrire à une Responsabilité Civile Pro</div>
     <%end%>
   <%end%>
 
