@@ -1,3 +1,11 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+    color: $my-lightgreen;
+  }
+
 hr {
   background-color: $brand-color;
 }
@@ -10,7 +18,7 @@ hr {
 .wrapper_todo {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(3, 300px);
+  grid-template-rows: repeat(3, 250px);
   grid-gap: 20px;
 }
 
