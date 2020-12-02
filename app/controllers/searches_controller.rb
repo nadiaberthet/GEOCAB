@@ -40,6 +40,9 @@ class SearchesController < ApplicationController
     end
   end
 
+  def loading
+  end
+
   def questionnaire_step_1
   end
 
