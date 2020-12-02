@@ -102,4 +102,6 @@ class SearchesController < ApplicationController
       }
     end
   end
+  case @search.query
+  when ''
 end

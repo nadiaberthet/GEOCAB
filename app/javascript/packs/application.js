@@ -27,11 +27,13 @@ import "bootstrap";
 // import mapboxgl from 'mapbox-gl';
 import { initMapbox } from '../plugins/init_mapbox';
 import {initAutocomplete} from '../plugins/init_autocomplete';
+import {initWiki} from '../plugins/init_wiki';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  initWiki();
   initAutocomplete();
   setTimeout(initMapbox, 200);
 });
