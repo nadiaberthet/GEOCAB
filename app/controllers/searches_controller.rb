@@ -36,6 +36,12 @@ class SearchesController < ApplicationController
   def questionnaire_step_2
   end
 
+  def destroy
+    @searches = Search.find(params[:id])
+    @searches.destroy
+    redirect_to mes_locaux_path
+  end
+
   def questionnaire_step_1_submit
     if current_user
       current_user.cpam = params[:cpam] == 'true'

@@ -1,4 +1,4 @@
-
+<%= render 'shared/navbar_white_links'%>
 <div class="container">
 <%= form_with url: mes_locaux_path, local: true, method: :post do |f| %>
 <inline style="color:white;"><strong> et je m'installe à </strong></inline>
@@ -7,7 +7,6 @@
 <% end %>
 </div>
 
-<%= render 'shared/navbar_white_links'%>
 
 
 <div class="main-container wrapper-locaux">
@@ -24,7 +23,9 @@
    <% current_user.searches.last(2).each do |search| %>
 
      <li>
-  <%= search.id %> <%= link_to search.query, mes_locaux_path(current_user, search_id: search.id) %>
+   <%= link_to search.query, mes_locaux_path(current_user, search_id: search.id) %>
+  <%= link_to 'Delete', @search, :method => 'delete' %>
+
      </li>
 
    <% end %>

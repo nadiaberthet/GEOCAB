@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/users/:id/mes_locaux', to: 'users#mes_locaux_submit'
   get '/users/:id/chiffres_cles', to: 'users#chiffres_cles', as: "chiffres_cles"
 
-  resources :searches, only: [:new, :create, :update, :show] do
+  resources :searches, only: [:new, :create, :update, :show, :destroy] do
     get 'questionnaire-step-1', on: :collection, as: :step1
     get 'questionnaire-step-2', on: :collection, as: :step2
     post 'questionnaire-step-1', on: :collection, to: 'searches#questionnaire_step_1_submit'
