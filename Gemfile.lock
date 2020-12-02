@@ -143,6 +143,7 @@ GEM
     nio4r (2.5.4)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
+    nprogress-rails (0.2.0.2)
     open-uri (0.1.0)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -283,6 +284,7 @@ DEPENDENCIES
   json
   listen (~> 3.2)
   nokogiri
+  nprogress-rails
   open-uri
   pg (>= 0.18, < 2.0)
   pry
