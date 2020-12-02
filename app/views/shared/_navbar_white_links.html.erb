@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="d-flex justify-content-between menu">
+    <div class="d-flex justify-content-between align-self-center menu">
       <% if user_signed_in? %>
         <ul class="d-flex menu align-self-center justify-content-between">
           <div>
@@ -21,13 +21,13 @@
                 <%= link_to "Mon tableau de bord", dashboard_path(current_user) %>
             </li>
           </div>
-          <div>|</div>
+
           <div>
             <li class="nav-item active mt-2 pr-5">
                 <%= link_to "Mes démarches", todo_lists_path(current_user) %>
             </li>
           </div>
-          <div>|</div>
+
           <div>
             <li class="nav-item active mt-2 pr-5">
                 <%= link_to "Mon cabinet", mes_locaux_path(current_user) %>
@@ -39,7 +39,7 @@
     <div class="d-flex justify-content-between userbox">
       <ul class="d-flex menu align-self-center">
         <li class="nav-item active">
-          <div class= "greetings-white pt-2 pr-5">
+          <div class= "greetings-white pt-3 pr-5">
             <%= "Bonjour #{current_user.name} !"%>
           </div>
         </li>
