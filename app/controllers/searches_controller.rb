@@ -84,6 +84,12 @@ class SearchesController < ApplicationController
       jobs: @search.job
     }
     @ads = Ad.near(@search, 10)
+    @places = current_user.search_places
+
+    @ad = Ad.all
+    @avg = @ad.map(&:rent_cents).sum / @ad.length.to_f
+
+
 
     @markers = @ads.map do |ad|
       {
