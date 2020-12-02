@@ -13,6 +13,11 @@ class SearchesController < ApplicationController
     @search = Search.find(params[:id])
     @ads = Ad.near(@search, 10)
 
+    @ad = Ad.all
+    @avg = @ad.map(&:rent_cents).sum / @ad.length.to_f
+
+    @places = current_user.search_places
+
     @markers = @ads.map do |ad|
       {
         lat: ad.latitude,
@@ -21,9 +26,6 @@ class SearchesController < ApplicationController
         image_url: helpers.asset_url("marker.png"),
         id: ad.id
       }
-    end
-    Thread.new do
-      CompetitorsApiJob.perform_now(@search)
     end
   end
 
@@ -34,6 +36,12 @@ class SearchesController < ApplicationController
   end
 
   def questionnaire_step_2
+  end
+
+  def destroy
+    @searches = Search.find(params[:id])
+    @searches.destroy
+    redirect_to mes_locaux_path
   end
 
   def questionnaire_step_1_submit

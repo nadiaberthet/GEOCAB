@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :current, only: [:edit, :update]
+  before_action :current, only: [:edit, :update, :destroy]
   before_action
 
   def edit
@@ -21,14 +21,16 @@ class UsersController < ApplicationController
   end
 
   def mes_locaux
-    @search = current_user.searches.last
+    if params.key? :search_id
+      @search = current_user.searches.find(params[:search_id])
+    else
+      @search = current_user.searches.last
+    end
+
     @ads = Ad.near([@search.latitude, @search.longitude], 10)
     # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
     @competitors = []
     @markers = @ads.map do |ad|
-      # markerCompetitor
-
-      @places = current_user.search_places
       @competitors += Competitor.near([ad.latitude, ad.longitude], 10)
 
       {
@@ -48,6 +50,13 @@ class UsersController < ApplicationController
         image_url: helpers.asset_url('competitor_marker.png')
       }
     end
+    CompetitorsApiJob.perform_later(@search)
+  end
+
+  def mes_locaux_submit
+    @search = Search.create!(query: params[:query], user: current_user)
+    CompetitorsApiJob.perform_now(@search)
+    redirect_to mes_locaux_path
   end
 
   def mes_locaux_submit
