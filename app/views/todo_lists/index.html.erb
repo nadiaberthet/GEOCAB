@@ -10,7 +10,7 @@
         </div>
 
 
-          <h4 class="card-title my-4"><i class="far fa-file-alt"></i>Mes démarches administrative</h4><hr>
+          <h4 class="card-title my-4"><i class="far fa-file-alt"></i>Mes démarches administratives</h4><hr>
 
            <div class="wrapper-checklist">
 
@@ -69,7 +69,7 @@
                       <%= f.input :retraite, label: false, as: :boolean, :checked => 0 ,  input_html: { class: 'checkbox-round' }%>
                     </div>
                     <p class="">
-                      Inscription à la CAPRIMKO
+                      Inscription à la Caprimko
                     </p>
                     </div>
                     <a type="button" class="align-self-end" data-toggle="modal" data-target="#carpimko">
@@ -86,7 +86,7 @@
                         <%= f.input :assurance_rcp, label: false, as: :boolean, :checked => 0 ,  input_html: { class: 'checkbox-round' }%>
                       </div>
                       <p class="">
-                        Inscription à une Assurance en responsabilité Civile Professionnelle
+                        Souscription à une Responsabilité Civile Professionnelle
                       </p>
                       </div>
                     <a type="button" class="align-self-end" data-toggle="modal" data-target="#rsp">
@@ -123,7 +123,7 @@
                             <%= f.input :materiel, label: false, as: :boolean, :checked => 0 ,  input_html: { class: 'checkbox-round' }%>
                           </div>
                           <p class="">
-                            Achat du matériel neccesaire
+                            Achat du matériel nécessaire
                           </p>
                         </div>
                         <a type="button" class="align-self-end" data-toggle="modal" data-target="#materiel">
@@ -166,18 +166,28 @@
                         </a>
                       </div>
                     <div class="text-center mt-3">
-                      <%= f.submit "Mettre à jour mes démarches!", class: "btn btn-primary mt-3 pull-right", id: "button" %>
+                      <%= f.submit "Mettre à jour mes démarches !", class: "btn btn-primary mt-3 pull-right", id: "button" %>
                     </div>
                     </div>
               <% end %>
             </div>
 
     <div class="todo-progress todo-card">
-      <h6>Progession</h6>
+      <h6>Progession de votre projet</h6>
     </div>
 
     <div class="todo-links todo-card">
-      <h6>Liens utiles</h6>
+      <h6>Liens utiles</h6></br></br>
+      <div class="align-self-center">
+      <div> <i class="fas fa-info-circle"></i> <%= link_to "Kineactu.com", "https://www.kineactu.com/#", target: :_blank, class: "text-data" %></div>
+      <div class="text">L’hebdomadaire de la profession pour les kinésithérapeutes</div> </br></br>
+
+      <div> <i class="fas fa-info-circle"></i> <%= link_to "Le blog kiné de Maddie", "https://www.maddiedoctor.com/le-blog", target: :_blank, class: "text-data" %></div>
+      <div class="text">Conseils kiné sur l'installation, le digital, la techniques et pleins d'autres sujets</div> </br></br>
+
+      <div> <i class="fas fa-info-circle"></i> <%= link_to "FFMKR", "https://www.ffmkr.org/actualites/nos-actualites/page/1", target: :_blank, class: "text-data" %></div>
+      <div class="text">Fédération Française des Masseurs Kinésithérapeuthes Rééducateurs</div> </br>
+      </div>
     </div>
 
   </div>
