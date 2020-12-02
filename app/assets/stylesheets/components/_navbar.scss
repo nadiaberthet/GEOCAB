@@ -1,8 +1,10 @@
+// homepage navbar
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
   padding: 0 100px;
 }
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -11,6 +13,7 @@
 .navbar-lewagon .navbar-brand img {
   width: 80px;
 }
+
 
 .logo-text {
   font-weight: 900;
@@ -26,4 +29,69 @@
 
 .greetings-name {
   color: $brand-color;
+}
+
+// white navbar (with and without links)
+.navbar-lewagon-white {
+  justify-content: space-between;
+  background: white;
+  padding: 0 100px;
+}
+
+.navbar-lewagon-white .navbar-brand img {
+  width: 80px;
+}
+
+.logo-text-color {
+  font-weight: 900;
+  color: $my-lightgreen;
+  font-family: 'Nunito', sans-serif;
+  font-style: italic;
+}
+
+.greetings-white {
+  font-size: 18px;
+  color: black;
+}
+
+.menu li {
+  display: inline;
+  margin-top: -1;
+}
+
+.menu {
+  color: $my-lightgreen;
+  text-decoration: none;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.menu:hover {
+  color: $my-green;
+  text-decoration: none;
+}
+
+.white-background {
+  background-color: white;
+}
+
+.container-navbar {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100px;
+}
+
+.menu {
+  ul {
+    margin-top: 1em;
+  }
+}
+
+.nav-item a:active {
+  color: $my-green;
+  font-weight: bold;
+  text-decoration: none;
 }
