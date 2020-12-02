@@ -50,6 +50,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def mes_locaux_submit
+    redirect_to mes_locaux
+  end
+
   def chiffres_cles
     @ad = Ad.all
     @avg = @ad.map(&:rent_cents).sum / @ad.length.to_f

@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   end
   resources :todo_lists, only:[:index, :update]
 
-  resources :users, only:[:edit, :update]
+  resources :users, only:[:edit, :update] do
+    post 'mes_locaux', on: :collection, to: 'users#mes_locaux_submit'
+  end
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

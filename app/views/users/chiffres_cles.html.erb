@@ -8,7 +8,7 @@
         <div class="text-description"> </div>
     </div>
     <div class="card-chiffres" id="card-chiffres-2">
-       <div class="text-data"> nombre </div> </br> <div class="text-title">kinésithérapeutes </div> <div class="text-description"> en exercice</div>
+       <div class="text-data"><%= @places.count %></div> </br> <div class="text-title">kinésithérapeutes </div> <div class="text-description"> en exercice</div>
     </div>
     <div class="card-chiffres" id="card-chiffres-3">
        <div class="text-data"> graphique </div> </br> <div class="text-title"> Evolution </div> <div class="text-description"> de la population </div>
@@ -19,8 +19,3 @@
 
        <div id="img-chiffres-cles"> <%= image_tag "abc-doctor.png", height: 150%> </div>
 </div>
-
-@avg.to_i %>€
-<%= @places.count %>
-
-
