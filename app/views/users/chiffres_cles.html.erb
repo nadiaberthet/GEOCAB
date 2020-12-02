@@ -5,23 +5,29 @@
   <div class="wrapper-chiffres-cles">
 
     <div class="card-chiffres" id="card-chiffres-1">
-        <div class="text-data"> nombre </div> </br>
+        <div class="text-data">
+        <%= "29 352" if @search.query.include?("1er") %>
+        <%= "30 436" if @search.query.include?("2e") %>
+        <%= "101 882" if @search.query.include?("3e") %>
+        <%= "36 145" if @search.query.include?("4e") %>
+        <%= "48 182" if @search.query.include?("5e") %>
+        <%= "50 596" if @search.query.include?("6e") %>
+        <%= "81 480" if @search.query.include?("7e") %>
+        <%= "85 229	" if @search.query.include?("8e") %>
+        <%= "49 774" if @search.query.include?("9e") %>
+        </div>
         <div class="text-title"> d'habitants</div>
         <div class="text-description"> </div>
     </div>
     <div class="card-chiffres" id="card-chiffres-2">
-       <div class="text-data"> nombre </div> </br> <div class="text-title">kinésithérapeutes </div> <div class="text-description"> en exercice</div>
+       <div class="text-data"><%= @places.count %></div> <div class="text-title">kinésithérapeutes </div> <div class="text-description"> en exercice</div>
     </div>
     <div class="card-chiffres" id="card-chiffres-3">
-       <div class="text-data"> graphique </div> </br> <div class="text-title"> Evolution </div> <div class="text-description"> de la population </div>
+       <div class="text-data"> graphique </div> <div class="text-title"> Evolution </div> <div class="text-description"> de la population </div>
     </div>
     <div class="card-chiffres" id="card-chiffres-4">
-       <div class="text-data"> XX </div> </br> <div class="text-title"> Répartition </div> <div class="text-description"> par tranche d'âge </div>
+       <div class="text-data"> XX </div> <div class="text-title"> Répartition </div> <div class="text-description"> par tranche d'âge </div>
     </div>
 
        <div id="img-chiffres-cles"> <%= image_tag "abc-doctor.png", height: 150%> </div>
 </div>
-
-<%= @places.count %>
-
-

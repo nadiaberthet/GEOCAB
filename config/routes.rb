@@ -14,10 +14,8 @@ Rails.application.routes.draw do
     post 'questionnaire-step-2', on: :collection, to: 'searches#questionnaire_step_2_submit'
   end
   resources :todo_lists, only:[:index, :update]
+  
+  resources :users, only:[:edit, :update]
 
- resources :users, only:[:edit, :update]
-
-
-
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
