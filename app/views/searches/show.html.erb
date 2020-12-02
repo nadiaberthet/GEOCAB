@@ -1,19 +1,19 @@
 <%= render 'shared/navbar_white_links'%>
 
 <div class= "main-container">
-  <h3 class="lightgreen mb-3"> <%= "Voici quelques information sur #{@search.query}, cela pourrait vous interesser!" %> </h3>
+  <h3 class="lightgreen mb-3"> <%= "Voici quelques information sur Lyon, cela pourrait vous interesser!" %> </h3>
 
 
 
 
 
     <div class="wrapper-insights">
-        <div class="card-1 card-insights"><div class="text-data"> <%= @places.count %> </div> </br> <div class="text-title"> kinésithérapeuthes </div> <div class="text-description"> sont en exercice à Lyon actuellement </div></div>
+        <div class="card-1 card-insights"><div class="text-data"> <%= Competitor.count %> </div> </br> <div class="text-title"> kinésithérapeuthes </div> <div class="text-description"> sont en exercice à Lyon actuellement </div></div>
         <div class="card-2 card-insights"><div class="text-data"> <%= @ad.count %> </div> </br> <div class="text-title"> cabinet </div> <div class="text-description"> sont en location / vente actuellement </div></div>
         <div class="card-3 card-insights"><div class="text-data"> <%= @avg.to_i %>€ </div> </br> <div class="text-title"> prix moyen d'un cabinet </div> <div class="text-description"> à Lyon actuellement </div></div>
         <div id="map" class="card-insights-map"
-               data-markers="<%= @markers.to_json %>"
-               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
     </div>
 
