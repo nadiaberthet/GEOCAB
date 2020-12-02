@@ -61,6 +61,7 @@ class UsersController < ApplicationController
     @search = current_user.post_search
   end
 
+
   def current
     @user = current_user
   end
