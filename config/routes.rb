@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     post 'questionnaire-step-1', on: :collection, to: 'searches#questionnaire_step_1_submit'
     post 'questionnaire-step-2', on: :collection, to: 'searches#questionnaire_step_2_submit'
   end
-
   resources :todo_lists, only:[:index, :update]
 
   resources :users, only:[:edit, :update]
