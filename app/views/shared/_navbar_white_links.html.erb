@@ -1,0 +1,64 @@
+<div class="white-background">
+  <div class="d-flex justify-content-between container-navbar text-center">
+
+    <div class="d-flex justify-content-start logobox navbar-brand">
+      <div>
+        <%= link_to "/", class: "navbar-brand" do %>
+          <%= image_tag "logo.png", width: 80%>
+        <% end %>
+      </div>
+
+      <div class="logo-text-color align-self-center">
+        <h1>GEOCAB</h1>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between menu">
+      <% if user_signed_in? %>
+        <ul class="d-flex menu align-self-center justify-content-between">
+          <div>
+            <li class="nav-item active mt-2 pr-5">
+                <%= link_to "Mon tableau de bord", dashboard_path(current_user) %>
+            </li>
+          </div>
+          <div>|</div>
+          <div>
+            <li class="nav-item active mt-2 pr-5">
+                <%= link_to "Mes démarches", todo_lists_path(current_user) %>
+            </li>
+          </div>
+          <div>|</div>
+          <div>
+            <li class="nav-item active mt-2 pr-5">
+                <%= link_to "Mon cabinet", mes_locaux_path(current_user) %>
+            </li>
+          </div>
+        </ul>
+    </div>
+
+    <div class="d-flex justify-content-between userbox">
+      <ul class="d-flex menu align-self-center">
+        <li class="nav-item active">
+          <div class= "greetings-white pt-2 pr-5">
+            <%= "Bonjour #{current_user.name} !"%>
+          </div>
+        </li>
+          <div>
+        <li class="nav-item dropdown">
+          <%= image_tag "user.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Accueil", "/", class: "dropdown-item" %>
+            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+          </div>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "S'identifier", new_user_session_path, class: "nav-link", class: "btn btn-primary" %>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+
+  </div>
+</div>
