@@ -1,18 +1,23 @@
 // Specific CSS for your home-page
+// Body
 
-// body {
-//   background-color: $my-lightgreen;
-// }
-body {
-  background: linear-gradient(#006a71, #5DA7A1);
+.main-background {
+  background: linear-gradient(#006a71, #68b0ab, #fff);
+  margin-top: -90px;
+  padding-top: 90px;
 }
+
 // Main Card
 .card-home-img {
-  height: 250px;
+  height: 200px;
+  margin: auto 0;
+  position: absolute;
+  bottom: 0;
+  right: 25px;
 }
 
 .card-body {
-  width: 900px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -29,13 +34,14 @@ body {
 }
 
 .card-steps {
-  margin-top: 25px;
+  margin-top: 20px;
+  padding-top: 40px;
   width: 100%;
   background-color: white;
 }
 
-.form-inputs.home {
-  // display: inline-block;
+.form-inputs-home {
+  width: 350px;
 }
 
 .title-desc {
@@ -44,3 +50,10 @@ body {
   color: white;
 }
 
+button, select {
+  border-radius: 25px;
+  padding: 5px;
+  border: 1px solid lightgrey;
+  color: $brand-color;
+  font-weight: bold;
+}
