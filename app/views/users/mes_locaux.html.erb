@@ -20,13 +20,13 @@
   <div class="card-local card-local-recherches">
     <div class="text-description"> mes recherches </div>
    <ul>
-   <% current_user.searches.last(2).each do |search| %>
+   <% current_user.searches.each do |search| %>
 
      <li>
    <%= link_to search.query, mes_locaux_path(current_user, search_id: search.id) %>
-   <% if search += 1%>
-      <%= link_to 'Delete', @search, :method => 'delete' %>
-   <% end %>
+
+      <%= link_to 'Delete', @search, method: 'delete', data: { confirm: 'Êtes-vous sûr?' }%>
+
 
      </li>
 
