@@ -82,13 +82,17 @@ a:hover {
   margin: 20px 0px 0px 0px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 20px;
-  background-color: white;
   border: 1px solid lightgrey;
   text-align: left;
-  padding: 20px;
 }
 
-.card-info:hover .card-info, .card-info:hover .text-category, .card-info:hover .text-data, .card-info:hover .text-title, .card-info:hover .text-description {
+.card-info-5:hover {
+  border: 2px solid $my-lightgreen;
+  z-index: 1000px;
+  cursor: pointer;
+}
+
+.card-info:hover .card-info, .card-info:hover .text-category, .card-info:hover .text-data, .card-info:hover .text-title, .card-info:hover .text-description, .card-info:hover #arrow-todo {
   background-color: $my-lightgreen;
   color: white;
 }
@@ -97,3 +101,15 @@ a:hover {
   background-color: $my-lightgreen;
 }
 
+#arrow-todo {
+  color: $brand-color;
+  font-size: 12px;
+  border-radius: 20px;
+}
+
+.mapboxgl-map {
+  z-index: 100;
+  height: 100%;
+  border-radius: 20px;
+
+}
