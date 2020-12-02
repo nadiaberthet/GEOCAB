@@ -33,7 +33,7 @@ import {initAutocomplete} from '../plugins/init_autocomplete';
 
 document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
-  setTimeout(initMapbox, 200);
+  setTimeout(initMapbox, 800);
 });
 
 

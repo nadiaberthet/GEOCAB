@@ -16,8 +16,6 @@ class SearchesController < ApplicationController
     @ad = Ad.all
     @avg = @ad.map(&:rent_cents).sum / @ad.length.to_f
 
-    @places = current_user.search_places
-
     @markers = @ads.map do |ad|
       {
         lat: ad.latitude,
