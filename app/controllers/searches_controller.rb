@@ -22,9 +22,6 @@ class SearchesController < ApplicationController
         id: ad.id
       }
     end
-    Thread.new do
-      CompetitorsApiJob.perform_now(@search)
-    end
   end
 
   def loading
