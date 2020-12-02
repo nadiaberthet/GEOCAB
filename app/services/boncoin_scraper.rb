@@ -4,10 +4,10 @@ require 'pry'
 
 class BoncoinScraper
   def scrap
-    # response = RestClient.get(url, headers)
-    body = File.open("#{Rails.root}/boncoin.html")
-    doc = Nokogiri::HTML(body)
-    doc.search('._2-MzW').first(5).each do |ad|
+    response = RestClient.get(url, headers)
+    #body = File.open("#{Rails.root}/boncoin.html")
+    doc = Nokogiri::HTML(response)
+    doc.search('._2-MzW').each do |ad|
       title   = ad.search('.Msj0v').text
       address = ad.search('._1UzWr:nth-child(2)').text
       rent_cents = ad.search('._1C-CB').text
