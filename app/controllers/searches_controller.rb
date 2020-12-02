@@ -6,20 +6,23 @@ class SearchesController < ApplicationController
     job = current_user&.job || params[:job]
     @search = Search.create!(query: params[:query], job: job, user: current_user)
     cookies[:search_id] = @search.id unless current_user
+    @places = search_places
+    @places.each do |place|
+      longitude = place.lng
+      latitude = place.lat
 
-      if current_user
-      @places = current_user.search_places
-      @places.each do |place|
-        longitude = place.lng
-        latitude = place.lat
-
-        Competitor.find_or_create_by(
-          latitude: latitude,
-          longitude: longitude
-        )
-      end
+      Competitor.find_or_create_by(
+        latitude: latitude,
+        longitude: longitude
+      )
     end
     redirect_to search_path(@search.id)
+  end
+
+  def search_places
+    client = GooglePlaces::Client.new(ENV["PLACES_API_KEY"])
+    places = client.spots(@search.latitude, @search.longitude, name: 'Kinésithérapeute', radius: 15_000, multipage: true)
+    return places
   end
 
   def show
@@ -31,7 +34,7 @@ class SearchesController < ApplicationController
         lat: ad.latitude,
         lng: ad.longitude,
         infoWindow: render_to_string(partial: "/shared/info_window", locals: { ad: ad }),
-        # image_url: helpers.asset_url("image"),
+        image_url: helpers.asset_url("marker.png"),
         id: ad.id
       }
     end
