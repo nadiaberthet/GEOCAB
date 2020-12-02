@@ -24,7 +24,9 @@
 
      <li>
    <%= link_to search.query, mes_locaux_path(current_user, search_id: search.id) %>
-  <%= link_to 'Delete', @search, :method => 'delete' %>
+   <% if search += 1%>
+      <%= link_to 'Delete', @search, :method => 'delete' %>
+   <% end %>
 
      </li>
 
