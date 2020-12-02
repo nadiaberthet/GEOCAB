@@ -54,44 +54,46 @@
     <%end%>
   <%end%>
 
-    <%if current_user == nil  %>
 
-    <%= link_to new_user_session_path, class: 'card-info card3' do %>
-        <div class="text-category">Chiffres clés</div></br>
-        <div class="text-data"> 513 275 </div>
-        <div class="text-title"> habitants </div>
-        <div class="text-description"> recensés à Lyon en 2019 </div>
-      <% end %>
-
-      <%= link_to new_user_session_path, class: 'card-info card4' do %>
-        <div class="text-category">Chiffres clés</div></br>
-        <div class="text-data"> 800€ </div>
-        <div class="text-title"> de loyer mensuel </div>
-        <div class="text-description"> pour un cabinet en location à Lyon </div>
-      <% end %>
-
-    <%else %>
 
       <%= link_to chiffres_cles_path(current_user), class: 'card-info card3' do %>
         <div class="text-category">Chiffres clés</div></br>
-        <div class="text-data"> 513 275 </div>
+        <div class="text-data">
+        <%= "29 352" if @search.query.include?("1er") %>
+        <%= "30 436" if @search.query.include?("2e") %>
+        <%= "101 882" if @search.query.include?("3e") %>
+        <%= "36 145" if @search.query.include?("4e") %>
+        <%= "48 182" if @search.query.include?("5e") %>
+        <%= "50 596" if @search.query.include?("6e") %>
+        <%= "81 480" if @search.query.include?("7e") %>
+        <%= "85 229 " if @search.query.include?("8e") %>
+        <%= "49 774" if @search.query.include?("9e") %>
+        </div>
         <div class="text-title"> habitants </div>
-        <div class="text-description"> recensés à Lyon en 2019 </div>
+        <div class="text-description"> dans cette zone </div>
       <% end %>
 
       <%= link_to chiffres_cles_path(current_user), class: 'card-info card4' do %>
         <div class="text-category">Chiffres clés</div></br>
-        <div class="text-data">  800€ </div>
-        <div class="text-title"> de loyer mensuel </div>
-        <div class="text-description"> pour un cabinet en location à Lyon </div>
+        <div class="text-data">  <%= @places.count  %> </div>
+        <div class="text-title"> kinésithérapeuthes </div>
+        <div class="text-description"> en exercice </div>
       <% end %>
-    <%end%>
 
-<%= link_to mes_locaux_path(current_user), class: "card-info-5" do %>
+      <%= link_to chiffres_cles_path(current_user), class: 'card-info card5' do %>
+        <div class="text-category">Chiffres clés</div></br>
+        <div class="text-data"> Zone surdotée </div>
+        <div class="text-title"> selon l'Assurance maladie </div>
+        <div class="text-description"> pas d'incitation financière </div>
+      <% end %>
+
+
+<%= link_to mes_locaux_path(current_user), class: "card-info-6" do %>
     <div id="map"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+    <div class="info-cabinet">Cabinets disponibles à Lyon</div>
   <%end%>
 
 
