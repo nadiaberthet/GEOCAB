@@ -18,7 +18,7 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 
-  <div class="card-local card-local-recherches">
+  <div class="card-local-recherches">
     <div class="text-description"> mes recherches </div>
    <ul>
    <% current_user.searches.last(2).each do |search| %>
@@ -30,12 +30,12 @@
    <% end %>
    </ul>
     <div>
-
     </div>
   </div>
 
 
-  <div class="card-local card-local-ad"></div>
+  <div class="card-local-info1"></div>
+  <div class="card-local-info2"></div>
 
 </div>
 
