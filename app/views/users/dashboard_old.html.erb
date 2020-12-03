@@ -5,9 +5,9 @@
 
     <div class="card-profil d-flex justify-content-around">
       <div class="my-auto margin-profil"> <%= image_tag "doctor-table.png", height: 130%> </div>
-      <div class="my-auto margin-profil"><div class="category-profil">Projet</div> </br> <div class="title-profil"> Kinésithérapeuthe</div></div>
-      <div class="my-auto margin-profil"><div class="category-profil">Lieux</div> </br> <div class="title-profil"> Lyon</div></div>
-     <div class="my-auto margin-profil"><div class="category-profil">Budget</div> </br> <div class="title-profil"> 80 000€</div></div>
+      <div class="my-auto margin-profil"><div class="category-profil">Projet</div>  <div class="title-profil"> Kinésithérapeuthe</div></div>
+      <div class="my-auto margin-profil"><div class="category-profil">Lieux</div>  <div class="title-profil"> Lyon</div></div>
+     <div class="my-auto margin-profil"><div class="category-profil">Budget</div>  <div class="title-profil"> 80 000€</div></div>
 
 
     </div>
@@ -15,21 +15,26 @@
 
 <div class="wrapper">
 
-    <div class="card1 card-completion"><div class="text-category">Progression</div></div>
+    <div class="card1 card-completion"><div class="text-category">Progression</div>
+    <div class="progress">
+          <span class="progress-bar progress-bar-striped progress-bar-animated"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
+        </div>
+        <div id = "percentage"> </div>
+        </div>
 
     <div class="card2 card-info">
       <div class="text-category">Mes démarches</div>
     </div>
 
     <%= link_to chiffres_cles_path(current_user), class: 'card-info card3' do %>
-        <div class="text-category">Chiffres clés</div></br>
+        <div class="text-category">Chiffres clés</div>
         <div class="text-data"> 513 275 </div>
         <div class="text-title"> habitants </div>
         <div class="text-description"> recensés à Lyon en 2019 </div>
       <% end %>
 
     <%= link_to chiffres_cles_path(current_user), class: 'card-info card4' do %>
-      <div class="text-category">Chiffres clés</div></br>
+      <div class="text-category">Chiffres clés</div>
       <div class="text-data"> 800€ </div>
       <div class="text-title"> de loyer mensuel </div>
       <div class="text-description"> pour un cabinet en location à Lyon </div>
@@ -44,8 +49,4 @@
  </div>
  </div>
 
- <script>
-  setTimeout(function(){
-    //deferred onload
-  }, 2000);
-</script>
+

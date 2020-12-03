@@ -6,10 +6,6 @@
 
       <div class="todo-checklist todo-card">
 
-        <div class="progress">
-          <span class="progress-bar progress-bar-striped progress-bar-animated"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
-        </div>
-
 
           <h4 class="card-title my-4"><i class="far fa-file-alt"></i>Mes démarches administratives</h4><hr>
 
@@ -175,6 +171,10 @@
 
     <div class="todo-progress todo-card">
       <h6>Progession de votre projet</h6>
+      <div class="progress">
+          <span class="progress-bar progress-bar-striped progress-bar-animated"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
+        </div>
+        <div id = "percentage"> </div>
     </div>
 
     <div class="todo-links todo-card">
@@ -385,21 +385,24 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style> .progress-bar { width: 0;}</style>
  <script>
+ $(document).on("turbolinks:load", function(event){
     const updateProgressBar = () =>{
     let $checkboxes = $('.checkbox-round');
     let total = $checkboxes.length;
     let checked = $checkboxes.filter(':checked').length;
     let progressWidth = (checked / total) * 100;
+    document.getElementById('percentage').innerHTML = progressWidth.toFixed();
+
+
     $('.progress-bar').css('width', progressWidth + '%');
   };
 
-  setTimeout(function(){ $(document).ready(function() {
+  { $(document).ready(function() {
     let $checkboxes = $('.checkbox-round');
-    console.log('ready');
     updateProgressBar();
     $checkboxes.on('change', updateProgressBar);
       });
-    },
-  200);
+    }
+ });
 
  </script>
