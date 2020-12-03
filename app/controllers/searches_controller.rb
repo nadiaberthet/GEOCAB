@@ -84,6 +84,7 @@ class SearchesController < ApplicationController
       location: @search.query,
       jobs: @search.job
     }
+
     @ads = Ad.near(@search, 10)
     @places = current_user.search_places
 

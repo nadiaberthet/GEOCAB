@@ -63,17 +63,12 @@ class UsersController < ApplicationController
     redirect_to mes_locaux_path
   end
 
-  def mes_locaux_submit
-    redirect_to mes_locaux
-  end
-
   def chiffres_cles
     @ad = Ad.all
     @avg = @ad.map(&:rent_cents).sum / @ad.length.to_f
     @places = current_user.search_places
     @search = current_user.post_search
   end
-
 
   def current
     @user = current_user
