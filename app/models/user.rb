@@ -24,6 +24,10 @@ class User < ApplicationRecord
     data << self.retraite
     data << self.assurance_rcp
     data << self.urssaf
+    data << self.cabinet
+    data << self.materiel
+    data << self.doctolib
+    data << self.google_business
     number = data.count(true)
     rounded = number.fdiv(9)*100
     return rounded.round

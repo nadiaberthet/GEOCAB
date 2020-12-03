@@ -28,7 +28,8 @@ const addMarkersToMap = (map, markers) => {
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-  map.fitBounds(bounds, {padding: 50});
+  map.fitBounds(bounds, {padding: 50, speed: 6});
+
 };
 
 const initMapbox = () => {
@@ -38,8 +39,8 @@ const initMapbox = () => {
   if (!mapElement.dataset.markersCompetitors){
     const map = buildMap(mapElement);
     const markers = JSON.parse(mapElement.dataset.markers);
-    fitMapToMarkers(map, markers);
     addMarkersToMap(map, markers);
+    fitMapToMarkers(map, markers);
     } else {
     const map = buildMap(mapElement);
     const markers = JSON.parse(mapElement.dataset.markers);
