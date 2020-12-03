@@ -1,6 +1,6 @@
 <%= render 'shared/navbar_white_links'%>
 
-<div class="main-container mb-4">
+<div class="main-container m-4">
 
  <div class="wrapper_todo">
 
@@ -23,8 +23,7 @@
                     </p>
                     </div>
                     <a type="button" class="align-self-end" data-toggle="modal" data-target="#ordre">
-                      <i class="fas fa-plus align-self-end" id="plus-sign">
-                      </i>
+                      <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
                     </a>
                   </div>
 
@@ -39,8 +38,7 @@
                     </p>
                     </div>
                     <a type="button" class="align-self-end" data-toggle="modal" data-target="#cpam">
-                      <i class="fas fa-plus align-self-end" id="plus-sign">
-                      </i>
+                      <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
                     </a>
                   </div>
 
@@ -55,8 +53,7 @@
                     </p>
                     </div>
                     <a type="button" class="align-self-end" data-toggle="modal" data-target="#ursaf">
-                      <i class="fas fa-plus align-self-end" id="plus-sign">
-                      </i>
+                      <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
                     </a>
                   </div>
 
@@ -70,8 +67,7 @@
                     </p>
                     </div>
                     <a type="button" class="align-self-end" data-toggle="modal" data-target="#carpimko">
-                      <i class="fas fa-plus align-self-end" id="plus-sign">
-                      </i>
+                      <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
                     </a>
                   </div>
 
@@ -87,8 +83,7 @@
                       </p>
                       </div>
                     <a type="button" class="align-self-end" data-toggle="modal" data-target="#rsp">
-                      <i class="fas fa-plus align-self-end" id="plus-sign">
-                      </i>
+                      <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
                     </a>
                   </div>
           </div>
@@ -109,8 +104,7 @@
                           </p>
                         </div>
                         <a type="button" class="align-self-end" data-toggle="modal" data-target="#cabinet">
-                          <i class="fas fa-plus align-self-end" id="plus-sign">
-                          </i>
+                          <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
                         </a>
                       </div>
 
@@ -124,8 +118,7 @@
                           </p>
                         </div>
                         <a type="button" class="align-self-end" data-toggle="modal" data-target="#materiel">
-                          <i class="fas fa-plus align-self-end" id="plus-sign">
-                          </i>
+                          <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
                         </a>
                       </div>
                     </div>
@@ -143,8 +136,7 @@
                           </p>
                         </div>
                         <a type="button" class="align-self-end" data-toggle="modal" data-target="#doctolib">
-                          <i class="fas fa-plus align-self-end" id="plus-sign">
-                          </i>
+                          <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
                         </a>
                       </div>
 
@@ -158,8 +150,7 @@
                           </p>
                         </div>
                         <a type="button" class="align-self-end" data-toggle="modal" data-target="#gb">
-                          <i class="fas fa-plus align-self-end" id="plus-sign">
-                          </i>
+                          <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
                         </a>
                       </div>
                     <div class="text-center mt-3">
@@ -171,22 +162,26 @@
 
     <div class="todo-progress todo-card">
       <h6>Progession de votre projet</h6>
-      <div class="progress">
-          <span class="progress-bar progress-bar-striped progress-bar-animated"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
+        <div class="block-progress">
+          <div class="progress">
+            <span class="progress-bar progress-bar-striped progress-bar-animated"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
+          </div>
+          <div class="percentage-todo">
+          <div id="percentage" style="color:white"><p> % </p></div>
+          </div>
         </div>
-        <div id = "percentage"> </div>
     </div>
 
     <div class="todo-links todo-card">
       <h6>Liens utiles</h6></br></br>
       <div class="align-self-center">
-      <div> <i class="fas fa-info-circle"></i> <%= link_to "Kineactu.com", "https://www.kineactu.com/#", target: :_blank, class: "text-data" %></div>
+      <div> <i class="fas fa-arrow-right"></i> <%= link_to "Kineactu.com", "https://www.kineactu.com/#", target: :_blank, class: "text-data" %></div>
       <div class="text">L’hebdomadaire de la profession pour les kinésithérapeutes</div> </br></br>
 
-      <div> <i class="fas fa-info-circle"></i> <%= link_to "Le blog kiné de Maddie", "https://www.maddiedoctor.com/le-blog", target: :_blank, class: "text-data" %></div>
+      <div> <i class="fas fa-arrow-right"></i> <%= link_to "Le blog kiné de Maddie", "https://www.maddiedoctor.com/le-blog", target: :_blank, class: "text-data" %></div>
       <div class="text">Conseils kiné sur l'installation, le digital, la techniques et pleins d'autres sujets</div> </br></br>
 
-      <div> <i class="fas fa-info-circle"></i> <%= link_to "FFMKR", "https://www.ffmkr.org/actualites/nos-actualites/page/1", target: :_blank, class: "text-data" %></div>
+      <div> <i class="fas fa-arrow-right"></i> <%= link_to "FFMKR", "https://www.ffmkr.org/actualites/nos-actualites/page/1", target: :_blank, class: "text-data" %></div>
       <div class="text">Fédération Française des Masseurs Kinésithérapeuthes Rééducateurs</div> </br>
       </div>
     </div>
