@@ -11,7 +11,7 @@ class SearchesController < ApplicationController
 
   def show
     @search = Search.find(params[:id])
-    @ads = Ad.near(@search, 1000)
+    @ads = Ad.near(@search, 10)
 
     @ad = Ad.all
     @avg = @ad.map(&:rent_cents).sum / @ad.length.to_f
@@ -89,8 +89,6 @@ class SearchesController < ApplicationController
 
     @ad = Ad.all
     @avg = @ad.map(&:rent_cents).sum / @ad.length.to_f
-
-
 
     @markers = @ads.map do |ad|
       {
