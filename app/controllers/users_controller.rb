@@ -77,4 +77,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:job, :ordre, :cpam, :urssaf, :retraite, :assurance_rcp, :budget, :cabinet, :materiel, :doctolib, :google_business)
   end
+
 end
