@@ -16,4 +16,20 @@ class User < ApplicationRecord
   def post_search
     return self.searches.last
   end
+
+  def get_prog
+    data = []
+    data << self.cpam
+    data << self.ordre
+    data << self.retraite
+    data << self.assurance_rcp
+    data << self.urssaf
+    data << self.cabinet
+    data << self.materiel
+    data << self.doctolib
+    data << self.google_business
+    number = data.count(true)
+    rounded = number.fdiv(9)*100
+    return rounded.round
+  end
 end

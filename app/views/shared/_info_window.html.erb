@@ -1,8 +1,11 @@
-<div class="card-img">
-  <%= image_tag  ad.image_url,  style: 'width: 100%' %>
+
+<div class="d-flex justify-content-around">
+<div class="card-img align-self-center">
+  <%= image_tag  ad.image_url,  style: 'width: 150px' %>
 </div>
-<div class="card-info-marker">
+<div class="card-info-marker align-self-center">
   <p class="title"><%= ad.title %></p>
   <p class="price"><%= ad.rent_cents %> €</p>
+</div>
 </div>
 

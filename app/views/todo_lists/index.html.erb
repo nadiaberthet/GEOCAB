@@ -6,10 +6,6 @@
 
       <div class="todo-checklist todo-card">
 
-        <div class="progress">
-          <span class="progress-bar progress-bar-striped progress-bar-animated"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
-        </div>
-
 
           <h4 class="card-title my-4"><i class="far fa-file-alt"></i>Mes démarches administratives</h4><hr>
 
@@ -175,6 +171,10 @@
 
     <div class="todo-progress todo-card">
       <h6>Progession de votre projet</h6>
+      <div class="progress">
+          <span class="progress-bar progress-bar-striped progress-bar-animated"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
+        </div>
+        <div id = "percentage"> </div>
     </div>
 
     <div class="todo-links todo-card">
@@ -212,7 +212,7 @@
         Pour plus d'infos sur comment s'inscrire au Conseil Départemental de l'Ordre, visitez le site de <strong> <%= link_to "l'Ordre", "https://www.ordremk.fr/je-suis-kinesitherapeute/exercice/minscrire-a-lordre/les-demarches/", target: :_blank %></strong>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -232,7 +232,7 @@
         Pour plus d'infos sur comment s'inscrire à la CPAM, visitez le site de la <strong> <%= link_to "CPAM", "https://installation-kine.ameli.fr/installation_kine/", target: :_blank %></strong>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -249,10 +249,10 @@
         </button>
       </div>
       <div class="modal-body text-center">
-        Pour plus d'infos sur comment s'inscrire à l'Ursaf, visitez le site de l'<strong> <%= link_to "Ursaf", "https://www.urssaf.fr/portail/home/independant/je-cree-mon-entreprise/quelle-activite/je-suis-profession-liberale/sinstaller-en-tant-que-professio.html", target: :_blank %></strong>
+        Pour plus d'infos sur comment s'inscrire à l'URSSAF, visitez le site de l'<strong> <%= link_to "URSSAF", "https://www.urssaf.fr/portail/home/independant/je-cree-mon-entreprise/quelle-activite/je-suis-profession-liberale/sinstaller-en-tant-que-professio.html", target: :_blank %></strong>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -273,7 +273,7 @@
         Pour plus d'infos sur comment s'inscrire à la CARPIMKO, visitez le site de la<strong> <%= link_to "CARPIMKO", "https://www.carpimko.com/affiliation", target: :_blank %></strong>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -293,7 +293,7 @@
         Pour plus d'infos sur comment souscrire à une responsabilité civile professionnelle, visitez ce<strong> <%= link_to "comparateur", "https://www.lelynx.fr/pro/responsabilite-civile/comparatif-devis-assurance/", target: :_blank %></strong>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -314,7 +314,7 @@
         Pour plus d'infos sur comment trouver un cabinet, rendez-vous sur la page GeoCab<strong> <%= link_to "Mon cabinet", mes_locaux_path(current_user), target: :_blank %> </strong>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -334,7 +334,7 @@
         Pour plus d'infos sur comment acheter votre materiel, visitez ce <strong><%= link_to "site", "https://www.fyzea.fr/?gclid=CjwKCAiA8Jf-BRB-EiwAWDtEGvrTtas7N4CmtsUm_EOrHh2YSPeN8B_tyHILK0Lmlq654-l7Fikd2BoCvsAQAvD_BwE", target: :_blank %></strong>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -354,7 +354,7 @@
         Pour plus d'infos sur comment vous inscrire à Doctolib, rendez-vous <strong><%= link_to "ici", "https://info.doctolib.fr/?utm_source=google&utm_medium=cpc&utm_campaign=adv_AW_FR_Search_B2B_ACQ_Click_Generic_KW-doctolibpro_BMM-phrase&utm_content=461544983007&utm_term=%2Bdoctolib%20%2Bpro&gclid=CjwKCAiA8Jf-BRB-EiwAWDtEGkqT1v4Od2u1R5pl-LhapfSvF0lN6e8aXXlj3n5uQ-liJD5D2Pm0HBoCwEQQAvD_BwE", target: :_blank %></strong>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -375,7 +375,7 @@
         Pour plus d'infos sur comment vous inscrire à Google My Business, rendez-vous <strong><%= link_to "ici", "https://support.google.com/business/answer/9798848?hl=fr&ref_topic=4539639", target: :_blank %></strong>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
@@ -385,21 +385,25 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style> .progress-bar { width: 0;}</style>
  <script>
-  $(document).on("turbolinks:load", function(event){
+ $(document).on("turbolinks:load", function(event){
     const updateProgressBar = () =>{
     let $checkboxes = $('.checkbox-round');
     let total = $checkboxes.length;
     let checked = $checkboxes.filter(':checked').length;
     let progressWidth = (checked / total) * 100;
+    document.getElementById('percentage').innerHTML = progressWidth.toFixed();
+
+
     $('.progress-bar').css('width', progressWidth + '%');
   };
 
-  setTimeout(function(){ $(document).ready(function() {
+  { $(document).ready(function() {
     let $checkboxes = $('.checkbox-round');
     updateProgressBar();
     $checkboxes.on('change', updateProgressBar);
       });
     },
   200)});
+
 
  </script>

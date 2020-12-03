@@ -42,6 +42,7 @@
 .btn-box-locaux {
   width: 230px;
   color: black;
+  border-radius:20px;
 }
 
 .btn-recherche-locaux {
@@ -58,7 +59,7 @@
   color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 20px;
-  position: absolute;
+  position: relative;
   height: 100%;
   a {
     color: white;
@@ -73,7 +74,8 @@
 }
 
 .form-locaux {
-  position: relative;
-  bottom: -35px;
-  left: 0px;
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+  color: black;
 }

@@ -6,7 +6,7 @@
 .mapboxgl-popup-content {
   font: 400 15px/22px 'IBM Plex Sans', 'Helvetica Neue', Sans-serif;
   padding: 0;
-  width: 180px;
+  width: 300px;
 }
 
 .mapboxgl-popup-content-wrapper {
@@ -51,4 +51,12 @@
   font-weight: bold;
   color: $brand-color;
   font-size: 20px;
+}
+
+.card-img, .card-img-top, .card-img-bottom {
+  width: 160px;
+}
+
+.card-info-marker {
+  text-align: right;
 }
