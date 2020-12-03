@@ -8,7 +8,7 @@
         <h4><i class="far fa-file-alt"></i> Démarches administratives</h4>
         <hr>
       </div>
-      <h4>Avez-vous entrepris les démarches suivantes :</h4>
+      <h4>Avez-vous entrepris les démarches suivantes ?</h4>
       <div class="wrapper-questionnaire">
         <div class="questionnaire-img">
           <%= image_tag "office-img", height: 150 %>
@@ -17,7 +17,7 @@
           <%= form_with url: questionnaire_step_1_searches_path, local: true, method: :post do |f| %>
 
             <div class="field d-flex justify-content-between">
-              <p>Inscription à l’Ordre des Masseurs-Kinésithérapeutes ?</p>
+              <p>Je suis inscris à l’Ordre des Masseurs-Kinésithérapeutes</p>
               <div>
                 <%= label :ordre, "Oui", value: true %>
                 <%= f.radio_button :ordre, true,  :value => true %>
@@ -28,7 +28,7 @@
             </div>
 
             <div class="field d-flex justify-content-between">
-              <p>Enregistrement auprès de la CPAM ?</p>
+              <p>Je suis enregistré auprès de la CPAM</p>
               <div>
                 <%= label :cpam, "Oui", value: true %>
                 <%= f.radio_button :cpam, true,  :value => true %>
@@ -38,7 +38,7 @@
             </div>
 
             <div class="field d-flex justify-content-between">
-              <p>Déclaration à l'URSSAF ?</p>
+              <p>Je suis déclaré à l'URSSAF</p>
               <div>
                 <%= label :urssaf, "Oui", value: true %>
                 <%= f.radio_button :urssaf, true,  :value => true %>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="field d-flex justify-content-between">
-              <p>Inscription à la caisse de retraite CARPIMKO ?</p>
+              <p>Je suis inscris à la caisse de retraite CARPIMKO</p>
               <div>
                 <%= label :retraite, "Oui", value: true %>
                 <%= f.radio_button :retraite, true,  :value => true %>
@@ -58,7 +58,7 @@
             </div>
 
             <div class="field d-flex justify-content-between">
-              <p>Souscription à une assurance en responsabilité civile professionnelle ?</p>
+              <p>J'ai souscris à une responsabilité civile professionnelle</p>
               <div>
                 <%= label :assurance_rcp, "Oui", value: true %>
                 <%= f.radio_button :assurance_rcp, true,  :value => true %>
