@@ -1,0 +1,5 @@
+mmeta_product_name: "GeoCab"
+meta_title: "GeoCab - Votre projet d'installation en libéral de A à Z"
+meta_description: "GeoCab est votre coach pour l'installation en libéral des professions médicales et paramédicales, des démarches administratives au choix du cabinet."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
