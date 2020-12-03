@@ -17,17 +17,10 @@
 <div class="wrapper">
 
     <div class="card1 card-completion"><div class="text-category">Progression</div>
-      <div class="circleprogress mx-auto" data-value='80'>
-          <span class="circleprogress-left">
-          <span class="circleprogress-bar border-primary"></span>
-          </span>
-          <span class="circleprogress-right">
-          <span class="circleprogress-bar border-primary"></span>
-          </span>
-          <div class="circleprogress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-            <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
-          </div>
+      <div class="progress">
+          <span class="progress-bar progress-bar-striped progress-bar-animated"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
         </div>
+        <div id = "percentage"> </div>
     </div>
 
 
@@ -99,4 +92,31 @@
 
   </div>
  </div>
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style> .progress-bar { width: 0;}</style>
+ <script>
+ $(document).on("turbolinks:load", function(event){
+    const updateProgressBar = () =>{
+    let $checkboxes = $('.checkbox-round');
+    let total = $checkboxes.length;
+    let checked = $checkboxes.filter(':checked').length;
+    let progressWidth = (checked / total) * 100;
+    document.getElementById('percentage').innerHTML = progressWidth.toFixed();
+
+
+    $('.progress-bar').css('width', progressWidth + '%');
+  };
+
+  { $(document).ready(function() {
+    let $checkboxes = $('.checkbox-round');
+    updateProgressBar();
+    $checkboxes.on('change', updateProgressBar);
+      });
+    }
+ });
+
+ </script>
 
