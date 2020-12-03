@@ -385,6 +385,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <style> .progress-bar { width: 0;}</style>
  <script>
+  $(document).on("turbolinks:load", function(event){
     const updateProgressBar = () =>{
     let $checkboxes = $('.checkbox-round');
     let total = $checkboxes.length;
@@ -395,11 +396,10 @@
 
   setTimeout(function(){ $(document).ready(function() {
     let $checkboxes = $('.checkbox-round');
-    console.log('ready');
     updateProgressBar();
     $checkboxes.on('change', updateProgressBar);
       });
     },
-  200);
+  200)});
 
  </script>
