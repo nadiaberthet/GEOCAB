@@ -120,10 +120,11 @@ a:hover {
 }
 
 .info-cabinet {
-  color: $brand-color;
-  text-shadow: 3px 3px 2px white;
+  color: $my-green;
+  font-weight: bold;
+  // text-shadow: 3px 3px 2px white;
   position: relative;
   z-index: 101;
-  bottom: 400px;
+  bottom: 430px;
   left: 20px;
 }
