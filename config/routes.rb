@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
   root to: 'pages#home'
   get 'dashboard', to: 'searches#dashboard', as: :dashboard
   get 'loading', to: 'searches#loading', as: :loading
@@ -14,7 +18,7 @@ Rails.application.routes.draw do
     post 'questionnaire-step-2', on: :collection, to: 'searches#questionnaire_step_2_submit'
   end
   resources :todo_lists, only:[:index, :update]
-  
+
   resources :users, only:[:edit, :update]
 
    # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
