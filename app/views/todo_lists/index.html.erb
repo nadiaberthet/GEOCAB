@@ -167,7 +167,7 @@
             <span class="progress-bar progress-bar-striped progress-bar-animated"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
           </div>
           <div class="percentage-todo">
-          <div id="percentage" style="color:white"><p> % </p></div>
+          <div id="percentage" style="color:white"></div>
           </div>
         </div>
     </div>
@@ -386,7 +386,7 @@
     let total = $checkboxes.length;
     let checked = $checkboxes.filter(':checked').length;
     let progressWidth = (checked / total) * 100;
-    document.getElementById('percentage').innerHTML = progressWidth.toFixed();
+    document.getElementById('percentage').innerHTML = progressWidth.toFixed() + '%';
 
 
     $('.progress-bar').css('width', progressWidth + '%');
