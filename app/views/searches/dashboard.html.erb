@@ -32,24 +32,24 @@
       <div class="text-category mb-2">Mes prochaines démarches</div>
     <%if current_user.ordre == false %>
       <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i>S'inscrire à l'ordre des Kinésthérapeuthes</div>
-    <%end%>
+    <% end %>
 
     <%if current_user.cpam == false%>
       <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i>S'inscrire à la Cpam</div>
-    <%end%>
+    <% end %>
 
     <%if current_user.urssaf == false%>
       <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i>S'inscrire à l'Urssaf</div>
-    <%end%>
+    <% end %>
 
     <%if current_user.retraite == false%>
       <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i>S'inscrire à la caisse de retraite</div>
-    <%end%>
+    <% end %>
 
     <%if current_user.assurance_rcp == false%>
       <div class="text-title"> <i class="fas fa-arrow-right" id="arrow-todo"></i>S'inscrire à une Responsabilité Civile Pro</div>
-    <%end%>
-  <%end%>
+    <% end %>
+  <% end %>
 
 
 
@@ -93,7 +93,6 @@
     <div class="info-cabinet">Cabinets disponibles à Lyon</div>
   <% end %>
 
-
   </div>
  </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -110,8 +109,9 @@
     let $checkboxes = $('.checkbox-round');
     updateProgressBar();
     $checkboxes.on('change', updateProgressBar);
-     200 });
-    }
+     });
+    200}
  });
+</script>
 
- </script>
+
