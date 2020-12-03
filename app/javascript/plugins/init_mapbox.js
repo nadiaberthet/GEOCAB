@@ -48,4 +48,6 @@ const initMapbox = () => {
   };
 }; // if  il y a map element data set
 
+
+
 export { initMapbox };
