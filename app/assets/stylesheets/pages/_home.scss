@@ -59,11 +59,7 @@ button, select {
   font-weight: bold;
 }
 
-.ap-input-icon svg {
-    fill: #cfcfcf;
-    position: absolute;
-    top: 35px;
-    right: 0;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
+.arrow {
+  color: $my-green;
+  font-size: 50px;
 }
