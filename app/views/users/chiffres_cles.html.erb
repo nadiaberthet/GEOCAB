@@ -1,33 +1,68 @@
 <%= render 'shared/navbar_white_links'%>
-
 <div class="main-container">
-<h3 class="lightgreen ml-3 mb-3"> <%= @search.query %> </h3>
-  <div class="wrapper-chiffres-cles">
+  <%current_user.searches.last(3).each do |search|%>
+  <h3 class="lightgreen ml-3 mb-3"> <%= search.query%> </h3>
+    <div class="wrapper-chiffres-cles">
 
-    <div class="card-chiffres" id="card-chiffres-1">
+      <div class="card-chiffres" id="card-chiffres-1">
+          <div class="text-data">
+          <%= "29 352" if search.query.include?("1er") %>
+          <%= "30 436" if search.query.include?("2e") %>
+          <%= "101 882" if search.query.include?("3e") %>
+          <%= "36 145" if search.query.include?("4e") %>
+          <%= "48 182" if search.query.include?("5e") %>
+          <%= "50 596" if search.query.include?("6e") %>
+          <%= "81 480" if search.query.include?("7e") %>
+          <%= "85 229 " if search.query.include?("8e") %>
+          <%= "49 774" if search.query.include?("9e") %>
+          </div> </br>
+          <div class="text-title"> habitants</div>
+          <div class="text-description"> dans cette zone </div>
+      </div>
+
+      <div class="card-chiffres" id="card-chiffres-2">
+        <div class="text-data">1 praticien </div> </br> <div class="text-title">
+          pour
+        <%= "560" if search.query.include?("3e") %>
+        <%= "364" if search.query.include?("6e") %>
+        habitants
+
+      </div> <div class="text-description"> cette zone est surdotée </div>
+      </div>
+
+      <div class="card-chiffres" id="card-chiffres-3">
         <div class="text-data">
-        <%= "29 352" if @search.query.include?("1er") %>
-        <%= "30 436" if @search.query.include?("2e") %>
-        <%= "101 882" if @search.query.include?("3e") %>
-        <%= "36 145" if @search.query.include?("4e") %>
-        <%= "48 182" if @search.query.include?("5e") %>
-        <%= "50 596" if @search.query.include?("6e") %>
-        <%= "81 480" if @search.query.include?("7e") %>
-        <%= "85 229	" if @search.query.include?("8e") %>
-        <%= "49 774" if @search.query.include?("9e") %>
-        </div> </br>
-        <div class="text-title"> habitants</div>
-        <div class="text-description"> dans cette zone </div>
-    </div>
-    <div class="card-chiffres" id="card-chiffres-2">
-       <div class="text-data">1 praticien </div> </br> <div class="text-title"> pour XX habitants</div> <div class="text-description"> cette zone est surdotée </div>
-    </div>
-    <div class="card-chiffres" id="card-chiffres-3">
-       <div class="text-data"> graphique </div> </br> <div class="text-title"> Evolution </div> <div class="text-description"> de la population </div>
-    </div>
-    <div class="card-chiffres" id="card-chiffres-4">
-       <div class="text-data"> XX </div> </br> <div class="text-title"> Répartition </div> <div class="text-description"> par tranche d'âge </div>
-    </div>
+          <%= "+0,7 %" if search.query.include?("3e") %>
+          <%= "+0,9 %" if search.query.include?("6e") %>
+        </div> </br> <div class="text-title"> Evolution </div> <div class="text-description"> de la population sur les 5 dernières années</div>
+      </div>
 
-       <div id="img-chiffres-cles"> <%= image_tag "abc-doctor.png", height: 150%> </div>
+      <div class="card-chiffres" id="card-chiffres-4">
+        <div class="d-flex justify-content-around">
+
+         <div> <div class="text-data">
+         15-29ans
+         </div> </br> <div class="text-title"> =
+          <%= "29%" if search.query.include?("3e") %>
+           <%= "26%" if search.query.include?("6e") %>
+          </div> <div class="text-description"> de la population </div> </div>
+
+          <div>
+            <div class="text-data"> 30-44ans </div> </br> <div class="text-title">
+          =
+          <%= "23%" if search.query.include?("3e") %>
+          <%= "20%" if search.query.include?("6e") %>
+           </div> <div class="text-description"> de la population </div> </div>
+
+          <div> <div class="text-data">
+          45-59ans
+        </div> </br> <div class="text-title">
+        =
+        <%= "17%" if search.query.include?("3e") %>
+        <%= "17%" if search.query.include?("6e") %>
+         </div> <div class="text-description"> de la population </div> </div>
+        </div>
+     </div>
+    </div>
+  <%end%>
 </div>
