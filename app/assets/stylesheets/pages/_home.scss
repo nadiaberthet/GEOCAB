@@ -41,7 +41,8 @@
 }
 
 .form-inputs-home {
-  width: 350px;
+  width: 360px;
+  display: inline-block;
 }
 
 .title-desc {
@@ -56,4 +57,13 @@ button, select {
   border: 1px solid lightgrey;
   color: $brand-color;
   font-weight: bold;
+}
+
+.ap-input-icon svg {
+    fill: #cfcfcf;
+    position: absolute;
+    top: 35px;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
