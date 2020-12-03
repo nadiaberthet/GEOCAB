@@ -7,7 +7,7 @@
     <div class="card-profil d-flex justify-content-around">
       <div class="my-auto margin-profil"> <%= image_tag "doctor-table.png", height: 130%> </div>
       <div class="my-auto margin-profil"><div class="category-profil">Projet</div> </br> <div class="title-profil"> <%=current_user ? current_user.job : @search.job %></div></div>
-      <div class="my-auto margin-profil"><div class="category-profil">Lieux</div> </br> <div class="title-profil"> <%= @search.query%></div></div>
+      <div class="my-auto margin-profil"><div class="category-profil">Lieu</div> </br> <div class="title-profil"> <%= @search.query%></div></div>
      <div class="my-auto margin-profil"><div class="category-profil">Budget</div> </br> <div class="title-profil"> <%= tag.span(cookies[:budget]) %>€</div></div>
 
 
@@ -83,7 +83,7 @@
       <%= link_to chiffres_cles_path(current_user), class: 'card-info card5' do %>
         <div class="text-category">Chiffres clés</div></br>
         <div class="text-data"> Zone surdotée </div>
-        <div class="text-title"> selon l'Assurance maladie </div>
+        <div class="text-title"> selon l'Assurance Maladie </div>
         <div class="text-description"> pas d'incitation financière </div>
       <% end %>
 

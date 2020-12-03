@@ -17,7 +17,7 @@
           <%= form_with url: questionnaire_step_2_searches_path, local: true, method: :post do |f| %>
 
             <div class="field d-flex justify-content-between">
-              <p>- Proche d'une école / crèche ?</p>
+              <p>- Proche d'une école ou d'une crèche ?</p>
               <div>
                 <%= f.check_box :ecole, as: :boolean, :checked => 0,  input_html: { class: 'custom-check-box' } %>
               </div>
@@ -51,7 +51,7 @@
               </div>
             </div>
             <div class="submit-questionnaire">
-              <%= f.submit "Voir mon dashboard", class: "mt-5 btn btn-primary" %>
+              <%= f.submit "Accéder à mon projet !", class: "mt-5 btn btn-primary" %>
             </div>
           <% end %>
         </div>

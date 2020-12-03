@@ -1,7 +1,7 @@
 <%= render 'shared/navbar_white_links'%>
 
 <div class= "main-container">
-  <h3 class="lightgreen mb-3"> <%= "Voici quelques information sur Lyon, cela pourrait vous interesser!" %> </h3>
+  <h4 class="lightgreen mb-3 mt-3"> <%= "Voici un aperçu des informations pertinentes pour votre installation à #{@search.query} :" %> </h4>
 
 
 
@@ -26,7 +26,7 @@
     <div class="image-insights">  <%= image_tag "doctor-img.png", height: 130%>  </div>
     <div class="text-banner">
       Répondez à notre questionnaire pour obtenir </br>
-      votre projet d’installation personnalisé
+      votre projet d’installation personnalisé.
     </div>
     <div class="btn-quizz"> <div class="pb-5"> <%= link_to "C'est parti !", questionnaire_step_1_searches_path%> </div> </div>
 

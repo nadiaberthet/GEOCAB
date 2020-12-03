@@ -11,7 +11,7 @@
         <div class="form-inputs-home">
             <%= form_with url: "/searches", local: true, method: :post do |f| %>
             <inline style="color:white;"><strong>Je suis</strong></inline>
-              <%= f.select :job, %w[Infirmier Kinésithérapeute Généraliste Ostéopathe Sage-Femme], class: "dropdown" %>
+            <%= f.select :job, %w[Infirmier Kinésithérapeute Généraliste Ostéopathe Sage-Femme], class: "dropdown" %>
             <inline style="color:white;"><strong> et je m'installe à </strong></inline>
               <%= f.text_field :query, placeholder: "Paris", class: "mt-3 form-control" %>
                 <%= f.submit "C'est parti !", class: "mt-3 btn btn-primary" %>
@@ -37,11 +37,11 @@
           </div>
           <div class="step">
             <i class="fas fa-cogs"></i>
-            <p text="center">Notre algorithme trouve pour vous la meilleure proposition</p>
+            <p text="center">Notre algorithme trouve pour vous les données pertinentes</p>
           </div>
           <div class="step">
             <i class="fas fa-columns"></i>
-            <p text="center">Accédez à votre projet sur-mesure dans votre dashboard !</p>
+            <p text="center">Accédez à votre projet sur-mesure dans votre tableau de bord !</p>
           </div>
         </div>
       </div>

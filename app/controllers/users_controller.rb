@@ -50,11 +50,11 @@ class UsersController < ApplicationController
         image_url: helpers.asset_url('competitor_marker.png')
       }
     end
+
     CompetitorsApiJob.perform_now(@search)
 
     @ad = Ad.all
     @avg = @ad.map(&:rent_cents).sum / @ad.length.to_f
-
   end
 
   def mes_locaux_submit
