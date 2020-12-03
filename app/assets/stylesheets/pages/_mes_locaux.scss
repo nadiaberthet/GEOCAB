@@ -1,25 +1,14 @@
 .wrapper-locaux {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 200px);
+  grid-template-rows: repeat(3, 190px);
   grid-gap: 20px;
+  margin-top: 20px;
 }
 
 .card-local-map {
   grid-column: 1 / 3 ;
   grid-row: 1 / 4;
-}
-
-.card-local-recherches {
-  grid-column: 3 / 4 ;
-  grid-row: 1 / 2;
-  margin-bottom: 20px;
-  background-color: $my-lightgreen;
-  text-align: left;
-  padding: 20px;
-  color: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 20px;
 }
 
 .card-local-info1 {
@@ -28,6 +17,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 20px;
   background-color: white;
+  padding: 20px;
+  transition: all .2s ease-in-out;
 }
 
 .card-local-info2 {
@@ -36,4 +27,53 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 20px;
   background-color: white;
+  padding: 20px;
+  transition: all .2s ease-in-out;
+}
+
+.card-local-info1:hover, .card-local-info2:hover, {
+  transform: scale(1.03);
+}
+
+.recherches-title {
+  color: white;
+}
+
+.btn-box-locaux {
+  width: 230px;
+  color: black;
+}
+
+.btn-recherche-locaux {
+  width: 150px;
+  font-size: 14px;
+}
+
+.card-local-recherches {
+  grid-column: 3 / 4 ;
+  grid-row: 1 / 2;
+  background-color: $my-lightgreen;
+  text-align: left;
+  padding: 10px 10px 10px 20px;
+  color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 20px;
+  position: absolute;
+  height: 100%;
+  a {
+    color: white;
+  }
+  li {
+    color: white;
+  }
+}
+
+.card-local-recherches a:hover, .card-local-recherches li:hover {
+  color: lightgrey;
+}
+
+.form-locaux {
+  position: relative;
+  bottom: -35px;
+  left: 0px;
 }

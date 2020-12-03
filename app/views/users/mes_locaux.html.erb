@@ -1,12 +1,10 @@
 <%= render 'shared/navbar_white_links'%>
-<div class="container">
-<%= form_with url: mes_locaux_path, local: true, method: :post do |f| %>
-<inline style="color:white;"><strong> et je m'installe à </strong></inline>
-  <%= f.text_field :query, placeholder: "Paris", class: "mt-3 form-control" %>
-    <%= f.submit "C'est parti !", class: "mt-3 btn btn-primary" %>
-<% end %>
-</div>
 
+
+<div class="container">
+
+</div>
+<h3 class="lightgreen mb-3 mt-3 ml-5"> <%= @search.query%> </h3>
 
 
 <div class="main-container wrapper-locaux">
@@ -18,27 +16,45 @@
 </div>
 
   <div class="card-local-recherches">
-    <div class="text-description"> mes recherches </div>
-   <ul>
-   <% current_user.searches.each do |search| %>
+    <div class="recherches-title mb-2"> <strong>Mes recherches</strong></div>
 
-     <li>
-   <%= link_to search.query, mes_locaux_path(current_user, search_id: search.id) %>
+      <ul>
+        <% current_user.searches.each do |search| %>
+          <li>
+            <%= link_to search.query, mes_locaux_path(current_user, search_id: search.id) %>
+            <%= link_to ' | Supprimer', @search, method: 'delete', data: { confirm: 'Êtes-vous sûr?' }%>
+          </li>
+        <% end %>
+       </ul>
 
-      <%= link_to 'Delete', @search, method: 'delete', data: { confirm: 'Êtes-vous sûr?' }%>
+      <div>
 
-
-     </li>
-
-   <% end %>
-   </ul>
-    <div>
-    </div>
+        <%= form_with url: mes_locaux_path, local: true, method: :post do |f| %>
+          <!-- <inline style="color:white;"><strong> et je m'installe à </strong></inline> -->
+          <div class="d-flex justify-content-between form-locaux">
+          <%= f.text_field :query, placeholder: "Lyon 2ème", class: "btn-box-locaux" %>
+          <%= f.submit "nouvelle recherche", class: "btn btn-primary btn-recherche-locaux" %>
+          </div>
+        <% end %>
+      </div>
   </div>
 
 
-  <div class="card-local-info1"></div>
-  <div class="card-local-info2"></div>
+  <div class="card-local-info1">
+    <div class="text-data">
+      <%= @ad.count %>
+    </div> </br>
+    <div class="text-title">
+      cabinet
+    </div>
+    <div class="text-description">
+      sont en location actuellement
+    </div>
+  </div>
+
+  <div class="card-local-info2">
+    <div class="text-data"> <%= @avg.to_i %>€ </div> </br> <div class="text-title"> loyer moyen d'un cabinet </div> <div class="text-description"> actuellement dans la zone recherchée</div>
+  </div>
 
 </div>
 
