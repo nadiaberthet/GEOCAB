@@ -64,3 +64,18 @@ hr {
 .checkbox-round:checked {
     background-color: $brand-color;
 }
+
+.percentage-todo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  background-color: $brand-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin: 30px auto 0px auto;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-size: 24px;
+}
+
