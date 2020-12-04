@@ -72,7 +72,7 @@
 
       <%= link_to chiffres_cles_path(current_user), class: 'card-info card4' do %>
         <div class="text-category">Chiffres clés</div></br>
-        <div class="text-data">  <%= @places.count  %> </div>
+        <div class="text-data">  <%= Competitor.near(@search).all.size %> </div>
         <div class="text-title"> kinésithérapeuthes </div>
         <div class="text-description"> en exercice </div>
       <% end %>
