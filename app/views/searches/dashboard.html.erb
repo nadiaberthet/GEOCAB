@@ -19,7 +19,7 @@
     <div class="card1 card-completion"><div class="text-category">Progression</div>
       <div class="block-progress">
           <div class="progress">
-            <span class="progress-bar progress-bar-striped progress-bar-animated"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
+            <span class="progress-bar progress-bar-tasks progress-bar-striped progress-bar-animated" data-percent="<%= current_user.get_prog %>" id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
           </div>
           <div class="percentage-dashboard">
           <div id="percentage" style="color:white"><%=current_user.get_prog%>%</div>
@@ -95,23 +95,6 @@
 
   </div>
  </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<style> .progress-bar { width: 0;}</style>
- <script>
- $(document).on("turbolinks:load", function(event){
-    const updateProgressBar = () =>{
-    let progressWidth = parseInt(document.getElementById('percentage').textContent);
-    $('.progress-bar').css('width', progressWidth + '%');
-  };
 
-  { $(document).ready(function() {
-    let $checkboxes = $('.checkbox-round');
-    updateProgressBar();
-    $checkboxes.on('change', updateProgressBar);
-     });
-    }
- });
-</script>
 
 
