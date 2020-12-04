@@ -18,6 +18,9 @@ const checkboxChanged = (_e) => {
 }
 
 const initProgressBar = () => {
+  if (document.querySelector('.progress-bar') == null)
+    return
+
   updateProgressBar()
   document.querySelectorAll('.checkbox-round').forEach((checkbox) => {
     checkbox.addEventListener('change', checkboxChanged)
