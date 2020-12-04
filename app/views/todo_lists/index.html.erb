@@ -7,20 +7,22 @@
       <div class="todo-checklist todo-card">
 
 
-          <h4 class="card-title my-4"><i class="far fa-file-alt"></i>Mes démarches administratives</h4><hr>
 
            <div class="wrapper-checklist">
 
               <%= simple_form_for current_user do |f| %>
 
+                  <h4 class="card-title my-4"><i class="far fa-file-alt"></i>Mes démarches administratives</h4><hr>
+
+
                   <div class="d-flex justify-content-between">
-                  <div class="d-flex justify-content-start">
-                    <div class="field pr-5">
-                      <%= f.input :ordre, label: false, as: :boolean, :checked => 0 ,  input_html: { class: 'checkbox-round' }%>
-                    </div>
-                    <p class="">
-                      Inscription au Conseil Départemental de l'Ordre
-                    </p>
+                    <div class="d-flex justify-content-start">
+                      <div class="field pr-5">
+                        <%= f.input :ordre, label: false, as: :boolean, :checked => 0 ,  input_html: { class: 'checkbox-round' }%>
+                      </div>
+                      <p class="">
+                        Inscription au Conseil Départemental de l'Ordre
+                      </p>
                     </div>
                     <a type="button" class="align-self-end" data-toggle="modal" data-target="#ordre">
                       <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
@@ -29,13 +31,13 @@
 
 
                   <div class="d-flex justify-content-between">
-                  <div class="d-flex justify-content-start">
-                    <div class="field pr-5">
-                      <%= f.input :cpam, label: false, as: :boolean, :checked => 0 ,  input_html: { class: 'checkbox-round' }%>
-                    </div>
-                    <p class="">
-                      Inscription à la CPAM
-                    </p>
+                    <div class="d-flex justify-content-start">
+                      <div class="field pr-5">
+                        <%= f.input :cpam, label: false, as: :boolean, :checked => 0 ,  input_html: { class: 'checkbox-round' }%>
+                      </div>
+                      <p class="">
+                        Inscription à la CPAM
+                      </p>
                     </div>
                     <a type="button" class="align-self-end" data-toggle="modal" data-target="#cpam">
                       <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
@@ -44,13 +46,13 @@
 
 
                   <div class="d-flex justify-content-between">
-                  <div class="d-flex justify-content-start">
-                    <div class="field pr-5">
-                      <%= f.input :urssaf, label: false, as: :boolean, :checked => 0 ,  input_html: { class: 'checkbox-round' }%>
-                    </div>
-                    <p class="">
-                      Déclararion auprès de l'URSSAF
-                    </p>
+                    <div class="d-flex justify-content-start">
+                      <div class="field pr-5">
+                        <%= f.input :urssaf, label: false, as: :boolean, :checked => 0 ,  input_html: { class: 'checkbox-round' }%>
+                      </div>
+                      <p class="">
+                        Déclararion auprès de l'URSSAF
+                      </p>
                     </div>
                     <a type="button" class="align-self-end" data-toggle="modal" data-target="#ursaf">
                       <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
@@ -86,14 +88,12 @@
                       <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
                     </a>
                   </div>
-          </div>
 
 
 
 
                     <h4 class="card-title my-4"><i class="fas fa-briefcase-medical lightgreen"></i>Mon cabinet</h4><hr>
 
-                    <div class="wrapper-checklist">
                       <div class="d-flex justify-content-between">
                         <div class="d-flex justify-content-start">
                           <div class="field pr-5">
@@ -121,11 +121,9 @@
                           <i class="fas fa-info-circle mb-3" id="plus-sign"></i>
                         </a>
                       </div>
-                    </div>
 
                     <h4 class="card-title my-4"><i class="far fa-comments lightgreen"></i>Ma communication</h4><hr>
 
-                    <div class="wrapper-checklist">
                       <div class="d-flex justify-content-between">
                         <div class="d-flex justify-content-start">
                           <div class="field pr-5">
@@ -156,18 +154,20 @@
                     <div class="text-center mt-3">
                       <%= f.submit "Mettre à jour mes démarches !", class: "btn btn-primary mt-3 pull-right", id: "button" %>
                     </div>
-                    </div>
-              <% end %>
+                <% end %>
+              </div>
             </div>
 
     <div class="todo-progress todo-card">
       <h6>Progession de votre projet</h6>
         <div class="block-progress">
           <div class="progress">
-            <span class="progress-bar progress-bar-striped progress-bar-animated"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
+            <span class="progress-bar progress-bar-tasks progress-bar-striped progress-bar-animated"  data-percent="<%= current_user.get_prog %>"  id="CheckProgress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></span>
           </div>
           <div class="percentage-todo">
-          <div id="percentage" style="color:white"></div>
+          <div id="percentage" style="color:white">
+            <%=current_user.get_prog%>%
+          </div>
           </div>
         </div>
     </div>
@@ -376,33 +376,3 @@
   </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<style> .progress-bar { width: 0;}</style>
- <script>
- $(document).on("turbolinks:load", function(event){
-    const updateProgressBar = () =>{
-    let $checkboxes = $('.checkbox-round');
-    let total = $checkboxes.length;
-    let checked = $checkboxes.filter(':checked').length;
-    let progressWidth = (checked / total) * 100;
-    document.getElementById('percentage').innerHTML = progressWidth.toFixed() + '%';
-
-
-    $('.progress-bar').css('width', progressWidth + '%');
-  };
-
-  { $(document).ready(function() {
-    let $checkboxes = $('.checkbox-round');
-    updateProgressBar();
-    $checkboxes.on('change', updateProgressBar);
-      });
- }})
-function reloadIt() {
-    if (window.location.href.substr(-2) !== "?r") {
-        window.location = window.location.href + "?r";
-    }
-}
-
-setTimeout('reloadIt()', 100)();
- </script>
