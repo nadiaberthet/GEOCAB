@@ -19,7 +19,7 @@
     <div class="recherches-title mb-2"> <strong>Mes recherches</strong></div>
 
       <ul>
-        <% current_user.searches.each do |search| %>
+        <% current_user.searches.last(2).each do |search| %>
           <li>
             <%= link_to search.query, mes_locaux_path(current_user, search_id: search.id) %>
             <%= link_to ' | Supprimer', @search, method: 'delete', data: { confirm: 'Êtes-vous sûr?' }%>
