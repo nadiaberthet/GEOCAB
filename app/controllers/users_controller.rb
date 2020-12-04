@@ -6,11 +6,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.budget.nil?
+    if current_user.budget == nil
       @user.update(user_params)
       redirect_to questionnaire2_searches_path
 
-    elsif current_user.budget.zero?
+    elsif current_user.budget == 0
       @user.update(user_params)
       redirect_to questionnaire2_searches_path
 
@@ -77,5 +77,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:job, :ordre, :cpam, :urssaf, :retraite, :assurance_rcp, :budget, :cabinet, :materiel, :doctolib, :google_business)
   end
-
 end
