@@ -2,9 +2,10 @@
 // Body
 
 .main-background {
-  background: linear-gradient(#006a71, #68b0ab, #fff);
+  background: linear-gradient(#006a71, #68b0ab, lightgrey);
   margin-top: -90px;
   padding-top: 90px;
+  padding-bottom: 50px;
 }
 
 // Main Card
@@ -38,6 +39,9 @@
   padding-top: 40px;
   width: 100%;
   background-color: white;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 40px;
 }
 
 .form-inputs-home {
