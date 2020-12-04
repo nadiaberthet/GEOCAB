@@ -17,7 +17,7 @@
           <%= form_with url: questionnaire_step_1_searches_path, local: true, method: :post do |f| %>
 
             <div class="field d-flex justify-content-between">
-              <p>Je suis inscris à l’Ordre des Masseurs-Kinésithérapeutes</p>
+              <p>Je suis inscrit à l’Ordre des Masseurs-Kinésithérapeutes</p>
               <div>
                 <%= label :ordre, "Oui", value: true %>
                 <%= f.radio_button :ordre, true,  :value => true %>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="field d-flex justify-content-between">
-              <p>Je suis inscris à la caisse de retraite CARPIMKO</p>
+              <p>Je suis inscrit à la caisse de retraite CARPIMKO</p>
               <div>
                 <%= label :retraite, "Oui", value: true %>
                 <%= f.radio_button :retraite, true,  :value => true %>
