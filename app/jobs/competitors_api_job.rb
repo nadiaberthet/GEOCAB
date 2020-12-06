@@ -19,7 +19,7 @@ class CompetitorsApiJob < ApplicationJob
 
   def search_places(search)
     client = GooglePlaces::Client.new(ENV["PLACES_API_KEY"])
-    places = client.spots(search.latitude, search.longitude, name: 'Kinésithérapeute', radius: 15_000, multipage: true)
+    places = client.spots(search.latitude, search.longitude, name: 'Kinésithérapeute', radius: 10_000, multipage: true)
     return places
   end
 end

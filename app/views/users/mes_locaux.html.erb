@@ -22,7 +22,9 @@
         <% current_user.searches.last(2).each do |search| %>
           <li>
             <%= link_to search.query, mes_locaux_path(current_user, search_id: search.id) %>
+            <% if Search.count(params[:id]) >=  2 %>
             <%= link_to ' | Supprimer', @search, method: 'delete', data: { confirm: 'Êtes-vous sûr?' }%>
+            <% end %>
           </li>
         <% end %>
        </ul>
