@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-  before_action :current, only: [:edit, :update, :destroy]
+  before_action :current, only: %i[edit update destroy]
   before_action
 
   def edit
   end
 
   def update
-    if current_user.budget == nil
+    if current_user.budget.nil?
       @user.update(user_params)
       redirect_to questionnaire2_searches_path
 

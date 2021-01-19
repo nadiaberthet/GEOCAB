@@ -2,7 +2,6 @@ class CompetitorsApiJob < ApplicationJob
   queue_as :default
 
   def perform(search)
-    # Do something later
     places = search_places(search)
     places.each do |place|
       longitude = place.lng
